@@ -1,0 +1,89 @@
+@import "./utils.scss";
+/**
+* * 영역나누기
+* * Header / Title / Content / Footer
+**/
+.container {
+  flex: 1;
+  // padding: 10px;
+  background-color: #fff;
+}
+
+.containerjfy {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  height: 9%;
+  justify-content: center;
+  align-items: center;
+  // background-color: #ff9a9a;
+}
+
+.title {
+  width: 100%;
+  height: 18%;
+  justify-content: center;
+  align-items: center;
+  // background-color: #9aa9ff;
+}
+.content {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  // background-color: #d6ca1a;
+}
+.footer {
+  width: 100%;
+  height: 20%;
+  // background-color: #1ad657;
+}
+/**
+* * 영역나누기
+* * Header / Title / Content / Footer
+**/
+
+.logofont_large {
+  // font-family: Noto Sans KR;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 44.2341px;
+  line-height: 56px;
+  text-align: left;
+  color: #ffffff;
+}
+.logofont_small {
+  // font-family: Noto Sans KR;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18.4309px;
+  line-height: 24px;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.34);
+}
+
+//* Input
+.default_input_container {
+  width: 90%;
+  height: 40;
+  border-color: #e0e0e0;
+  color: #929394;
+  border-width: 1px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.default_input {
+  border-bottom-width: 0px;
+  border-color: #e0e0e0;
+}
+.default_label {
+  font-size: $font_size;
+  text-align: left;
+  width: 90%;
+  color: #292c30;
+  margin: 5px;
+}

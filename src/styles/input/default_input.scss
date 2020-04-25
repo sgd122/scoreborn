@@ -1,0 +1,17 @@
+@import '../utils.scss';
+
+.default_input {
+  width: 90%;
+  height: 40;
+  border-color: #e0e0e0;
+  color: #929394;
+  border-width: 1px;
+  border-radius: 5px;
+}
+.default_label {
+  font-size: $font_size;
+  text-align: left;
+  width: 90%;
+  color: #292c30;
+  margin: 5px;
+}
