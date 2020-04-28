@@ -1,4 +1,4 @@
-//* Main
+//* 라이브
 
 import React, {useEffect, useContext} from 'react';
 import {Button, View, Image, StyleSheet, Text, TextInput} from 'react-native';
@@ -9,6 +9,7 @@ import PageContext, {PageProvider} from './Context';
 import ScoreInput from '../../components/Text/ScoreInput';
 import ScoreLabel from '../../components/Text/ScoreLabel';
 import CustomButton from '../../components/Buttons/CustomButton';
+import HeaderScreen from '../../settings/navigation/Screen/HeaderScreen';
 
 //* 스타일
 import styles from '../../styles/common.module.scss';
@@ -45,29 +46,7 @@ function Login({userStore, navigation}) {
               onChangeText={(text) => setState((prev) => ({...prev, id: text}))}
               value={state.id}
             />
-            <ScoreLabel>비밀번호</ScoreLabel>
-            <ScoreInput
-              secureTextEntry={true}
-              placeholder="8자리 이상의 비밀번호를 입력하세요."
-              onChangeText={(text) =>
-                setState((prev) => ({...prev, password: text}))
-              }
-              value={state.password}
-            />
 
-            {/* Buttons */}
-            <CustomButton
-              buttonColor={'#ADADAD'}
-              title={'로그인'}
-              onPress={() => callLogin()}
-            />
-            <CustomButton
-              buttonColor={'#fff'}
-              titleColor={'#042B6C'}
-              borderColor={'#042B6C'}
-              title={'회원가입'}
-              onPress={() => callSignUp()}
-            />
             <CustomButton
               buttonColor={'#fff'}
               titleColor={'#292C30'}
@@ -85,6 +64,7 @@ function Login({userStore, navigation}) {
 export default inject('userStore')(({userStore, navigation}) => {
   return (
     <PageProvider>
+      {/* <HeaderScreen navigation={navigation} /> */}
       <Login userStore={userStore} navigation={navigation} />
     </PageProvider>
   );

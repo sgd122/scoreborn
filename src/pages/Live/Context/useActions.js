@@ -28,11 +28,11 @@ export default function useActions({state, setState, commonStore}) {
   };
 
   const callSignUp = () => {
-    state.navigation.navigate('회원가입');
+    state.navigation.navigate('SignUp');
   };
 
   const callForgot = () => {
-    state.navigation.navigate('아이디/비밀번호 찾기');
+    state.navigation.navigate('MatchIdPwd');
   };
 
   return {

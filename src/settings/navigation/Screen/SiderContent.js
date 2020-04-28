@@ -1,7 +1,7 @@
 // router.js
-import React, {useEffect, useContext} from 'react';
-import {Button, View, Text} from 'react-native';
-import {DrawerActions} from '@react-navigation/native';
+import React, { useEffect, useContext } from 'react';
+import { Button, View, Text } from 'react-native';
+import { DrawerActions } from '@react-navigation/native';
 import {
   DrawerContentScrollView,
   DrawerItemList,
@@ -10,15 +10,23 @@ import {
 export default function SiderContent(props) {
   return (
     <DrawerContentScrollView {...props}>
-      <DrawerItemList {...props} />
-      {/* <DrawerItem
-        label="Close drawer"
-        onPress={() => props.navigation.dispatch(DrawerActions.closeDrawer())}
+      {/* <DrawerItemList {...props} /> */}
+      <DrawerItem
+        label="라이브"
+        onPress={() => props.navigation.navigate("Live")}
       />
       <DrawerItem
-        label="Toggle drawer"
-        onPress={() => props.navigation.dispatch(DrawerActions.toggleDrawer())}
-      /> */}
+        label="픽"
+        onPress={() => props.navigation.navigate("Pick")}
+      />
+      <DrawerItem
+        label="채팅"
+        onPress={() => props.navigation.navigate("Chat")}
+      />
+      <DrawerItem
+        label="마켓"
+        onPress={() => props.navigation.navigate("Market")}
+      />
     </DrawerContentScrollView>
   );
 }
