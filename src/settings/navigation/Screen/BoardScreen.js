@@ -14,7 +14,8 @@ import AuthContext, {AuthProvider} from '../AuthContext';
 import {Observer, observer, inject} from 'mobx-react';
 
 // import SplashScreen from '../../../pages/Splash/Splash';
-import Live from '../../../pages/Live';
+import Board from '../../../pages/Board';
+import AnalysisPage from '../../../pages/Board/AnalysisPage';
 
 //* 공통 헤더 및 Sider
 import HeaderScreen from './HeaderScreen';
@@ -43,15 +44,33 @@ export default function LiveScreen({navigation}) {
       <StatusBar barStyle="light-content" />
       <SafeAreaView style={{flex: 1}}>
         <HeaderScreen navigation={navigation} />
-        <Stack.Navigator
-          screenOptions={{
-            headerStyle: {
-              width: 0,
-              height: 0,
-            },
-          }}>
-          <Stack.Screen name="Live" component={Live} />
-        </Stack.Navigator>
+        <Htab.Navigator>
+          <Htab.Screen
+            name="Board"
+            component={Board}
+            options={{tabBarLabel: '전체'}}
+          />
+          <Htab.Screen
+            name="AnalysisPage"
+            component={AnalysisPage}
+            options={{tabBarLabel: '분석'}}
+          />
+          <Htab.Screen
+            name="AnalysisPage2"
+            component={AnalysisPage}
+            options={{tabBarLabel: '적중인증'}}
+          />
+          <Htab.Screen
+            name="AnalysisPage3"
+            component={AnalysisPage}
+            options={{tabBarLabel: '도전'}}
+          />
+          <Htab.Screen
+            name="AnalysisPage4"
+            component={AnalysisPage}
+            options={{tabBarLabel: '자유'}}
+          />
+        </Htab.Navigator>
       </SafeAreaView>
     </Fragment>
   );

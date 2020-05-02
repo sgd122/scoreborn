@@ -1,14 +1,7 @@
-//* 라이브
+//* 게시판
 
 import React, {useEffect, useContext} from 'react';
-import {
-  ScrollView,
-  View,
-  Image,
-  StyleSheet,
-  Text,
-  TextInput,
-} from 'react-native';
+import {Button, View, Image, StyleSheet, Text, TextInput} from 'react-native';
 import {Observer, observer, inject} from 'mobx-react';
 import PageContext, {PageProvider} from './Context';
 
@@ -17,14 +10,12 @@ import ScoreInput from '../../components/Text/ScoreInput';
 import ScoreLabel from '../../components/Text/ScoreLabel';
 import CustomButton from '../../components/Buttons/CustomButton';
 import CustomListItem from '../../components/ListItem/CustomListItem';
-import LiveLabelType1 from '../../components/Text/LiveLabelType1';
-import LiveCard from '../../components/Card/LiveCard';
 import HeaderScreen from '../../settings/navigation/Screen/HeaderScreen';
 
 //* 스타일
 import styles from '../../styles/common.module.scss';
 
-function Live({userStore, navigation}) {
+function Board({userStore, navigation}) {
   const {
     state,
     setState,
@@ -58,21 +49,7 @@ function Live({userStore, navigation}) {
     <Observer>
       {() => (
         <View style={[styles.container]}>
-          <ScrollView>
-            <LiveCard type={'live'} />
-
-            <LiveLabelType1>예정 경기</LiveLabelType1>
-            <LiveCard type={1} />
-            <LiveCard type={1} />
-            <LiveCard type={1} />
-            <LiveCard type={1} />
-
-            <LiveLabelType1>경기 결과</LiveLabelType1>
-            <LiveCard type={2} />
-            <LiveCard type={2} />
-            <LiveCard type={2} />
-            <LiveCard type={2} />
-          </ScrollView>
+          <CustomListItem list={state.list} />
         </View>
       )}
     </Observer>
@@ -83,7 +60,7 @@ export default inject('userStore')(({userStore, navigation}) => {
   return (
     <PageProvider>
       {/* <HeaderScreen navigation={navigation} /> */}
-      <Live userStore={userStore} navigation={navigation} />
+      <Board userStore={userStore} navigation={navigation} />
     </PageProvider>
   );
 });

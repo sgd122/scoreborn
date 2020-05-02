@@ -15,6 +15,7 @@ import LiveScreen from '../Screen/LiveScreen';
 import PickScreen from '../Screen/PickScreen';
 import ChatScreen from '../Screen/ChatScreen';
 import MarketScreen from '../Screen/MarketScreen';
+import BoardScreen from '../Screen/BoardScreen';
 import Sider from '../Screen/SiderContent';
 
 const Drawer = createDrawerNavigator();
@@ -68,10 +69,10 @@ function MySettingsBottom({navigation}) {
         }}
       />
       <Tab.Screen
-        name="Market"
-        component={MarketScreen}
+        name="Board"
+        component={BoardScreen}
         options={{
-          tabBarLabel: '마켓',
+          tabBarLabel: '게시판',
           //   tabBarIcon: ({ color }) => (
           //     <MaterialCommunityIcons name="home" color={color} size={26} />
           //   ),
