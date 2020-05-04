@@ -49,6 +49,48 @@ function Pick({userStore, navigation}) {
           rankScore: +1000,
           cnt: 53662,
         },
+        {
+          name: '스포츠어드벤처',
+          subtitle: '스포츠 빅데이터 분석기관',
+          rank: 1,
+          rankScore: +36000,
+          cnt: 1156,
+        },
+        {
+          name: '배당률탑',
+          subtitle: '前 KBS 스포츠국 작가',
+          rank: 2,
+          rankScore: +1000,
+          cnt: 53662,
+        },
+        {
+          name: '스포츠어드벤처',
+          subtitle: '스포츠 빅데이터 분석기관',
+          rank: 1,
+          rankScore: +36000,
+          cnt: 1156,
+        },
+        {
+          name: '배당률탑',
+          subtitle: '前 KBS 스포츠국 작가',
+          rank: 2,
+          rankScore: +1000,
+          cnt: 53662,
+        },
+        {
+          name: '스포츠어드벤처',
+          subtitle: '스포츠 빅데이터 분석기관',
+          rank: 1,
+          rankScore: +36000,
+          cnt: 1156,
+        },
+        {
+          name: '배당률탑',
+          subtitle: '前 KBS 스포츠국 작가',
+          rank: 2,
+          rankScore: +1000,
+          cnt: 53662,
+        },
       ],
     }));
   }, []);

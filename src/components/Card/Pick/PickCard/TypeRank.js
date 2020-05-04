@@ -1,11 +1,16 @@
 import React from 'react';
-import {View, Image, StyleSheet, Text, TextInput} from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+} from 'react-native';
 import {Card, Divider} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from '../../../../styles/common.module.scss';
 import {Fonts} from '../../../../settings/fonts';
 import RoundImage from '../../../Image/RoundImage';
-
+import * as func from './func';
 /**
  * @param {*} props
  *
@@ -21,56 +26,66 @@ const TypeRank = (props) => {
       {data &&
         data.map((k) => {
           return (
-            <Card containerStyle={[CustomStyles.defaultCard]}>
-              <View style={{flexDirection: 'column'}}>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                  }}>
-                  <View style={{flexDirection: 'row'}}>
-                    <RoundImage
-                      source={require('../../../../img/game/game1.png')}
-                    />
-                    <View style={{flexDirection: 'column'}}>
-                      <View style={{flexDirection: 'row'}}>
-                        <Text
-                          style={[
-                            CustomStyles.defualtFont,
-                            {fontSize: 14, marginRight: 10},
-                          ]}>
-                          {k.name}
-                        </Text>
-                        <Text
-                          style={[
-                            CustomStyles.defualtFont,
-                            {fontSize: 12, color: '#ADADAD'},
-                          ]}>
-                          {k.rankScore}
-                        </Text>
-                      </View>
-                      <View style={{flexDirection: 'row'}}>
-                        <Icon
-                          name="star"
-                          size={10}
-                          style={{color: '#042B6C', marginTop: 5}}
-                        />
-                        <Text
-                          style={[
-                            CustomStyles.defualtFont,
-                            {fontSize: 10, color: '#042B6C'},
-                          ]}>
-                          {k.cnt}
-                        </Text>
+            <TouchableOpacity
+              onPress={() => {
+                func.onCardClick(k, type);
+              }}>
+              <Card containerStyle={[CustomStyles.defaultCard]}>
+                <View style={{flexDirection: 'column'}}>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      justifyContent: 'space-between',
+                    }}>
+                    <View style={{flexDirection: 'row'}}>
+                      <RoundImage
+                        source={require('../../../../img/game/game1.png')}
+                      />
+                      <View style={{flexDirection: 'column'}}>
+                        <View style={{flexDirection: 'row'}}>
+                          <Text
+                            style={[
+                              CustomStyles.defualtFont,
+                              {fontSize: 14, marginRight: 10},
+                            ]}>
+                            {k.name}
+                          </Text>
+                          <Text
+                            style={[
+                              CustomStyles.defualtFont,
+                              {fontSize: 12, color: '#ADADAD'},
+                            ]}>
+                            {k.rankScore}
+                          </Text>
+                        </View>
+                        <View style={{flexDirection: 'row'}}>
+                          <Icon
+                            name="star"
+                            size={10}
+                            style={{color: '#042B6C', marginTop: 5}}
+                          />
+                          <Text
+                            style={[
+                              CustomStyles.defualtFont,
+                              {fontSize: 10, color: '#042B6C'},
+                            ]}>
+                            {k.cnt}
+                          </Text>
+                        </View>
                       </View>
                     </View>
-                  </View>
-                  <View>
-                    <Icon name="star" size={18} style={{color: 'red'}} />
+                    <View>
+                      <TouchableWithoutFeedback
+                        onPress={() => {
+                          func.onLikeClick(k, type);
+                        }}>
+                        <Icon name="star" size={18} style={{color: 'red'}} />
+                      </TouchableWithoutFeedback>
+                    </View>
                   </View>
                 </View>
-              </View>
-            </Card>
+              </Card>
+            </TouchableOpacity>
           );
         })}
     </View>

@@ -18,7 +18,7 @@ import ScoreLabel from '../../components/Text/ScoreLabel';
 import CustomButton from '../../components/Buttons/CustomButton';
 import CustomListItem from '../../components/ListItem/CustomListItem';
 import LiveLabelType1 from '../../components/Text/LiveLabelType1';
-import LiveCard from '../../components/Card/LiveCard';
+import LiveCard from '../../components/Card/Live';
 import HeaderScreen from '../../settings/navigation/Screen/HeaderScreen';
 
 //* 스타일
@@ -39,16 +39,40 @@ function Live({userStore, navigation}) {
       ...prev,
       list: [
         {
-          name: '분석',
-          avatar_url:
-            'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-          subtitle: '시카고컵스랑 오클랜드 보시는 분들 필독',
+          name: '1',
+          subtitle: '러셀은 안전하게 2아웃 잘 잡습니다.',
+          time: '경기종료',
+          leagueName: '16:00 잉글랜드 PD리그',
+          cnt: 1156,
+          home: {
+            name: '시카고펍스',
+            url: '../../../img/game/game1.png',
+            score: 130,
+          },
+          away: {
+            name: '오클랜드',
+            url: '../../../img/game/game2.png',
+            score: 110,
+          },
+          chat: '채팅방이 없습니다.',
         },
         {
-          name: '자유',
-          // avatar_url:
-          //   'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-          subtitle: '꿀조합 추천 드립니다.',
+          name: '2',
+          subtitle: '마앰 풀업 점퍼 팅',
+          time: '경기종료',
+          leagueName: '16:00 잉글랜드 PD리그',
+          cnt: 53662,
+          home: {
+            name: '올랜드',
+            url: '../../../img/game/game1.png',
+            score: 210,
+          },
+          away: {
+            name: '포틀랜드',
+            url: '../../../img/game/game2.png',
+            score: 300,
+          },
+          chat: '5명 채팅중',
         },
       ],
     }));
@@ -59,19 +83,13 @@ function Live({userStore, navigation}) {
       {() => (
         <View style={[styles.container]}>
           <ScrollView>
-            <LiveCard type={'live'} />
+            <LiveCard type={'live'} data={state.list} />
 
             <LiveLabelType1>예정 경기</LiveLabelType1>
-            <LiveCard type={1} />
-            <LiveCard type={1} />
-            <LiveCard type={1} />
-            <LiveCard type={1} />
+            <LiveCard type={'upcoming'} data={state.list} />
 
             <LiveLabelType1>경기 결과</LiveLabelType1>
-            <LiveCard type={2} />
-            <LiveCard type={2} />
-            <LiveCard type={2} />
-            <LiveCard type={2} />
+            <LiveCard type={'end'} data={state.list} />
           </ScrollView>
         </View>
       )}

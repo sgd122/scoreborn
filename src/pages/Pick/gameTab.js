@@ -65,6 +65,96 @@ function Pick({userStore, navigation}) {
           },
           money: 30,
         },
+        {
+          name: '스포츠어드벤처',
+          subtitle: '스포츠 빅데이터 분석기관',
+          leagueName: '16:00 잉글랜드 PD리그',
+          cnt: 1156,
+          home: {
+            name: '시카고펍스',
+            url: '../../../img/game/game1.png',
+          },
+          away: {
+            name: '오클랜드',
+            url: '../../../img/game/game2.png',
+          },
+          money: 15,
+        },
+        {
+          name: '배당률탑',
+          subtitle: '前 KBS 스포츠국 작가',
+          leagueName: '16:00 잉글랜드 PD리그',
+          cnt: 53662,
+          home: {
+            name: '올랜드',
+            url: '../../../img/game/game1.png',
+          },
+          away: {
+            name: '포틀랜드',
+            url: '../../../img/game/game2.png',
+          },
+          money: 30,
+        },
+        {
+          name: '스포츠어드벤처',
+          subtitle: '스포츠 빅데이터 분석기관',
+          leagueName: '16:00 잉글랜드 PD리그',
+          cnt: 1156,
+          home: {
+            name: '시카고펍스',
+            url: '../../../img/game/game1.png',
+          },
+          away: {
+            name: '오클랜드',
+            url: '../../../img/game/game2.png',
+          },
+          money: 15,
+        },
+        {
+          name: '배당률탑',
+          subtitle: '前 KBS 스포츠국 작가',
+          leagueName: '16:00 잉글랜드 PD리그',
+          cnt: 53662,
+          home: {
+            name: '올랜드',
+            url: '../../../img/game/game1.png',
+          },
+          away: {
+            name: '포틀랜드',
+            url: '../../../img/game/game2.png',
+          },
+          money: 30,
+        },
+        {
+          name: '스포츠어드벤처',
+          subtitle: '스포츠 빅데이터 분석기관',
+          leagueName: '16:00 잉글랜드 PD리그',
+          cnt: 1156,
+          home: {
+            name: '시카고펍스',
+            url: '../../../img/game/game1.png',
+          },
+          away: {
+            name: '오클랜드',
+            url: '../../../img/game/game2.png',
+          },
+          money: 15,
+        },
+        {
+          name: '배당률탑',
+          subtitle: '前 KBS 스포츠국 작가',
+          leagueName: '16:00 잉글랜드 PD리그',
+          cnt: 53662,
+          home: {
+            name: '올랜드',
+            url: '../../../img/game/game1.png',
+          },
+          away: {
+            name: '포틀랜드',
+            url: '../../../img/game/game2.png',
+          },
+          money: 30,
+        },
       ],
     }));
   }, []);

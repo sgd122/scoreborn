@@ -6,7 +6,7 @@ import styles from '../../styles/common.module.scss';
 import {Fonts} from '../../settings/fonts';
 
 const CustomLiveCard = (props) => {
-  let {type} = props;
+  let {type, data} = props;
 
   if (!type) {
     type = 'live';
