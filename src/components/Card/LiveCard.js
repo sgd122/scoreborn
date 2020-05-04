@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Image, StyleSheet, Text, TextInput} from 'react-native';
 import {Card, ListItem, Button} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -7,38 +7,46 @@ import {Fonts} from '../../settings/fonts';
 
 const CustomLiveCard = (props) => {
   let {type} = props;
+
   if (!type) {
     type = 'live';
   }
   return (
-    <Card containerStyle={[CustomStyles.defaultCard]}>
+    <Card
+      containerStyle={[CustomStyles.defaultCard]}
+      wrapperStyle={{height: type == 'live' ? 110 : 80}}>
       <View style={{flexDirection: 'column'}}>
-        <View style={{flexDirection: 'row'}}>
-          <Icon name="star" size={24} style={{color: 'red'}} />
+        <View style={{flexDirection: 'row', marginBottom: 8}}>
           {type == 'live' && (
             //* 라이브경기일경우
-            <View style={CustomStyles.liveContainer}>
-              <Text style={CustomStyles.liveText}>
-                러셀은 안전하게 2아웃 잘 잡습니다
-              </Text>
-            </View>
+            <>
+              <Icon name="star" size={18} style={{color: 'red'}} />
+              <View style={CustomStyles.liveContainer}>
+                <Text style={CustomStyles.liveText}>
+                  러셀은 안전하게 2아웃 잘 잡습니다
+                </Text>
+              </View>
+            </>
           )}
         </View>
 
         <View style={[styles.conatiner_between]}>
+          {type != 'live' && (
+            <Icon name="star" size={18} style={{color: 'red'}} />
+          )}
           {/* 
             //* 1번팀 로고
             */}
           <View style={{flexDirection: 'row'}}>
             <View>
               <Image
-                style={[{width: 60, resizeMode: 'contain'}]}
+                style={[{width: 40, height: 40, resizeMode: 'contain'}]}
                 source={require('../../img/game/game1.png')}
               />
               <Text
                 style={[
                   CustomStyles.defualtFont,
-                  {color: '#03367A', fontSize: 20},
+                  {color: '#03367A', fontSize: 14, marginTop: 10},
                 ]}>
                 올랜도
               </Text>
@@ -52,7 +60,7 @@ const CustomLiveCard = (props) => {
             <Text
               style={[
                 CustomStyles.defualtFont,
-                {fontSize: 18, textAlign: 'center'},
+                {fontSize: 14, textAlign: 'center'},
               ]}>
               경기종료
             </Text>
@@ -66,10 +74,7 @@ const CustomLiveCard = (props) => {
               </Text>
             </View>
             <Text
-              style={[
-                styles.default_label_type0,
-                {color: '#03367A', textAlign: 'center'},
-              ]}>
+              style={[{fontSize: 10, color: '#03367A', textAlign: 'center'}]}>
               5명 채팅중
             </Text>
           </View>
@@ -79,14 +84,14 @@ const CustomLiveCard = (props) => {
           */}
           <View>
             <Image
-              style={[{width: 60, resizeMode: 'contain'}]}
+              style={[{width: 40, height: 40, resizeMode: 'contain'}]}
               source={require('../../img/game/game2.png')}
             />
             <Text
               style={[
                 CustomStyles.defualtFont,
                 CustomStyles.AwayBlackColor,
-                {fontSize: 20},
+                {fontSize: 14, marginTop: 10},
               ]}>
               포틀랜드
             </Text>
@@ -108,7 +113,7 @@ const CustomStyles = StyleSheet.create({
     elevation: 3, // Android적용
   },
   defualtFont: {
-    fontSize: 40,
+    fontSize: 28,
     fontWeight: '500',
     fontFamily: Fonts.RobotoMedium,
   },
