@@ -15,6 +15,9 @@ import {Observer, observer, inject} from 'mobx-react';
 
 // import SplashScreen from '../../../pages/Splash/Splash';
 import Pick from '../../../pages/Pick';
+import gameTab from '../../../pages/Pick/gameTab';
+import likeTab from '../../../pages/Pick/likeTab';
+import rankTab from '../../../pages/Pick/rankTab';
 
 //* 공통 헤더 및 Sider
 import HeaderScreen from './HeaderScreen';
@@ -51,17 +54,17 @@ export default function PickScreen({navigation}) {
           />
           <Htab.Screen
             name="Game"
-            component={Pick}
+            component={gameTab}
             options={{tabBarLabel: '경기별'}}
           />
           <Htab.Screen
             name="Like"
-            component={Pick}
+            component={likeTab}
             options={{tabBarLabel: '즐겨찾기'}}
           />
           <Htab.Screen
             name="Rank"
-            component={Pick}
+            component={rankTab}
             options={{tabBarLabel: '랭킹'}}
           />
         </Htab.Navigator>

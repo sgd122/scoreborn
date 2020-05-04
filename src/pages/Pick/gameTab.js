@@ -74,10 +74,10 @@ function Pick({userStore, navigation}) {
       {() => (
         <View style={[styles.container]}>
           <ScrollView>
-            <PickTopCard />
+            <PickCard type={'game'} data={state.list} />
 
-            <LiveLabelType1>실시간 전문가 픽</LiveLabelType1>
-            <PickCard data={state.list} />
+            <LiveLabelType1>종료된 경기</LiveLabelType1>
+            <PickCard type={'EndGame'} data={state.list} />
           </ScrollView>
         </View>
       )}

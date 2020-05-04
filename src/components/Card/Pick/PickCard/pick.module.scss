@@ -1,0 +1,28 @@
+.defaultCard {
+    border-radius: 5;
+    border-width: 0;
+    shadow-color: 'rgba(40, 40, 40, 0.15)';
+    shadowOpacity: 1, //그림자 투명도
+    shadowRadius: 20,
+    shadowOffset: {width: 0, height: 4},
+    elevation: 3, // Android적용
+  };
+  .defualtFont {
+    fontSize: 14,
+    lineHeight: 20,
+    fontFamily: Fonts.NotoSans,
+  };
+  .gameFont {
+    fontSize: 14,
+    fontWeight: '500',
+    lineHeight: 16,
+    fontFamily: Fonts.Roboto,
+  };
+  .moneyFont {
+    alignItems: 'center',
+    color: '#042B6C',
+    fontSize: 14,
+    lineHeight: 20,
+    fontWeight: '500',
+    fontFamily: Fonts.NotoSans,
+  },
