@@ -1,4 +1,4 @@
-//* 라이브
+//* 픽
 
 import React, {useEffect, useContext} from 'react';
 import {
@@ -13,18 +13,15 @@ import {Observer, observer, inject} from 'mobx-react';
 import PageContext, {PageProvider} from './Context';
 
 //* 공통 컴포넌트
-import ScoreInput from '../../components/Text/ScoreInput';
-import ScoreLabel from '../../components/Text/ScoreLabel';
-import CustomButton from '../../components/Buttons/CustomButton';
-import CustomListItem from '../../components/ListItem/CustomListItem';
 import LiveLabelType1 from '../../components/Text/LiveLabelType1';
-import LiveCard from '../../components/Card/LiveCard';
-import HeaderScreen from '../../settings/navigation/Screen/HeaderScreen';
+import PickCard from '../../components/Card/Pick/PickCard';
+import PickTopCard from '../../components/Card/Pick/PickTopCard';
+import RoundImage from '../../components/Image/RoundImage';
 
 //* 스타일
 import styles from '../../styles/common.module.scss';
 
-function Live({userStore, navigation}) {
+function Pick({userStore, navigation}) {
   const {
     state,
     setState,
@@ -59,19 +56,13 @@ function Live({userStore, navigation}) {
       {() => (
         <View style={[styles.container]}>
           <ScrollView>
-            <LiveCard type={'live'} />
+            <PickTopCard />
 
-            <LiveLabelType1>예정 경기</LiveLabelType1>
-            <LiveCard type={1} />
-            <LiveCard type={1} />
-            <LiveCard type={1} />
-            <LiveCard type={1} />
-
-            <LiveLabelType1>경기 결과</LiveLabelType1>
-            <LiveCard type={2} />
-            <LiveCard type={2} />
-            <LiveCard type={2} />
-            <LiveCard type={2} />
+            <LiveLabelType1>실시간 전문가 픽</LiveLabelType1>
+            <PickCard type={1} />
+            <PickCard type={1} />
+            <PickCard type={1} />
+            <PickCard type={1} />
           </ScrollView>
         </View>
       )}
@@ -83,7 +74,7 @@ export default inject('userStore')(({userStore, navigation}) => {
   return (
     <PageProvider>
       {/* <HeaderScreen navigation={navigation} /> */}
-      <Live userStore={userStore} navigation={navigation} />
+      <Pick userStore={userStore} navigation={navigation} />
     </PageProvider>
   );
 });

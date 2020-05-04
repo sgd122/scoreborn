@@ -25,13 +25,6 @@ const Tab = createBottomTabNavigator();
 // const Tab = createMaterialBottomTabNavigator();
 const Htab = createMaterialTopTabNavigator();
 
-const options = {
-  headerStyle: {},
-  headerTitleStyle: {
-    fontWeight: 'bold',
-  },
-};
-
 /**
  * * 앱 메인 화면
  */
