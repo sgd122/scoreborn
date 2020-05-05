@@ -13,7 +13,7 @@ import {Fonts} from '../../../settings/fonts';
 import * as func from './func';
 
 const CustomLiveCard = (props) => {
-  let {type, data, CustomStyles} = props;
+  let {type, data, CustomStyles, navigation} = props;
 
   if (!type) {
     type = 'live';
@@ -25,7 +25,7 @@ const CustomLiveCard = (props) => {
           return (
             <TouchableOpacity
               onPress={() => {
-                func.onCardClick(k, type);
+                func.onCardClick(k, type, navigation);
               }}>
               <Card
                 containerStyle={[CustomStyles.defaultCard]}
@@ -34,7 +34,7 @@ const CustomLiveCard = (props) => {
                   <View style={[styles.conatiner_between]}>
                     <TouchableWithoutFeedback
                       onPress={() => {
-                        func.onLikeClick(k, type);
+                        func.onLikeClick(k, type, navigation);
                       }}>
                       <Icon name="star" size={18} style={{color: 'red'}} />
                     </TouchableWithoutFeedback>

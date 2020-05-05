@@ -9,7 +9,7 @@ import UpComingCard from './UpComingCard';
 import EndCard from './EndCard';
 
 const CustomLiveCard = (props) => {
-  let {type, data} = props;
+  let {type, data, navigation} = props;
 
   if (!type) {
     type = 'live';
@@ -17,13 +17,32 @@ const CustomLiveCard = (props) => {
 
   const pageReturn = () => {
     if (type == 'live') {
-      return <LiveCard type={type} data={data} CustomStyles={CustomStyles} />;
+      return (
+        <LiveCard
+          type={type}
+          data={data}
+          CustomStyles={CustomStyles}
+          navigation={navigation}
+        />
+      );
     } else if (type == 'upcoming') {
       return (
-        <UpComingCard type={type} data={data} CustomStyles={CustomStyles} />
+        <UpComingCard
+          type={type}
+          data={data}
+          CustomStyles={CustomStyles}
+          navigation={navigation}
+        />
       );
     } else if (type == 'end') {
-      return <EndCard type={type} data={data} CustomStyles={CustomStyles} />;
+      return (
+        <EndCard
+          type={type}
+          data={data}
+          CustomStyles={CustomStyles}
+          navigation={navigation}
+        />
+      );
     }
   };
   return <View>{pageReturn()}</View>;

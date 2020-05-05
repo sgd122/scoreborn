@@ -10,21 +10,16 @@ import {
   TextInput,
 } from 'react-native';
 import {Observer, observer, inject} from 'mobx-react';
-import PageContext, {PageProvider} from './Context';
+import PageContext, {PageProvider} from '../Context';
 
 //* 공통 컴포넌트
-import ScoreInput from '../../components/Text/ScoreInput';
-import ScoreLabel from '../../components/Text/ScoreLabel';
-import CustomButton from '../../components/Buttons/CustomButton';
-import CustomListItem from '../../components/ListItem/CustomListItem';
-import LiveLabelType1 from '../../components/Text/LiveLabelType1';
-import LiveCard from '../../components/Card/Live';
-import HeaderScreen from '../../settings/navigation/Screen/HeaderScreen';
+import LiveLabelType1 from '../../../components/Text/LiveLabelType1';
+import LiveCard from '../../../components/Card/Live';
 
 //* 스타일
-import styles from '../../styles/common.module.scss';
+import styles from '../../../styles/common.module.scss';
 
-function Live({userStore, navigation}) {
+function UpComing({userStore, navigation}) {
   const {
     state,
     setState,
@@ -46,12 +41,12 @@ function Live({userStore, navigation}) {
           cnt: 1156,
           home: {
             name: '시카고펍스',
-            url: '../../../img/game/game1.png',
+            url: '../../../../img/game/game1.png',
             score: 130,
           },
           away: {
             name: '오클랜드',
-            url: '../../../img/game/game2.png',
+            url: '../../../../img/game/game2.png',
             score: 110,
           },
           chat: '채팅방이 없습니다.',
@@ -82,28 +77,7 @@ function Live({userStore, navigation}) {
     <Observer>
       {() => (
         <View style={[styles.container]}>
-          {/* <HeaderScreen navigation={navigation} /> */}
-          <ScrollView>
-            <LiveCard
-              type={'live'}
-              data={state.list}
-              navigation={state.navigation}
-            />
-
-            <LiveLabelType1>예정 경기</LiveLabelType1>
-            <LiveCard
-              type={'upcoming'}
-              data={state.list}
-              navigation={state.navigation}
-            />
-
-            <LiveLabelType1>경기 결과</LiveLabelType1>
-            <LiveCard
-              type={'end'}
-              data={state.list}
-              navigation={state.navigation}
-            />
-          </ScrollView>
+          <ScrollView></ScrollView>
         </View>
       )}
     </Observer>
@@ -114,7 +88,7 @@ export default inject('userStore')(({userStore, navigation}) => {
   return (
     <PageProvider>
       {/* <HeaderScreen navigation={navigation} /> */}
-      <Live userStore={userStore} navigation={navigation} />
+      <UpComing userStore={userStore} navigation={navigation} />
     </PageProvider>
   );
 });
