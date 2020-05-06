@@ -22,7 +22,7 @@ import HeaderScreen from '../Screen/HeaderScreen';
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
-
+const Htab = createMaterialTopTabNavigator();
 import UpComing from '../../../pages/Live/SubPage/UpComing';
 /**
  * * 앱 메인 화면
@@ -45,6 +45,23 @@ function DrawerTab() {
     <Drawer.Navigator drawerContent={(props) => <Sider {...props} />}>
       <Drawer.Screen name="Main" component={MySettingsBottom} />
     </Drawer.Navigator>
+  );
+}
+
+function LiveUpComingScreen() {
+  return (
+    <Htab.Navigator>
+      <Htab.Screen
+        name="Live/UpComing"
+        component={UpComing}
+        options={{tabBarLabel: '전체'}}
+      />
+      <Htab.Screen
+        name="Live/UpComing2"
+        component={UpComing}
+        options={{tabBarLabel: '경기별'}}
+      />
+    </Htab.Navigator>
   );
 }
 

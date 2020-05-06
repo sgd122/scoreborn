@@ -1,24 +1,19 @@
 //* 라이브
 
 import React, {useEffect, useContext} from 'react';
-import {
-  ScrollView,
-  View,
-  Image,
-  StyleSheet,
-  Text,
-  TextInput,
-} from 'react-native';
+import {ScrollView, View, StyleSheet, Text} from 'react-native';
+import {Button} from 'react-native-elements';
 import {Observer, observer, inject} from 'mobx-react';
 import PageContext, {PageProvider} from '../Context';
 
 //* 공통 컴포넌트
 import LiveLabelType1 from '../../../components/Text/LiveLabelType1';
 import LiveCard from '../../../components/Card/Live';
-
+import UpComingChat from './UpComingChat';
+import UpComingExpert from './UpComingExpert';
 //* 스타일
 import styles from '../../../styles/common.module.scss';
-
+import {Fonts} from '../../../settings/fonts';
 function UpComing({userStore, navigation}) {
   const {
     state,
@@ -32,6 +27,7 @@ function UpComing({userStore, navigation}) {
 
     setState((prev) => ({
       ...prev,
+      TabCnt: 1,
       list: [
         {
           name: '1',
@@ -77,7 +73,62 @@ function UpComing({userStore, navigation}) {
     <Observer>
       {() => (
         <View style={[styles.container]}>
-          <ScrollView></ScrollView>
+          <View style={{backgroundColor: '#F7F7F7'}}>
+            <Text
+              style={{
+                textAlign: 'center',
+                color: '#ADADAD',
+                fontSize: 14,
+                margin: 10,
+              }}>
+              3월 12일 16:00 유로파리그
+            </Text>
+            <View>
+              <Text
+                style={{
+                  textAlign: 'center',
+                  fontSize: 14,
+                  marginBottom: 10,
+                }}>
+                바샥하비르 vs 코펜하겐
+              </Text>
+            </View>
+          </View>
+          <View style={{flexDirection: 'row', width: '100%'}}>
+            <Button
+              title="채팅"
+              onPress={() => setState((prev) => ({...prev, TabCnt: 1}))}
+              titleStyle={[
+                CustomStyles.defualtFont,
+                state.TabCnt == 1
+                  ? CustomStyles.pickFontColor
+                  : CustomStyles.nonPickFontColor,
+              ]}
+              buttonStyle={
+                state.TabCnt == 1
+                  ? CustomStyles.pickBottomStyle
+                  : CustomStyles.nonPickBottomStyle
+              }
+            />
+            <Button
+              title="전문가 픽"
+              onPress={() => setState((prev) => ({...prev, TabCnt: 2}))}
+              titleStyle={[
+                CustomStyles.defualtFont,
+                state.TabCnt == 2
+                  ? CustomStyles.pickFontColor
+                  : CustomStyles.nonPickFontColor,
+              ]}
+              buttonStyle={
+                state.TabCnt == 2
+                  ? CustomStyles.pickBottomStyle
+                  : CustomStyles.nonPickBottomStyle
+              }
+            />
+          </View>
+          <ScrollView>
+            {state.TabCnt == 1 ? <UpComingChat /> : <UpComingExpert />}
+          </ScrollView>
         </View>
       )}
     </Observer>
@@ -91,4 +142,32 @@ export default inject('userStore')(({userStore, navigation}) => {
       <UpComing userStore={userStore} navigation={navigation} />
     </PageProvider>
   );
+});
+
+const CustomStyles = StyleSheet.create({
+  defualtFont: {
+    fontSize: 14,
+    lineHeight: 20,
+    fontFamily: Fonts.NotoSans,
+  },
+  pickBottomStyle: {
+    height: 40,
+    width: '100%',
+    backgroundColor: '#F7F7F7',
+    borderBottomColor: '#042B6C',
+    borderBottomWidth: 4,
+  },
+  pickFontColor: {
+    color: '#042B6C',
+  },
+  nonPickBottomStyle: {
+    height: 40,
+    width: '100%',
+    backgroundColor: '#F7F7F7',
+    borderBottomColor: 'rgba(146, 147, 148, 0.13)',
+    borderBottomWidth: 1,
+  },
+  nonPickFontColor: {
+    color: '#929394',
+  },
 });
