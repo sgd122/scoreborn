@@ -16,13 +16,16 @@ const AuthProvider = inject('userStore')(({children, userStore}) => {
     } catch (e) {
       // Restoring token failed
     }
+    // console.log('::AsyncStorage::', AsyncStorage.getAllKeys());
 
     // After restoring token, we may need to validate it in production apps
 
     // This will switch to the App screen or Auth screen and this loading
     // screen will be unmounted and thrown away.
     // dispatch({type: 'RESTORE_TOKEN', token: userToken});
-    dispatch({type: 'RESTORE_TOKEN', token: userToken});
+    if (userToken != mainState.token) {
+      dispatch({type: 'RESTORE_TOKEN', token: userToken});
+    }
   };
 
   bootstrapAsync();
