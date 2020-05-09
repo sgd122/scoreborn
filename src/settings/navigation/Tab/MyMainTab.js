@@ -23,7 +23,9 @@ const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
 const Htab = createMaterialTopTabNavigator();
-import UpComing from '../../../pages/Live/SubPage/UpComing';
+import SubUpComing from '../../../pages/Live/SubPage/SubUpComing';
+import SubLive from '../../../pages/Live/SubPage/SubLive';
+import SubEnd from '../../../pages/Live/SubPage/SubEnd';
 /**
  * * 앱 메인 화면
  */
@@ -48,30 +50,25 @@ function DrawerTab() {
   );
 }
 
-function LiveUpComingScreen() {
-  return (
-    <Htab.Navigator>
-      <Htab.Screen
-        name="Live/UpComing"
-        component={UpComing}
-        options={{tabBarLabel: '전체'}}
-      />
-      <Htab.Screen
-        name="Live/UpComing2"
-        component={UpComing}
-        options={{tabBarLabel: '경기별'}}
-      />
-    </Htab.Navigator>
-  );
-}
-
 function PageScreen() {
   return (
-    <Stack.Screen
-      name="Live/UpComing"
-      component={UpComing}
-      options={{headerTitle: '진행예정 경기'}}
-    />
+    <>
+      <Stack.Screen
+        name="Live/UpComing"
+        component={SubUpComing}
+        options={{headerTitle: '진행예정 경기'}}
+      />
+      <Stack.Screen
+        name="Live/Live"
+        component={SubLive}
+        options={{headerTitle: '진행중 경기'}}
+      />
+      <Stack.Screen
+        name="Live/End"
+        component={SubEnd}
+        options={{headerTitle: '종료된 경기'}}
+      />
+    </>
   );
 }
 

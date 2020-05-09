@@ -9,13 +9,15 @@ import React, {useState} from 'react';
  * * end
  */
 export const onCardClick = (data, type, navigation) => {
-  // alert('1=>' + type + '///' + navigation);
   if (type == 'live') {
-  } else if (type == 'upcomimg') {
+    navigation.navigate('Live/Live');
+  } else if (type == 'upcoming') {
+    navigation.navigate('Live/UpComing');
   } else if (type == 'end') {
+    navigation.navigate('Live/End');
   }
-  navigation.navigate('Live/UpComing');
 };
+
 export const onLikeClick = (data, type) => {
   alert('2=>' + type);
 };

@@ -15,7 +15,6 @@ import {Observer, observer, inject} from 'mobx-react';
 
 // import SplashScreen from '../../../pages/Splash/Splash';
 import Live from '../../../pages/Live';
-import UpComing from '../../../pages/Live/SubPage/UpComing';
 
 //* 공통 헤더 및 Sider
 import HeaderScreen from './HeaderScreen';

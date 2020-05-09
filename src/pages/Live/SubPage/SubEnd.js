@@ -8,12 +8,12 @@ import PageContext, {PageProvider} from '../Context';
 
 //* 공통 컴포넌트
 import RoundImage from '../../../components/Image/RoundImage';
-import UpComingChat from './UpComingChat';
-import UpComingExpert from './UpComingExpert';
+import TabChat from './TabChat';
+import TabExpert from './TabExpert';
 //* 스타일
 import styles from '../../../styles/common.module.scss';
 import {Fonts} from '../../../settings/fonts';
-function UpComing({userStore, navigation}) {
+function SubEnd({userStore, navigation}) {
   const {
     state,
     setState,
@@ -169,7 +169,7 @@ function UpComing({userStore, navigation}) {
             />
           </View>
           <ScrollView>
-            {state.TabCnt == 1 ? <UpComingChat /> : <UpComingExpert />}
+            {state.TabCnt == 1 ? <TabChat /> : <TabExpert />}
           </ScrollView>
         </View>
       )}
@@ -181,7 +181,7 @@ export default inject('userStore')(({userStore, navigation}) => {
   return (
     <PageProvider>
       {/* <HeaderScreen navigation={navigation} /> */}
-      <UpComing userStore={userStore} navigation={navigation} />
+      <SubEnd userStore={userStore} navigation={navigation} />
     </PageProvider>
   );
 });
