@@ -7,8 +7,7 @@ import {Observer, observer, inject} from 'mobx-react';
 import PageContext, {PageProvider} from '../Context';
 
 //* 공통 컴포넌트
-import LiveLabelType1 from '../../../components/Text/LiveLabelType1';
-import LiveCard from '../../../components/Card/Live';
+import RoundImage from '../../../components/Image/RoundImage';
 import UpComingChat from './UpComingChat';
 import UpComingExpert from './UpComingExpert';
 //* 스타일
@@ -83,15 +82,58 @@ function UpComing({userStore, navigation}) {
               }}>
               3월 12일 16:00 유로파리그
             </Text>
-            <View>
-              <Text
+            <View
+              style={{
+                flexDirection: 'column',
+                marginBottom: 10,
+                alignItems: 'center',
+              }}>
+              <View
                 style={{
-                  textAlign: 'center',
-                  fontSize: 14,
-                  marginBottom: 10,
+                  flexDirection: 'row',
+                  alignItems: 'center',
                 }}>
-                바샥하비르 vs 코펜하겐
-              </Text>
+                <Text
+                  style={[
+                    CustomStyles.defualtFont,
+                    {
+                      textAlign: 'center',
+                    },
+                  ]}>
+                  바샥하비르
+                </Text>
+                <RoundImage source={require('../../../img/game/game1.png')} />
+                <Text
+                  style={[
+                    {
+                      textAlign: 'center',
+                      color: '#042B6C',
+                      fontFamily: Fonts.Roboto,
+                      marginRight: 15,
+                      fontSize: 26,
+                    },
+                  ]}>
+                  11:45:30
+                </Text>
+                <RoundImage
+                  source={require('../../../img/game/game2.png')}
+                  style={{
+                    width: 50,
+                    height: 50,
+                    borderRadius: 50 / 2,
+                    marginRight: 0,
+                  }}
+                />
+                <Text
+                  style={[
+                    CustomStyles.defualtFont,
+                    {
+                      textAlign: 'center',
+                    },
+                  ]}>
+                  코펜하겐
+                </Text>
+              </View>
             </View>
           </View>
           <View style={{flexDirection: 'row', width: '100%'}}>

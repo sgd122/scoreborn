@@ -7,8 +7,7 @@ import {Observer, observer, inject} from 'mobx-react';
 import PageContext, {PageProvider} from '../Context';
 
 //* 공통 컴포넌트
-import LiveLabelType1 from '../../../components/Text/LiveLabelType1';
-import LiveCard from '../../../components/Card/Live';
+import CustomListChat from '../../../components/ListItem/CustomListChat';
 
 //* 스타일
 import styles from '../../../styles/common.module.scss';
@@ -65,38 +64,10 @@ export default function UpComingExpert({userStore, navigation}) {
   }, []);
 
   return (
-    <View style={[styles.container]}>
+    <View style={[styles.container, {margin: 10}]}>
       <ScrollView>
-        <Text>전문가</Text>
+        <CustomListChat list={state.list} type="Expert" />
       </ScrollView>
     </View>
   );
 }
-
-const CustomStyles = StyleSheet.create({
-  defualtFont: {
-    fontSize: 14,
-    lineHeight: 20,
-    fontFamily: Fonts.NotoSans,
-  },
-  pickBottomStyle: {
-    height: 40,
-    width: '100%',
-    backgroundColor: '#F7F7F7',
-    borderBottomColor: '#042B6C',
-    borderBottomWidth: 4,
-  },
-  pickFontColor: {
-    color: '#042B6C',
-  },
-  nonPickBottomStyle: {
-    height: 40,
-    width: '100%',
-    backgroundColor: '#F7F7F7',
-    borderBottomColor: 'rgba(146, 147, 148, 0.13)',
-    borderBottomWidth: 1,
-  },
-  nonPickFontColor: {
-    color: '#929394',
-  },
-});
