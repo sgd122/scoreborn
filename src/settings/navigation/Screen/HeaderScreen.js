@@ -6,6 +6,7 @@ import {DrawerActions} from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
 import Logo from '../../../components/Logo';
 import AsyncStorage from '@react-native-community/async-storage';
+import RNRestart from 'react-native-restart';
 export default function HeaderScreen({navigation, children}) {
   return (
     <LinearGradient colors={['#001943', '#153467']}>
@@ -48,5 +49,6 @@ const MyCustomRightComponent = ({navigation}) => {
 };
 
 const goHome = () => {
-  AsyncStorage.clear();
+  AsyncStorage.removeItem('userToken');
+  RNRestart.Restart();
 };
