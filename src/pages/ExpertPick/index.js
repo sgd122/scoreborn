@@ -1,4 +1,4 @@
-//* 라이브
+//* 전문가픽
 
 import React, {useEffect, useContext} from 'react';
 import {
@@ -19,13 +19,10 @@ import CustomButton from '../../components/Buttons/CustomButton';
 import CustomListItem from '../../components/ListItem/CustomListItem';
 import LiveLabelType1 from '../../components/Text/LiveLabelType1';
 import LiveCard from '../../components/Card/Live';
-import HeaderScreen from '../../settings/navigation/Screen/HeaderScreen';
 
 //* 스타일
 import styles from '../../styles/common.module.scss';
 
-//* Modal
-import Modal01 from './Modal/Modal01';
 function Live({userStore, navigation}) {
   const {
     state,

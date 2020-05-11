@@ -13,6 +13,8 @@ import TabExpert from './TabExpert';
 //* 스타일
 import styles from '../../../styles/common.module.scss';
 import {Fonts} from '../../../settings/fonts';
+//* Modal
+import Modal01 from '../Modal/Modal01';
 function SubLive({userStore, navigation}) {
   const {
     state,
@@ -97,6 +99,7 @@ function SubLive({userStore, navigation}) {
                   alignItems: 'center',
                 }}>
                 <Text
+                  onPress={() => navigation.navigate('Live/SubPrevResult')}
                   style={[
                     CustomStyles.defualtFont,
                     {
@@ -105,7 +108,16 @@ function SubLive({userStore, navigation}) {
                   ]}>
                   바샥하비르
                 </Text>
-                <RoundImage source={require('../../../img/game/game1.png')} />
+                <RoundImage
+                  source={require('../../../img/game/game1.png')}
+                  onPress={() =>
+                    setState((prev) => ({
+                      ...prev,
+                      visible: true,
+                      modalType: 'home',
+                    }))
+                  }
+                />
                 <Text
                   style={[
                     {
@@ -120,6 +132,13 @@ function SubLive({userStore, navigation}) {
                 </Text>
                 <RoundImage
                   source={require('../../../img/game/game2.png')}
+                  onPress={() =>
+                    setState((prev) => ({
+                      ...prev,
+                      visible: true,
+                      modalType: 'away',
+                    }))
+                  }
                   style={{
                     width: 50,
                     height: 50,
@@ -128,6 +147,7 @@ function SubLive({userStore, navigation}) {
                   }}
                 />
                 <Text
+                  onPress={() => navigation.navigate('Live/SubPrevResult')}
                   style={[
                     CustomStyles.defualtFont,
                     {
@@ -172,8 +192,13 @@ function SubLive({userStore, navigation}) {
             />
           </View>
           <ScrollView>
-            {state.TabCnt == 1 ? <TabChat /> : <TabExpert />}
+            {state.TabCnt == 1 ? (
+              <TabChat navigation={navigation} />
+            ) : (
+              <TabExpert navigation={navigation} />
+            )}
           </ScrollView>
+          <Modal01 />
         </View>
       )}
     </Observer>

@@ -1,18 +1,29 @@
-//* 라이브
+//* 라이브(이전 경기결과)
 
 import React, {useEffect, useContext} from 'react';
-import {ScrollView, View, StyleSheet, Text} from 'react-native';
-import {Button} from 'react-native-elements';
+import {
+  ScrollView,
+  View,
+  Image,
+  StyleSheet,
+  Text,
+  TextInput,
+} from 'react-native';
 import {Observer, observer, inject} from 'mobx-react';
 import PageContext, {PageProvider} from '../Context';
 
 //* 공통 컴포넌트
-import CustomListChat from '../../../components/ListItem/CustomListChat';
+import ScoreInput from '../../../components/Text/ScoreInput';
+import ScoreLabel from '../../../components/Text/ScoreLabel';
+import CustomButton from '../../../components/Buttons/CustomButton';
+import CustomListItem from '../../../components/ListItem/CustomListItem';
+import LiveLabelType1 from '../../../components/Text/LiveLabelType1';
+import LiveCard from '../../../components/Card/Live';
 
 //* 스타일
 import styles from '../../../styles/common.module.scss';
-import {Fonts} from '../../../settings/fonts';
-export default function UpComingExpert({userStore, navigation}) {
+
+function SubPrevResult({userStore, navigation}) {
   const {
     state,
     setState,
@@ -31,12 +42,12 @@ export default function UpComingExpert({userStore, navigation}) {
           cnt: 1156,
           home: {
             name: '시카고펍스',
-            url: '../../../../img/game/game1.png',
+            url: '../../../img/game/game1.png',
             score: 130,
           },
           away: {
             name: '오클랜드',
-            url: '../../../../img/game/game2.png',
+            url: '../../../img/game/game2.png',
             score: 110,
           },
           chat: '채팅방이 없습니다.',
@@ -64,14 +75,39 @@ export default function UpComingExpert({userStore, navigation}) {
   }, []);
 
   return (
-    <View style={[styles.container, {margin: 10}]}>
+    <View style={[styles.container]}>
+      {/* <HeaderScreen navigation={navigation} /> */}
       <ScrollView>
-        <CustomListChat
-          list={state.list}
-          type="Expert"
-          navigation={navigation}
+        <LiveCard
+          type={'live'}
+          data={state.list}
+          navigation={state.navigation}
+        />
+
+        <LiveLabelType1>예정 경기</LiveLabelType1>
+        <LiveCard
+          type={'upcoming'}
+          data={state.list}
+          navigation={state.navigation}
+        />
+
+        <LiveLabelType1>경기 결과</LiveLabelType1>
+        <LiveCard
+          type={'end'}
+          data={state.list}
+          navigation={state.navigation}
         />
       </ScrollView>
+      {/* <Modal01 /> */}
     </View>
   );
 }
+
+export default inject('userStore')(({userStore, navigation}) => {
+  return (
+    <PageProvider>
+      {/* <HeaderScreen navigation={navigation} /> */}
+      <SubPrevResult userStore={userStore} navigation={navigation} />
+    </PageProvider>
+  );
+});

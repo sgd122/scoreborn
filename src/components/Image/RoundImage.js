@@ -1,11 +1,20 @@
 import React from 'react';
-import {View, Image, StyleSheet, Text, TextInput} from 'react-native';
+import {
+  View,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableHighlight,
+  TouchableOpacity,
+} from 'react-native';
 import styles from '../../styles/common.module.scss';
 import {Fonts} from '../../settings/fonts';
 
-const RoundImage = ({name, ...props}) => (
+const RoundImage = ({onPress, name, ...props}) => (
   <View>
-    <Image style={[CustomStyles.defaultImgae, props.style]} {...props} />
+    <TouchableOpacity onPress={() => onPress()}>
+      <Image style={[CustomStyles.defaultImgae, props.style]} {...props} />
+    </TouchableOpacity>
     {name && <Text style={CustomStyles.defualtFont}>{name}</Text>}
   </View>
 );

@@ -5,7 +5,7 @@ import styles from '../../styles/common.module.scss';
 import RoundImage from '../Image/RoundImage';
 import {Fonts} from '../../settings/fonts';
 
-const CustomType = ({type}) => {
+const CustomType = ({type, navigation}) => {
   if (type == 'Expert') {
     return (
       <View
@@ -15,7 +15,13 @@ const CustomType = ({type}) => {
           padding: 5,
           height: 30,
         }}>
-        <Text style={CustomStyles.moneyFont}>무료</Text>
+        <Text
+          style={CustomStyles.moneyFont}
+          onPress={() =>
+            navigation && navigation.navigate('Live/SubPrevResult')
+          }>
+          무료
+        </Text>
       </View>
     );
   } else {
@@ -56,7 +62,7 @@ const CustomListChat = (props) => (
                     쉽지 않은 픽, 하지만 해답은 있습니다.
                   </Text>
                 </View>
-                <CustomType type={props.type} />
+                <CustomType type={props.type} navigation={props.navigation} />
               </View>
             </View>
           </View>

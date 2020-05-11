@@ -26,6 +26,8 @@ const Htab = createMaterialTopTabNavigator();
 import SubUpComing from '../../../pages/Live/SubPage/SubUpComing';
 import SubLive from '../../../pages/Live/SubPage/SubLive';
 import SubEnd from '../../../pages/Live/SubPage/SubEnd';
+import SubPrevResult from '../../../pages/Live/SubPage/SubPrevResult';
+import ExpertPick from '../../../pages/ExpertPick';
 /**
  * * 앱 메인 화면
  */
@@ -67,6 +69,16 @@ function PageScreen() {
         name="Live/End"
         component={SubEnd}
         options={{headerTitle: '종료된 경기'}}
+      />
+      <Stack.Screen
+        name="Live/SubPrevResult"
+        component={SubPrevResult}
+        options={{headerTitle: '이전 경기결과'}}
+      />
+      <Stack.Screen
+        name="ExpertPick"
+        component={ExpertPick}
+        options={{headerTitle: '전문가 픽'}}
       />
     </>
   );

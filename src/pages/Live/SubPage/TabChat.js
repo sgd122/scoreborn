@@ -66,7 +66,7 @@ export default function UpComingChat({userStore, navigation}) {
   return (
     <View style={[styles.container, {margin: 10}]}>
       <ScrollView>
-        <CustomListChat list={state.list} type="Chat" />
+        <CustomListChat list={state.list} type="Chat" navigation={navigation} />
       </ScrollView>
     </View>
   );
