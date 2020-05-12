@@ -17,9 +17,7 @@ const CustomType = ({type, navigation}) => {
         }}>
         <Text
           style={CustomStyles.moneyFont}
-          onPress={() =>
-            navigation && navigation.navigate('Live/SubPrevResult')
-          }>
+          onPress={() => navigation && navigation.navigate('ExpertPick')}>
           무료
         </Text>
       </View>

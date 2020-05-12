@@ -34,7 +34,7 @@ const CustomPickCard = (props) => {
     }
   };
 
-  return <View>{pageReturn()}</View>;
+  return <View style={props.style}>{pageReturn()}</View>;
 };
 
 const CustomStyles = StyleSheet.create({
