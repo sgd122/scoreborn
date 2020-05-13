@@ -28,6 +28,7 @@ import SubLive from '../../../pages/Live/SubPage/SubLive';
 import SubEnd from '../../../pages/Live/SubPage/SubEnd';
 import SubPrevResult from '../../../pages/Live/SubPage/SubPrevResult';
 import ExpertPick from '../../../pages/ExpertPick';
+import MyPage from '../../../pages/MyPage';
 /**
  * * 앱 메인 화면
  */
@@ -82,7 +83,7 @@ function PageScreen() {
       />
       <Stack.Screen
         name="MyPage"
-        component={ExpertPick}
+        component={MyPage}
         options={{headerTitle: '마이페이지'}}
       />
     </>
