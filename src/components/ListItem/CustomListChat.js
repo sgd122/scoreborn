@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, Image, StyleSheet, Text, TextInput} from 'react-native';
+import {
+  View,
+  Image,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+} from 'react-native';
 import {Divider, Avatar} from 'react-native-elements';
 import styles from '../../styles/common.module.scss';
 import RoundImage from '../Image/RoundImage';
@@ -34,14 +41,19 @@ const CustomListChat = (props) => (
           <View style={{flexDirection: 'row', marginBottom: 20, marginTop: 10}}>
             <RoundImage source={require('../../img/game/pick/top1.png')} />
             <View style={{flexDirection: 'column', flex: 1}}>
-              <View style={{flexDirection: 'row'}}>
+              <TouchableOpacity
+                style={{flexDirection: 'row'}}
+                onPress={() => {
+                  props.navigation &&
+                    props.navigation.navigate('Profile/Expert'); //* 전문가프로필 이동
+                }}>
                 <Text style={[CustomStyles.defualtFont, {marginRight: 10}]}>
                   김덕중
                 </Text>
                 <Text style={[CustomStyles.defualtFont, {color: '#ADADAD'}]}>
                   前 SPOTIVE 뉴스 팀장
                 </Text>
-              </View>
+              </TouchableOpacity>
               <View
                 style={{
                   width: '100%',

@@ -18,17 +18,11 @@ import ChatScreen from '../Screen/ChatScreen';
 import MarketScreen from '../Screen/MarketScreen';
 import BoardScreen from '../Screen/BoardScreen';
 import Sider from '../Screen/SiderContent';
-import HeaderScreen from '../Screen/HeaderScreen';
+import PagesScreen from '../Screen/PagesScreen';
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
 const Htab = createMaterialTopTabNavigator();
-import SubUpComing from '../../../pages/Live/SubPage/SubUpComing';
-import SubLive from '../../../pages/Live/SubPage/SubLive';
-import SubEnd from '../../../pages/Live/SubPage/SubEnd';
-import SubPrevResult from '../../../pages/Live/SubPage/SubPrevResult';
-import ExpertPick from '../../../pages/ExpertPick';
-import MyPage from '../../../pages/MyPage';
 /**
  * * 앱 메인 화면
  */
@@ -40,7 +34,7 @@ export default function MyMainTab() {
         component={DrawerTab}
         options={{headerStyle: {height: 0}}}
       />
-      {PageScreen()}
+      {PagesScreen()}
     </Stack.Navigator>
   );
 }
@@ -50,43 +44,6 @@ function DrawerTab() {
     <Drawer.Navigator drawerContent={(props) => <Sider {...props} />}>
       <Drawer.Screen name="Main" component={MySettingsBottom} />
     </Drawer.Navigator>
-  );
-}
-
-function PageScreen() {
-  return (
-    <>
-      <Stack.Screen
-        name="Live/UpComing"
-        component={SubUpComing}
-        options={{headerTitle: '진행예정 경기'}}
-      />
-      <Stack.Screen
-        name="Live/Live"
-        component={SubLive}
-        options={{headerTitle: '진행중 경기'}}
-      />
-      <Stack.Screen
-        name="Live/End"
-        component={SubEnd}
-        options={{headerTitle: '종료된 경기'}}
-      />
-      <Stack.Screen
-        name="Live/SubPrevResult"
-        component={SubPrevResult}
-        options={{headerTitle: '이전 경기결과'}}
-      />
-      <Stack.Screen
-        name="ExpertPick"
-        component={ExpertPick}
-        options={{headerTitle: '전문가 픽'}}
-      />
-      <Stack.Screen
-        name="MyPage"
-        component={MyPage}
-        options={{headerTitle: '마이페이지'}}
-      />
-    </>
   );
 }
 
