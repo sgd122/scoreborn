@@ -27,7 +27,7 @@ function MyPage({userStore, navigation}) {
   const {
     state,
     setState,
-    actions: {callLogin, callSignUp, callForgot},
+    actions: {callMyPage},
   } = useContext(PageContext);
 
   useEffect(() => {
@@ -60,7 +60,7 @@ function MyPage({userStore, navigation}) {
     <Observer>
       {() => (
         <View style={[styles.container]}>
-          <ScrollView></ScrollView>
+          <ScrollView>{callMyPage()}</ScrollView>
         </View>
       )}
     </Observer>

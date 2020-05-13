@@ -37,9 +37,14 @@ export default function useActions({state, setState, commonStore}) {
     state.navigation.navigate('MatchIdPwd');
   };
 
+  const callMyPage = () => {
+    // setState((prev) => ({...prev, member: '222'}));
+  };
+
   return {
     callLogin,
     callSignUp,
     callForgot,
+    callMyPage,
   };
 }
