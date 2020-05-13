@@ -39,12 +39,21 @@ const MyCustomCenterComponent = () => {
 
 const MyCustomRightComponent = ({navigation}) => {
   return (
-    <Icon
-      name="home"
-      color="#fff"
-      style={{zIndex: 9999}}
-      onPress={() => goHome()}
-    />
+    <View style={{flexDirection: 'row'}}>
+      <Icon
+        name="heartbeat"
+        type="font-awesome"
+        color="#fff"
+        style={{zIndex: 9999}}
+        onPress={() => navigation.navigate('MyPage')}
+      />
+      <Icon
+        name="home"
+        color="#fff"
+        style={{zIndex: 9999}}
+        onPress={() => goHome()}
+      />
+    </View>
   );
 };
 

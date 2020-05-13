@@ -80,6 +80,11 @@ function PageScreen() {
         component={ExpertPick}
         options={{headerTitle: '전문가 픽'}}
       />
+      <Stack.Screen
+        name="MyPage"
+        component={ExpertPick}
+        options={{headerTitle: '마이페이지'}}
+      />
     </>
   );
 }
