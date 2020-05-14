@@ -15,6 +15,7 @@ import PageContext, { PageProvider } from './Context';
 //* 공통 컴포넌트
 import VerticalGrayLine from '../../components/Line/VerticalGrayLine';
 import HorizontalLine from '../../components/Line/HorizontalLine';
+import CustomTextList from '../../components/ListItem/CustomTextList';
 
 //* 스타일
 import styles from '../../styles/common.module.scss';
@@ -29,11 +30,7 @@ import UserLikeCount from './SubPage/UserLikeCount';
 import UserCash from './SubPage/UserCash';
 
 function MyPage({ userStore, navigation }) {
-  const {
-    state,
-    setState,
-    actions: { flatListRenderItem },
-  } = useContext(PageContext);
+  const { state, setState, } = useContext(PageContext);
 
   useEffect(() => {
     //* Navigation
@@ -72,42 +69,44 @@ function MyPage({ userStore, navigation }) {
     <Observer>
       {() => (
         <View style={[styles.container]}>
-          <View>
+          <ScrollView>
             {/* 유저사진 */}
             <UserImages CustomStyles={CustomStyles} />
 
             {/* 닉네임 */}
-            <UserNickName CustomStyles={CustomStyles} />
+            <UserNickName CustomStyles={CustomStyles} navigation={navigation} />
 
             {/* 상태메세지 */}
             <UserStatusText CustomStyles={CustomStyles} />
 
             {/* 수치화 3개 */}
-            <View style={CustomStyles.UserLikeCountOutter}>
-              <UserLikeCount
-                CustomStyles={CustomStyles}
-                img={require('../../img/icon/person.png')}
-                count={30}
-                title="나를 즐겨찾는 사람"
-              />
-              {/* 세로줄 */}
-              <HorizontalLine />
-              <UserLikeCount
-                CustomStyles={CustomStyles}
-                img={require('../../img/icon/good.png')}
-                count={1054}
-                title="받은 좋아요"
-              />
-              {/* 세로줄 */}
-              <HorizontalLine />
-              <UserLikeCount
-                CustomStyles={CustomStyles}
-                img={require('../../img/icon/Star.png')}
-                count={1054}
-                title="나의 즐겨찾기"
-              />
-            </View>
+            <View style={{ width: '100%', justifyContent: 'space-between', alignItems: 'center' }}>
+              <View style={CustomStyles.UserLikeCountOutter}>
+                <UserLikeCount
+                  CustomStyles={CustomStyles}
+                  img={require('../../img/icon/person.png')}
+                  count={30}
+                  title="나를 즐겨찾는 사람"
+                />
+                {/* 세로줄 */}
+                <HorizontalLine />
 
+                <UserLikeCount
+                  CustomStyles={CustomStyles}
+                  img={require('../../img/icon/good.png')}
+                  count={1054}
+                  title="받은 좋아요"
+                />
+                {/* 세로줄 */}
+                <HorizontalLine />
+                <UserLikeCount
+                  CustomStyles={CustomStyles}
+                  img={require('../../img/icon/Star.png')}
+                  count={1054}
+                  title="나의 즐겨찾기"
+                />
+              </View>
+            </View>
             {/* 굵은 가로줄 */}
             <VerticalGrayLine />
 
@@ -117,21 +116,13 @@ function MyPage({ userStore, navigation }) {
             {/* 굵은 가로줄 */}
             <VerticalGrayLine />
 
-            <FlatList
-              data={state.list1}
-              renderItem={({ item, index }) => flatListRenderItem(item, index)}
-              scrollEnabled={false}
-            />
+            <CustomTextList data={state.list1} />
 
             {/* 굵은 가로줄 */}
             <VerticalGrayLine />
 
-            <FlatList
-              data={state.list2}
-              renderItem={({ item, index }) => flatListRenderItem(item, index)}
-              scrollEnabled={false}
-            />
-          </View>
+            <CustomTextList data={state.list2} />
+          </ScrollView>
         </View>
       )}
     </Observer>
@@ -165,14 +156,14 @@ const CustomStyles = StyleSheet.create({
   UserNickNameView: {
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
-  UserNickNameChaneOuter: {
+  UserNickNameChangeOuter: {
     justifyContent: 'center',
     alignItems: 'flex-start',
     marginLeft: 4,
   },
-  UserNickNameChaneInner: {
+  UserNickNameChangeInner: {
     backgroundColor: '#E5F0FF',
     paddingHorizontal: 8,
     paddingVertical: 4,
@@ -181,7 +172,7 @@ const CustomStyles = StyleSheet.create({
   },
   UserStatusTextView: {
     flexDirection: 'row',
-    width: '90%',
+    width: '80%',
     backgroundColor: '#F7F7F7',
     justifyContent: 'center',
     alignSelf: 'center',
@@ -198,13 +189,14 @@ const CustomStyles = StyleSheet.create({
     textAlign: 'center',
     borderRadius: 5,
     position: 'absolute',
+    fontFamily: Fonts.NotoSans,
     right: 4,
-    margin: 10,
+    margin: 10
   },
   UserLikeCountOutter: {
-    width: '100%',
+    width: '80 %',
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     alignItems: 'center',
     marginTop: 16,
   },
@@ -212,7 +204,23 @@ const CustomStyles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop: 8,
   },
+  UserLikeCountText: {
+    fontSize: 20,
+    fontFamily: Fonts.NotoSans,
+    fontWeight: 'bold',
+    lineHeight: 29,
+    letterSpacing: -0.035,
+    marginBottom: -8
+  },
+  UserLikeCountBootomText: {
+    fontSize: 12,
+    fontFamily: Fonts.NotoSans,
+    color: '#ADADAD',
+    letterSpacing: -0.09
+  },
+
   UserCashView: {
     flexDirection: 'column',
     paddingHorizontal: 20,
@@ -226,6 +234,24 @@ const CustomStyles = StyleSheet.create({
     borderRadius: 5,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  UserCashText: {
+    color: '#1075FD',
+    fontSize: 14,
+    marginRight: 4,
+    fontFamily: Fonts.NotoSans
+  },
+  HorizontalLine: {
+    borderRightWidth: 1,
+    borderColor: '#ADADAD',
+    height: 32,
+  },
+  VerticalGrayLine: {
+    flexDirection: 'row',
+    width: '100%',
+    borderBottomColor: '#F7F7F7',
+    borderBottomWidth: 8,
+    marginTop: 16,
   },
 
   defualtFont: {
@@ -241,3 +267,4 @@ const CustomStyles = StyleSheet.create({
     margin: 5,
   },
 });
+
