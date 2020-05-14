@@ -22,7 +22,7 @@ const RoundImage = ({onPress, name, size, ...props}) => {
       width: globalSize,
       height: globalSize,
       borderRadius: globalSize / 2,
-      marginRight: 15,
+      // marginRight: 15,
     },
   });
   return (
