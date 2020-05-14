@@ -10,6 +10,7 @@ import RoundImage from '../../../components/Image/RoundImage';
 
 //* 스타일
 import styles from '../../../styles/common.module.scss';
+import { Fonts } from '../../../settings/fonts';
 
 export default function UserLikCount({ CustomStyles, img, count, title }) {
     const {
@@ -21,14 +22,14 @@ export default function UserLikCount({ CustomStyles, img, count, title }) {
     return (
         <View
             style={CustomStyles.UserLikeCountView}>
-            <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
+            <View style={{ flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'center' }}>
                 <Image
                     source={img}
-                    style={{ width: 12, height: 8, marginRight: 5 }}
-                    resizeMode="contain"></Image>
-                <Text style={{ fontSize: 20 }}>{count}</Text>
+                    style={{ width: 12, height: 12, }}
+                    resizeMode="contain" />
+                <Text style={CustomStyles.UserLikeCountText}>{count}</Text>
             </View>
-            <Text style={{ fontSize: 12, color: '#ADADAD', marginTop: 5 }}>
+            <Text style={CustomStyles.UserLikeCountBootomText}>
                 {title}
             </Text>
         </View>
