@@ -15,6 +15,7 @@ import PageContext, { PageProvider } from './Context';
 //* 공통 컴포넌트
 import VerticalGrayLine from '../../components/Line/VerticalGrayLine';
 import HorizontalLine from '../../components/Line/HorizontalLine';
+import CustomTextList from '../../components/ListItem/CustomTextList';
 
 //* 스타일
 import styles from '../../styles/common.module.scss';
@@ -29,11 +30,7 @@ import UserLikeCount from './SubPage/UserLikeCount';
 import UserCash from './SubPage/UserCash';
 
 function MyPage({ userStore, navigation }) {
-  const {
-    state,
-    setState,
-    actions: { flatListRenderItem },
-  } = useContext(PageContext);
+  const { state, setState, } = useContext(PageContext);
 
   useEffect(() => {
     //* Navigation
@@ -117,20 +114,12 @@ function MyPage({ userStore, navigation }) {
             {/* 굵은 가로줄 */}
             <VerticalGrayLine />
 
-            <FlatList
-              data={state.list1}
-              renderItem={({ item, index }) => flatListRenderItem(item, index)}
-              scrollEnabled={false}
-            />
+            <CustomTextList data={state.list1} />
 
             {/* 굵은 가로줄 */}
             <VerticalGrayLine />
 
-            <FlatList
-              data={state.list2}
-              renderItem={({ item, index }) => flatListRenderItem(item, index)}
-              scrollEnabled={false}
-            />
+            <CustomTextList data={state.list2} />
           </View>
         </View>
       )}
