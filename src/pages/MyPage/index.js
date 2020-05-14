@@ -13,12 +13,8 @@ import { Observer, observer, inject } from 'mobx-react';
 import PageContext, { PageProvider } from './Context';
 
 //* 공통 컴포넌트
-import ScoreInput from '../../components/Text/ScoreInput';
-import ScoreLabel from '../../components/Text/ScoreLabel';
-import CustomButton from '../../components/Buttons/CustomButton';
-import CustomListItem from '../../components/ListItem/CustomListItem';
-import LiveLabelType1 from '../../components/Text/LiveLabelType1';
-import LiveCard from '../../components/Card/Live';
+import VerticalGrayLine from '../../components/Line/VerticalGrayLine';
+import HorizontalLine from '../../components/Line/HorizontalLine';
 
 //* 스타일
 import styles from '../../styles/common.module.scss';
@@ -31,7 +27,6 @@ import UserNickName from './SubPage/UserNickName';
 import UserStatusText from './SubPage/UserStatusText';
 import UserLikeCount from './SubPage/UserLikeCount';
 import UserCash from './SubPage/UserCash';
-
 
 function MyPage({ userStore, navigation }) {
   const {
@@ -89,23 +84,38 @@ function MyPage({ userStore, navigation }) {
 
             {/* 수치화 3개 */}
             <View style={CustomStyles.UserLikeCountOutter}>
-              <UserLikeCount CustomStyles={CustomStyles} img={require('../../img/icon/person.png')} count={30} title='나를 즐겨찾는 사람' />
+              <UserLikeCount
+                CustomStyles={CustomStyles}
+                img={require('../../img/icon/person.png')}
+                count={30}
+                title="나를 즐겨찾는 사람"
+              />
               {/* 세로줄 */}
-              <View style={CustomStyles.HorizontalLine}></View>
-              <UserLikeCount CustomStyles={CustomStyles} img={require('../../img/icon/good.png')} count={1054} title='받은 좋아요' />
+              <HorizontalLine />
+              <UserLikeCount
+                CustomStyles={CustomStyles}
+                img={require('../../img/icon/good.png')}
+                count={1054}
+                title="받은 좋아요"
+              />
               {/* 세로줄 */}
-              <View style={CustomStyles.HorizontalLine}></View>
-              <UserLikeCount CustomStyles={CustomStyles} img={require('../../img/icon/Star.png')} count={1054} title='나의 즐겨찾기' />
+              <HorizontalLine />
+              <UserLikeCount
+                CustomStyles={CustomStyles}
+                img={require('../../img/icon/Star.png')}
+                count={1054}
+                title="나의 즐겨찾기"
+              />
             </View>
 
             {/* 굵은 가로줄 */}
-            <View style={CustomStyles.VerticalGrayLine} />
+            <VerticalGrayLine />
 
             {/* 나의 캐시 */}
             <UserCash CustomStyles={CustomStyles} />
 
             {/* 굵은 가로줄 */}
-            <View style={styles.VerticalGrayLine} />
+            <VerticalGrayLine />
 
             <FlatList
               data={state.list1}
@@ -114,14 +124,13 @@ function MyPage({ userStore, navigation }) {
             />
 
             {/* 굵은 가로줄 */}
-            <View style={CustomStyles.VerticalGrayLine} />
+            <VerticalGrayLine />
 
             <FlatList
               data={state.list2}
               renderItem={({ item, index }) => flatListRenderItem(item, index)}
               scrollEnabled={false}
             />
-
           </View>
         </View>
       )}
@@ -156,7 +165,7 @@ const CustomStyles = StyleSheet.create({
   UserNickNameView: {
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   UserNickNameChaneOuter: {
     justifyContent: 'center',
@@ -190,7 +199,7 @@ const CustomStyles = StyleSheet.create({
     borderRadius: 5,
     position: 'absolute',
     right: 4,
-    margin: 10
+    margin: 10,
   },
   UserLikeCountOutter: {
     width: '100%',
@@ -202,7 +211,7 @@ const CustomStyles = StyleSheet.create({
   UserLikeCountView: {
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   UserCashView: {
     flexDirection: 'column',
@@ -217,18 +226,6 @@ const CustomStyles = StyleSheet.create({
     borderRadius: 5,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  HorizontalLine: {
-    borderRightWidth: 1,
-    borderColor: '#ADADAD',
-    height: 32,
-  },
-  VerticalGrayLine: {
-    flexDirection: 'row',
-    width: '100%',
-    borderBottomColor: '#F7F7F7',
-    borderBottomWidth: 8,
-    marginTop: 16,
   },
 
   defualtFont: {
