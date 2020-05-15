@@ -43,13 +43,13 @@ const MyCustomRightComponent = ({navigation}) => {
       <TouchableOpacity onPress={() => navigation.navigate('MyPage')}>
         <Image
           style={{zIndex: 9999, marginRight: 10}}
-          source={require('../../../img/head/Bell.png')}
+          source={require('../../../img/head/Calendar.png')}
         />
       </TouchableOpacity>
       <TouchableOpacity onPress={() => goHome()}>
         <Image
           style={{zIndex: 9999}}
-          source={require('../../../img/head/Calendar.png')}
+          source={require('../../../img/head/Bell.png')}
         />
       </TouchableOpacity>
     </View>
