@@ -3,8 +3,8 @@
 import React, {useEffect, useContext} from 'react';
 import {View, StyleSheet} from 'react-native';
 
-export default function HorizontalLine() {
-  return <View style={CustomStyles.HorizontalLine} />;
+export default function HorizontalLine({style}) {
+  return <View style={[CustomStyles.HorizontalLine, style]} />;
 }
 
 const CustomStyles = StyleSheet.create({

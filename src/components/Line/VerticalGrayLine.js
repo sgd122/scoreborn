@@ -3,8 +3,8 @@
 import React, {useEffect, useContext} from 'react';
 import {View, StyleSheet} from 'react-native';
 
-export default function VerticalGrayLine() {
-  return <View style={CustomStyles.VerticalGrayLine} />;
+export default function VerticalGrayLine({style}) {
+  return <View style={[CustomStyles.VerticalGrayLine, style]} />;
 }
 
 const CustomStyles = StyleSheet.create({
