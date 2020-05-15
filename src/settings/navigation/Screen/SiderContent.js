@@ -30,6 +30,6 @@ export default function SiderContent(props) {
     //   />
     // </DrawerContentScrollView>
 
-    <Sider />
+    <Sider navigation={props.navigation} />
   );
 }

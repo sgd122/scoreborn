@@ -19,6 +19,7 @@ import {Fonts} from '../../settings/fonts';
 //* 컴퍼넌트
 import UserStatusText from './SubPage/UserStatusText';
 import UserGameText from './SubPage/UserGameText';
+import BottomCircle from './SubPage/BottomCircle';
 
 function CustomSider({userStore, navigation}) {
   const {
@@ -76,32 +77,7 @@ function CustomSider({userStore, navigation}) {
 
           <Divider style={{margin: 20}} />
 
-          <View style={{flexDirection: 'row', justifyContent: 'center'}}>
-            <View style={CustomStyles.Circle}>
-              <Image
-                source={require('../../img/icon/dice.png')}
-                style={{width: 18}}
-                resizeMode="contain"
-              />
-              <Text>토토</Text>
-            </View>
-            <View style={CustomStyles.Circle}>
-              <Image
-                source={require('../../img/icon/Star4.png')}
-                style={{width: 18, marginBottom: 3}}
-                resizeMode="contain"
-              />
-              <Text>즐겨찾기</Text>
-            </View>
-            <View style={CustomStyles.Circle}>
-              <Image
-                source={require('../../img/icon/Star4.png')}
-                style={{width: 18, marginBottom: 3}}
-                resizeMode="contain"
-              />
-              <Text>MY</Text>
-            </View>
-          </View>
+          <BottomCircle CustomStyles={CustomStyles} navigation={navigation} />
         </View>
       )}
     </Observer>
