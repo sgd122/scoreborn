@@ -77,7 +77,7 @@ const TypeRank = (props) => {
                     <View>
                       <TouchableWithoutFeedback
                         onPress={() => {
-                          func.onLikeClick(k, type);
+                          func.onLikeClick(k, type, props.navigation);
                         }}>
                         <Icon name="star" size={18} style={{color: 'red'}} />
                       </TouchableWithoutFeedback>

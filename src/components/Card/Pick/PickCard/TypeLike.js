@@ -10,6 +10,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from '../../../../styles/common.module.scss';
 import {Fonts} from '../../../../settings/fonts';
 import RoundImage from '../../../Image/RoundImage';
+import VerticalGrayLine from '../../../Line/VerticalGrayLine';
 import * as func from './func';
 /**
  * @param {*} props
@@ -30,7 +31,8 @@ const TypeLike = (props) => {
               onPress={() => {
                 func.onCardClick(k, type);
               }}>
-              <Card containerStyle={[CustomStyles.defaultCard]}>
+              <View style={{marginLeft: 10, marginRight: 10}}>
+                {/* <Card containerStyle={[CustomStyles.defaultCard]}> */}
                 <View style={{flexDirection: 'column'}}>
                   <View style={{flexDirection: 'column'}}>
                     <View style={{flexDirection: 'row'}}>
@@ -99,7 +101,9 @@ const TypeLike = (props) => {
                     </View>
                   </View>
                 </View>
-              </Card>
+                {/* </Card> */}
+              </View>
+              <VerticalGrayLine style={{marginBottom: 15}} />
             </TouchableOpacity>
           );
         })}

@@ -30,7 +30,8 @@ const TypePick = (props) => {
               onPress={() => {
                 func.onCardClick(k, type);
               }}>
-              <Card containerStyle={[CustomStyles.defaultCard]}>
+              <View style={{margin: 10}}>
+                {/* <Card containerStyle={[CustomStyles.defaultCard]}> */}
                 <View style={{flexDirection: 'column'}}>
                   <View style={{flexDirection: 'row'}}>
                     <RoundImage
@@ -112,7 +113,8 @@ const TypePick = (props) => {
                     </View>
                   </View>
                 </View>
-              </Card>
+                {/* </Card> */}
+              </View>
             </TouchableOpacity>
           );
         })}

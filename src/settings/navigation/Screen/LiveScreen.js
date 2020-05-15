@@ -44,7 +44,7 @@ export default function LiveScreen({navigation}) {
               height: 0,
             },
           }}>
-          <Stack.Screen name="Live" component={Live} />
+          <Stack.Screen name="Live" component={Live} options={{title: ''}} />
         </Stack.Navigator>
       </SafeAreaView>
     </Fragment>

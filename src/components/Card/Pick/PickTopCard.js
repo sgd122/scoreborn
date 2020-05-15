@@ -18,26 +18,32 @@ const CustomPickTopCard = (props) => {
         <RoundImage
           source={require('../../../img/game/pick/top1.png')}
           name={'김덕중'}
+          style={{marginRight: 15}}
         />
         <RoundImage
           source={require('../../../img/game/pick/top1.png')}
           name={'스포츠어..'}
+          style={{marginRight: 15}}
         />
         <RoundImage
           source={require('../../../img/game/pick/top1.png')}
           name={'미우도우'}
+          style={{marginRight: 15}}
         />
         <RoundImage
           source={require('../../../img/game/pick/top1.png')}
           name={'배당률탑'}
+          style={{marginRight: 15}}
         />
         <RoundImage
           source={require('../../../img/game/pick/top1.png')}
           name={'팁돌이'}
+          style={{marginRight: 15}}
         />
         <RoundImage
           source={require('../../../img/game/pick/top1.png')}
           name={'한효주여..'}
+          style={{marginRight: 15}}
         />
       </View>
     </View>

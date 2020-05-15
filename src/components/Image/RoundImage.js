@@ -10,7 +10,7 @@ import {
 import styles from '../../styles/common.module.scss';
 import {Fonts} from '../../settings/fonts';
 
-const RoundImage = ({onPress, name, size, ...props}) => {
+const RoundImage = ({onPress, name, size, style, ...props}) => {
   const [globalSize, setGlobalSize] = useState(size ? size : 50);
   const CustomStyles = StyleSheet.create({
     defualtFont: {
@@ -28,7 +28,7 @@ const RoundImage = ({onPress, name, size, ...props}) => {
   return (
     <View>
       <TouchableOpacity onPress={() => onPress()}>
-        <Image style={[CustomStyles.defaultImgae, props.style]} {...props} />
+        <Image style={[CustomStyles.defaultImgae, style]} {...props} />
       </TouchableOpacity>
       {name && <Text style={CustomStyles.defualtFont}>{name}</Text>}
     </View>

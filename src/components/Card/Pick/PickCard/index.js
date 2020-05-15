@@ -22,15 +22,50 @@ const CustomPickCard = (props) => {
 
   const pageReturn = () => {
     if (type == 'pick') {
-      return <TypePick type={type} data={data} CustomStyles={CustomStyles} />;
+      return (
+        <TypePick
+          type={type}
+          data={data}
+          CustomStyles={CustomStyles}
+          navigation={props.navigation}
+        />
+      );
     } else if (type == 'game') {
-      return <TypeGame type={type} data={data} CustomStyles={CustomStyles} />;
+      return (
+        <TypeGame
+          type={type}
+          data={data}
+          CustomStyles={CustomStyles}
+          navigation={props.navigation}
+        />
+      );
     } else if (type == 'EndGame') {
-      return <TypeGame type={type} data={data} CustomStyles={CustomStyles} />;
+      return (
+        <TypeGame
+          type={type}
+          data={data}
+          CustomStyles={CustomStyles}
+          navigation={props.navigation}
+        />
+      );
     } else if (type == 'like') {
-      return <TypeLike type={type} data={data} CustomStyles={CustomStyles} />;
+      return (
+        <TypeLike
+          type={type}
+          data={data}
+          CustomStyles={CustomStyles}
+          navigation={props.navigation}
+        />
+      );
     } else if (type == 'rank') {
-      return <TypeRank type={type} data={data} CustomStyles={CustomStyles} />;
+      return (
+        <TypeRank
+          type={type}
+          data={data}
+          CustomStyles={CustomStyles}
+          navigation={props.navigation}
+        />
+      );
     }
   };
 
