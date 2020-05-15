@@ -100,7 +100,7 @@ function Pick({userStore, navigation}) {
       {() => (
         <View style={[styles.container]}>
           <ScrollView>
-            <PickCard type={'rank'} data={state.list} />
+            <PickCard type={'rank'} data={state.list} navigation={navigation} />
           </ScrollView>
         </View>
       )}
