@@ -11,7 +11,7 @@ import SubPrevResult from '../../../pages/Live/SubPage/SubPrevResult';
 import ExpertPick from '../../../pages/ExpertPick';
 import ExpertProfile from '../../../pages/ExpertProfile';
 import MyPage from '../../../pages/MyPage';
-import NickNameChange from '../../../pages/MyPage/SubPage/NickNameChange';
+import NickNameChange from '../../../pages/NickNameChange';
 
 const PagesScreen = () => {
   return (
