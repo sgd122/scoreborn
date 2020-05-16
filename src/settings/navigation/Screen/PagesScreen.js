@@ -20,6 +20,7 @@ import ExpertProfile from '../../../pages/ExpertProfile';
 import MyPage from '../../../pages/MyPage';
 import Favorites from '../../../pages/Favorites';
 import FavoritesUsers from '../../../pages/Favorites/Tab/FavoritesUsers';
+import NickNameChange from '../../../pages/NickNameChange';
 
 const PagesScreen = () => {
   return (
@@ -58,6 +59,11 @@ const PagesScreen = () => {
         name="MyPage"
         component={MyPage}
         options={{headerTitle: '마이페이지'}}
+      />
+      <Stack.Screen
+        name="MyPage/NickNameChange"
+        component={NickNameChange}
+        options={{headerTitle: '닉네임 변경'}}
       />
       <Stack.Screen
         name="Favorites"

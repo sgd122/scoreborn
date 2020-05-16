@@ -10,6 +10,7 @@ import RoundImage from '../../../components/Image/RoundImage';
 
 //* 스타일
 import styles from '../../../styles/common.module.scss';
+import { Fonts } from '../../../settings/fonts';
 
 export default function UserCash({ CustomStyles }) {
     const {
@@ -21,7 +22,7 @@ export default function UserCash({ CustomStyles }) {
     return (
         <View style={CustomStyles.UserCashView}>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                <Text style={{ color: '#1075FD', fontSize: 14, marginRight: 4 }}>
+                <Text style={CustomStyles.UserCashText}>
                     나의 캐시
                 </Text>
                 <Image
@@ -31,7 +32,7 @@ export default function UserCash({ CustomStyles }) {
             </View>
             <View
                 style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                <Text style={{ fontSize: 30 }}>300</Text>
+                <Text style={{ fontSize: 30, fontFamily: Fonts.NotoSans }}>300</Text>
                 <View style={CustomStyles.UserCashCharge}>
                     <Text style={{ fontSize: 14, color: '#042B6C' }}>충전하기</Text>
                 </View>
