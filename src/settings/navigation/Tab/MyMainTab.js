@@ -1,6 +1,6 @@
 // router.js
 import React from 'react';
-import {Button, View, Text, SafeAreaView, StatusBar} from 'react-native';
+import {Image} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
@@ -58,9 +58,9 @@ function MySettingsBottom({navigation}) {
         component={LiveScreen}
         options={{
           tabBarLabel: '라이브',
-          // tabBarIcon: ({color}) => (
-          //   <MaterialCommunityIcons name="home" color={color} size={26} />
-          // ),
+          tabBarIcon: ({color}) => (
+            <Image source={require('../../../img/bottom/LIVE.png')} />
+          ),
         }}
       />
       <Tab.Screen
@@ -68,9 +68,9 @@ function MySettingsBottom({navigation}) {
         component={PickScreen}
         options={{
           tabBarLabel: '픽',
-          //   tabBarIcon: ({ color }) => (
-          //     <MaterialCommunityIcons name="home" color={color} size={26} />
-          //   ),
+          tabBarIcon: ({color}) => (
+            <Image source={require('../../../img/bottom/Pick.png')} />
+          ),
         }}
       />
       <Tab.Screen
@@ -78,9 +78,9 @@ function MySettingsBottom({navigation}) {
         component={ChatScreen}
         options={{
           tabBarLabel: '채팅',
-          //   tabBarIcon: ({ color }) => (
-          //     <MaterialCommunityIcons name="home" color={color} size={26} />
-          //   ),
+          tabBarIcon: ({color}) => (
+            <Image source={require('../../../img/bottom/Chat.png')} />
+          ),
         }}
       />
       <Tab.Screen
@@ -88,9 +88,9 @@ function MySettingsBottom({navigation}) {
         component={BoardScreen}
         options={{
           tabBarLabel: '게시판',
-          //   tabBarIcon: ({ color }) => (
-          //     <MaterialCommunityIcons name="home" color={color} size={26} />
-          //   ),
+          tabBarIcon: ({color}) => (
+            <Image source={require('../../../img/bottom/Board.png')} />
+          ),
         }}
       />
     </Tab.Navigator>

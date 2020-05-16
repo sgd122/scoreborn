@@ -1,6 +1,6 @@
 // router.js
 import React, {useEffect, useContext} from 'react';
-import {Button, View} from 'react-native';
+import {TouchableOpacity, View, Image} from 'react-native';
 import {Header, Icon, Text} from 'react-native-elements';
 import {DrawerActions} from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
@@ -34,25 +34,24 @@ const MyCustomLeftComponent = ({navigation}) => {
   );
 };
 const MyCustomCenterComponent = () => {
-  return <Logo style={{height: '100%', zIndex: 9999}} />;
+  return <Logo style={{height: '100%', width: '50%', zIndex: 9999}} />;
 };
 
 const MyCustomRightComponent = ({navigation}) => {
   return (
     <View style={{flexDirection: 'row'}}>
-      <Icon
-        name="heartbeat"
-        type="font-awesome"
-        color="#fff"
-        style={{zIndex: 9999}}
-        onPress={() => navigation.navigate('MyPage')}
-      />
-      <Icon
-        name="home"
-        color="#fff"
-        style={{zIndex: 9999}}
-        onPress={() => goHome()}
-      />
+      <TouchableOpacity onPress={() => navigation.navigate('MyPage')}>
+        <Image
+          style={{zIndex: 9999, marginRight: 10}}
+          source={require('../../../img/head/Calendar.png')}
+        />
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => goHome()}>
+        <Image
+          style={{zIndex: 9999}}
+          source={require('../../../img/head/Bell.png')}
+        />
+      </TouchableOpacity>
     </View>
   );
 };

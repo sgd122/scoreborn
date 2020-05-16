@@ -14,9 +14,7 @@ import AuthContext, {AuthProvider} from '../AuthContext';
 import {Observer, observer, inject} from 'mobx-react';
 
 // import SplashScreen from '../../../pages/Splash/Splash';
-import Live from '../../../pages/Live';
-import Login from '../../../pages/Login';
-import SignUp from '../../../pages/SignUp';
+import Chat from '../../../pages/Chat';
 import MatchID from '../../../pages/MatchID';
 import MatchPwd from '../../../pages/MatchPwd';
 
@@ -50,14 +48,19 @@ export default function ChatScreen({navigation}) {
         <HeaderScreen navigation={navigation} />
         <Htab.Navigator>
           <Htab.Screen
-            name="MatchID"
-            component={MatchID}
-            options={{tabBarLabel: '아이디찾기'}}
+            name="Chat/All"
+            component={Chat}
+            options={{tabBarLabel: '전체채팅'}}
           />
           <Htab.Screen
-            name="MatchPwd"
-            component={MatchPwd}
-            options={{tabBarLabel: '비밀번호찾기'}}
+            name="Chat/List"
+            component={Chat}
+            options={{tabBarLabel: '채팅방'}}
+          />
+          <Htab.Screen
+            name="Chat/MyChat"
+            component={Chat}
+            options={{tabBarLabel: '나의채팅'}}
           />
         </Htab.Navigator>
       </SafeAreaView>

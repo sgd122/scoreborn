@@ -69,7 +69,7 @@ const CustomPickCard = (props) => {
     }
   };
 
-  return <View style={props.style}>{pageReturn()}</View>;
+  return <View style={[{marginTop: 10}, props.style]}>{pageReturn()}</View>;
 };
 
 const CustomStyles = StyleSheet.create({
@@ -81,6 +81,9 @@ const CustomStyles = StyleSheet.create({
     shadowRadius: 20,
     shadowOffset: {width: 0, height: 4},
     elevation: 3, // Android적용
+    marginBottom: -7,
+    marginLeft: 10,
+    marginRight: 10,
   },
   defualtFont: {
     fontSize: 14,
