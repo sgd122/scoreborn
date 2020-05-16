@@ -29,14 +29,21 @@ export default function BottomCircle({CustomStyles}) {
           />
           <Text>토토</Text>
         </View>
-        <View style={CustomStyles.Circle}>
-          <Image
-            source={require('../../../img/icon/Star4.png')}
-            style={{width: 18, marginBottom: 3}}
-            resizeMode="contain"
-          />
-          <Text>즐겨찾기</Text>
-        </View>
+
+        <TouchableWithoutFeedback
+          onPress={() => {
+            state.navigation.navigate('Favorites');
+          }}>
+          <View style={CustomStyles.Circle}>
+            <Image
+              source={require('../../../img/icon/Star4.png')}
+              style={{width: 18, marginBottom: 3}}
+              resizeMode="contain"
+            />
+            <Text>즐겨찾기</Text>
+          </View>
+        </TouchableWithoutFeedback>
+
         <TouchableWithoutFeedback
           onPress={() => {
             state.navigation.navigate('MyPage');
