@@ -15,8 +15,7 @@ import {Observer, observer, inject} from 'mobx-react';
 
 // import SplashScreen from '../../../pages/Splash/Splash';
 import Chat from '../../../pages/Chat';
-import MatchID from '../../../pages/MatchID';
-import MatchPwd from '../../../pages/MatchPwd';
+import ChatRoomList from '../../../pages/Chat/ChatRoomList';
 
 //* 공통 헤더 및 Sider
 import HeaderScreen from './HeaderScreen';
@@ -53,8 +52,8 @@ export default function ChatScreen({navigation}) {
             options={{tabBarLabel: '전체채팅'}}
           />
           <Htab.Screen
-            name="Chat/List"
-            component={Chat}
+            name="Chat/Room"
+            component={ChatRoomList}
             options={{tabBarLabel: '채팅방'}}
           />
           <Htab.Screen
