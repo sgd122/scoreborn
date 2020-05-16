@@ -20,6 +20,8 @@ import ExpertProfile from '../../../pages/ExpertProfile';
 import MyPage from '../../../pages/MyPage';
 import Favorites from '../../../pages/Favorites';
 import FavoritesUsers from '../../../pages/Favorites/Tab/FavoritesUsers';
+import FavoritesChat from '../../../pages/Favorites/Tab/FavoritesChat';
+import FavoritesExpert from '../../../pages/Favorites/Tab/FavoritesExpert';
 import NickNameChange from '../../../pages/NickNameChange';
 
 const PagesScreen = () => {
@@ -80,7 +82,7 @@ function FavoritesScreen({navigation}) {
       <SafeAreaView style={{flex: 0, backgroundColor: '#001943'}} />
       <StatusBar barStyle="light-content" />
       <SafeAreaView style={{flex: 1}}>
-        <HeaderScreen navigation={navigation} />
+        {/* <HeaderScreen navigation={navigation} /> */}
         <Htab.Navigator>
           <Htab.Screen
             name="Favorites/Users"
@@ -89,12 +91,12 @@ function FavoritesScreen({navigation}) {
           />
           <Htab.Screen
             name="Favorites/Chat"
-            component={Favorites}
+            component={FavoritesChat}
             options={{tabBarLabel: '채팅방'}}
           />
           <Htab.Screen
             name="Favorites/Expert"
-            component={Favorites}
+            component={FavoritesExpert}
             options={{tabBarLabel: '전문가'}}
           />
         </Htab.Navigator>

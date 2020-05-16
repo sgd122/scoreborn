@@ -13,7 +13,7 @@ import {Observer, observer, inject} from 'mobx-react';
 import PageContext, {PageProvider} from '../Context';
 
 //* 공통 컴포넌트
-import CustomUsers from '../../../components/Card/Users';
+import CustomChatCard from '../../../components/Card/Chat';
 import HorizontalLine from '../../../components/Line/HorizontalLine';
 import CustomTextList from '../../../components/ListItem/CustomTextList';
 
@@ -22,7 +22,7 @@ import styles from '../../../styles/common.module.scss';
 import {Fonts} from '../../../settings/fonts';
 import {FlatList} from 'react-native-gesture-handler';
 
-function FavoritesUsers({userStore, navigation}) {
+function FavoritesChat({userStore, navigation}) {
   const {state, setState} = useContext(PageContext);
 
   useEffect(() => {
@@ -63,7 +63,7 @@ function FavoritesUsers({userStore, navigation}) {
       {() => (
         <View style={[styles.container]}>
           <View>
-            <CustomUsers data={state.list1} />
+            <CustomChatCard data={state.list1} />
           </View>
         </View>
       )}
@@ -74,7 +74,7 @@ function FavoritesUsers({userStore, navigation}) {
 export default inject('userStore')(({userStore, navigation}) => {
   return (
     <PageProvider>
-      <FavoritesUsers userStore={userStore} navigation={navigation} />
+      <FavoritesChat userStore={userStore} navigation={navigation} />
     </PageProvider>
   );
 });
