@@ -16,6 +16,7 @@ import {Observer, observer, inject} from 'mobx-react';
 // import SplashScreen from '../../../pages/Splash/Splash';
 import Chat from '../../../pages/Chat';
 import ChatRoomList from '../../../pages/Chat/ChatRoomList';
+import MyChat from '../../../pages/Chat/MyChat';
 
 //* 공통 헤더 및 Sider
 import HeaderScreen from './HeaderScreen';
@@ -58,7 +59,7 @@ export default function ChatScreen({navigation}) {
           />
           <Htab.Screen
             name="Chat/MyChat"
-            component={Chat}
+            component={MyChat}
             options={{tabBarLabel: '나의채팅'}}
           />
         </Htab.Navigator>
