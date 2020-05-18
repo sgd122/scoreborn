@@ -51,22 +51,22 @@ export default function LiveScreen({navigation}) {
             options={{tabBarLabel: '전체'}}
           />
           <Htab.Screen
-            name="AnalysisPage"
+            name="Board/Analysis"
             component={Board}
             options={{tabBarLabel: '분석'}}
           />
           <Htab.Screen
-            name="AnalysisPage2"
+            name="Board/Hit"
             component={Board}
             options={{tabBarLabel: '적중인증'}}
           />
           <Htab.Screen
-            name="AnalysisPage3"
+            name="Board/Challenge"
             component={Board}
             options={{tabBarLabel: '도전'}}
           />
           <Htab.Screen
-            name="AnalysisPage4"
+            name="Board/Free"
             component={Board}
             options={{tabBarLabel: '자유'}}
           />
