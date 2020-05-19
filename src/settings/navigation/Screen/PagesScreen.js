@@ -11,7 +11,9 @@ import SubPrevResult from '../../../pages/Live/SubPage/SubPrevResult';
 import ExpertPick from '../../../pages/ExpertPick';
 import ExpertProfile from '../../../pages/ExpertProfile';
 import MyPage from '../../../pages/MyPage';
-import NickNameChange from '../../../pages/NickNameChange';
+import NickNameChange from '../../../pages/MyPage/SubPage/NickNameChange';
+import StatusMessageChange from '../../../pages/MyPage/SubPage/StatusMessageChange';
+import Follow from '../../../pages/MyPage/SubPage/Follow';
 
 const PagesScreen = () => {
   return (
@@ -55,6 +57,17 @@ const PagesScreen = () => {
         name="MyPage/NickNameChange"
         component={NickNameChange}
         options={{ headerTitle: '닉네임 변경' }}
+      />
+      <Stack.Screen
+        name="MyPage/StatusMessageChange"
+        component={StatusMessageChange}
+        options={{ headerTitle: '프로필 메시지 변경' }}
+      />
+
+      <Stack.Screen
+        name="MyPage/Follow"
+        component={Follow}
+        options={{ headerTitle: '나를 즐겨찾는 사람' }}
       />
     </>
   );
