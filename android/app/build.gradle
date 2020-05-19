@@ -129,7 +129,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.awesomeproject"
+        applicationId "org.reactjs.native.windevel.scoreborn"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -197,6 +197,7 @@ dependencies {
     //* add
     implementation 'androidx.appcompat:appcompat:1.1.0-rc01'
     // compile project(':react-native-vector-icons')
+    implementation 'com.google.firebase:firebase-analytics:17.2.2'
     //* add
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
@@ -230,3 +231,5 @@ task copyDownloadableDepsToLibs(type: Copy) {
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
 
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
+apply plugin: 'com.google.gms.google-services'

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "369487059",
+    "firebase_url": "https://scoreborn-25cf7.firebaseio.com",
+    "project_id": "scoreborn-25cf7",
+    "storage_bucket": "scoreborn-25cf7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:369487059:android:0e49805b22d37e0394f826",
+        "android_client_info": {
+          "package_name": "org.reactjs.native.windevel.scoreborn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "369487059-javlhcldoshedejjktogj2iokj372j59.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvjQKGhagIVJ-FtwZnE4fQ7zv9gk8DeUs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "369487059-javlhcldoshedejjktogj2iokj372j59.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "369487059-1aqmvv1b360kbnjvsps90r98odfivcui.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.windevel.scoreborn"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
