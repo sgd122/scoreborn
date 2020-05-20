@@ -137,7 +137,7 @@ function Pick({userStore, navigation}) {
             <PickTopCard />
 
             <LiveLabelType1>실시간 전문가 픽</LiveLabelType1>
-            <PickCard data={state.list} />
+            <PickCard data={state.list} navigation={navigation} />
           </ScrollView>
         </View>
       )}

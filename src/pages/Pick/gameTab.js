@@ -164,10 +164,14 @@ function Pick({userStore, navigation}) {
       {() => (
         <View style={[styles.container]}>
           <ScrollView>
-            <PickCard type={'game'} data={state.list} />
+            <PickCard type={'game'} data={state.list} navigation={navigation} />
 
             <LiveLabelType1>종료된 경기</LiveLabelType1>
-            <PickCard type={'EndGame'} data={state.list} />
+            <PickCard
+              type={'EndGame'}
+              data={state.list}
+              navigation={navigation}
+            />
           </ScrollView>
         </View>
       )}
