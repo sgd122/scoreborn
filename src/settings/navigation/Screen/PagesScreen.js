@@ -15,6 +15,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 
 const Stack = createStackNavigator();
 const Htab = createMaterialTopTabNavigator();
+const Drawer = createDrawerNavigator();
 
 //* 공통 헤더 및 Sider
 import HeaderScreen from './HeaderScreen';
@@ -31,7 +32,11 @@ import FavoritesUsers from '../../../pages/Favorites/Tab/FavoritesUsers';
 import FavoritesChat from '../../../pages/Favorites/Tab/FavoritesChat';
 import FavoritesExpert from '../../../pages/Favorites/Tab/FavoritesExpert';
 import NickNameChange from '../../../pages/NickNameChange';
-import AlarmScreen from '../../../pages/Alarm';
+import AlarmPage from '../../../pages/Alarm';
+import AlaramSettings from '../../../pages/Alarm/Subpage/AlaramSettings';
+
+import Sider from './SiderContent';
+import AlarmScreen from './AlaramScreen';
 
 const PagesScreen = () => {
   return (
@@ -83,13 +88,18 @@ const PagesScreen = () => {
       />
       <Stack.Screen
         name="Alarm"
-        component={AlarmScreen}
+        component={AlarmPage}
         options={({route, navigation}) => ({
           headerTitle: '알림',
           headerRight: (props) => (
             <AlarmTitle navigation={navigation} {...props} />
           ),
         })}
+      />
+      <Stack.Screen
+        name="Alarm/Settings"
+        component={AlaramSettings}
+        options={{headerTitle: '알림 설정'}}
       />
     </>
   );
@@ -99,7 +109,7 @@ function AlarmTitle(props) {
   return (
     <TouchableOpacity
       onPress={() => {
-        props.navigation.navigate('Profile/Expert');
+        props.navigation.navigate('Alarm/Settings');
       }}>
       <View>
         <Image
