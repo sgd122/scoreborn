@@ -1,7 +1,7 @@
 // router.js
-import React, {useEffect, useContext} from 'react';
+import React, {useState} from 'react';
 import {TouchableOpacity, View, Image} from 'react-native';
-import {Header, Icon, Text} from 'react-native-elements';
+import {Header, Icon, Text, Overlay} from 'react-native-elements';
 import {DrawerActions} from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
 import Logo from '../../../components/Logo';
@@ -38,9 +38,14 @@ const MyCustomCenterComponent = () => {
 };
 
 const MyCustomRightComponent = ({navigation}) => {
+  const [visible, setVisible] = useState(false);
+
+  const toggleOverlay = () => {
+    setVisible(!visible);
+  };
   return (
     <View style={{flexDirection: 'row'}}>
-      <TouchableOpacity onPress={() => navigation.navigate('MyPage')}>
+      <TouchableOpacity onPress={() => setVisible(!visible)}>
         <Image
           style={{zIndex: 9999, marginRight: 10}}
           source={require('../../../img/head/Calendar.png')}
@@ -52,6 +57,11 @@ const MyCustomRightComponent = ({navigation}) => {
           source={require('../../../img/head/Bell.png')}
         />
       </TouchableOpacity>
+
+      {/* 달력 */}
+      <Overlay isVisible={visible} onBackdropPress={toggleOverlay}>
+        <Text>여기에 달력이 출력됩니다.</Text>
+      </Overlay>
     </View>
   );
 };
