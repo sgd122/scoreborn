@@ -13,7 +13,8 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "launch-ios": "react-native run-ios --simulator \"iPhone 8\""
+    "launch-ios": "react-native run-ios --simulator \"iPhone 8\"",
+    "launch-android": "react-native run-android"
   },
   "dependencies": {
     "@babel/plugin-proposal-decorators": "^7.8.3",
