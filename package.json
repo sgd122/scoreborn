@@ -1,5 +1,5 @@
 {
-  "name": "AwesomeProject",
+  "name": "ScoreBorn",
   "version": "0.0.1",
   "private": true,
   "rnpm": {
@@ -14,7 +14,8 @@
     "test": "jest",
     "lint": "eslint .",
     "launch-ios": "react-native run-ios --simulator \"iPhone 8\"",
-    "launch-android": "react-native run-android"
+    "launch-android": "react-native run-android",
+    "launch-android-release": "react-native run-android --variant=release"
   },
   "dependencies": {
     "@babel/plugin-proposal-decorators": "^7.8.3",
