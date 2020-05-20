@@ -46,7 +46,7 @@ const MyCustomRightComponent = ({navigation}) => {
           source={require('../../../img/head/Calendar.png')}
         />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => goHome()}>
+      <TouchableOpacity onPress={() => navigation.navigate('Alarm')}>
         <Image
           style={{zIndex: 9999}}
           source={require('../../../img/head/Bell.png')}

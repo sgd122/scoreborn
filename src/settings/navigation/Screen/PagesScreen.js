@@ -1,5 +1,13 @@
 import React, {Fragment} from 'react';
-import {Button, View, Text, SafeAreaView, StatusBar} from 'react-native';
+import {
+  Button,
+  View,
+  Text,
+  SafeAreaView,
+  StatusBar,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
@@ -23,6 +31,7 @@ import FavoritesUsers from '../../../pages/Favorites/Tab/FavoritesUsers';
 import FavoritesChat from '../../../pages/Favorites/Tab/FavoritesChat';
 import FavoritesExpert from '../../../pages/Favorites/Tab/FavoritesExpert';
 import NickNameChange from '../../../pages/NickNameChange';
+import AlarmScreen from '../../../pages/Alarm';
 
 const PagesScreen = () => {
   return (
@@ -72,9 +81,36 @@ const PagesScreen = () => {
         component={FavoritesScreen}
         options={{headerTitle: '나의 즐겨찾기'}}
       />
+      <Stack.Screen
+        name="Alarm"
+        component={AlarmScreen}
+        options={({route, navigation}) => ({
+          headerTitle: '알림',
+          headerRight: (props) => (
+            <AlarmTitle navigation={navigation} {...props} />
+          ),
+        })}
+      />
     </>
   );
 };
+
+function AlarmTitle(props) {
+  return (
+    <TouchableOpacity
+      onPress={() => {
+        props.navigation.navigate('Profile/Expert');
+      }}>
+      <View>
+        <Image
+          style={{marginRight: 10}}
+          resizeMode="contain"
+          source={require('../../../img/icon/Settings.png')}
+        />
+      </View>
+    </TouchableOpacity>
+  );
+}
 
 function FavoritesScreen({navigation}) {
   return (

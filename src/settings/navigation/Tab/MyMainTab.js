@@ -32,7 +32,7 @@ export default function MyMainTab() {
       <Stack.Screen
         name="Home"
         component={DrawerTab}
-        options={{headerStyle: {height: 0}}}
+        options={{headerShown: false, headerStyle: {height: 0}}}
       />
       {PagesScreen()}
     </Stack.Navigator>
