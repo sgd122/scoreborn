@@ -54,20 +54,19 @@ const CustomLiveCard = (props) => {
                     {/* 
                   //* 1번팀 로고
                   */}
-                    <View
-                      style={{
-                        flexDirection: 'row',
-                      }}>
+                    <View style={{flexDirection: 'row'}}>
                       <View
                         style={{
                           justifyContent: 'center',
                           alignItems: 'center',
+                          width: 100,
+                          // backgroundColor: 'red',
                         }}>
                         <Image
                           style={[
                             {
-                              width: 28,
-                              height: 28,
+                              width: 34,
+                              height: 34,
                               resizeMode: 'contain',
                             },
                           ]}
@@ -76,7 +75,7 @@ const CustomLiveCard = (props) => {
                         <Text
                           style={[
                             CustomStyles.defualtFont,
-                            {color: '#03367A', fontSize: 14, marginTop: 5},
+                            {color: '#03367A', fontSize: 14, marginTop: 7},
                           ]}>
                           {k.home.name}
                         </Text>
@@ -86,7 +85,12 @@ const CustomLiveCard = (props) => {
                     {/* 
                   //* 경기스코어
                   */}
-                    <View style={{justifyContent: 'center'}}>
+                    <View
+                      style={{
+                        flex: 1,
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                      }}>
                       <Text
                         style={[
                           CustomStyles.defualtFont,
@@ -126,12 +130,13 @@ const CustomLiveCard = (props) => {
                       style={{
                         justifyContent: 'center',
                         alignItems: 'center',
+                        width: 50,
                       }}>
                       <Image
                         style={[
                           {
-                            width: 28,
-                            height: 28,
+                            width: 34,
+                            height: 34,
                             resizeMode: 'contain',
                           },
                         ]}
@@ -141,7 +146,7 @@ const CustomLiveCard = (props) => {
                         style={[
                           CustomStyles.defualtFont,
                           CustomStyles.AwayBlackColor,
-                          {fontSize: 14, marginTop: 5},
+                          {fontSize: 14, marginTop: 7},
                         ]}>
                         {k.away.name}
                       </Text>
