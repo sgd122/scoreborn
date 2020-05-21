@@ -35,6 +35,12 @@ import NickNameChange from '../../../pages/NickNameChange';
 import AlarmPage from '../../../pages/Alarm';
 import AlaramSettings from '../../../pages/Alarm/Subpage/AlaramSettings';
 
+//* Login
+import Login from '../../../pages/Login';
+import SignUp from '../../../pages/SignUp';
+import MatchID from '../../../pages/MatchID';
+import MatchPwd from '../../../pages/MatchPwd';
+
 import Sider from './SiderContent';
 import AlarmScreen from './AlaramScreen';
 
@@ -101,6 +107,7 @@ const PagesScreen = () => {
         component={AlaramSettings}
         options={{headerTitle: '알림 설정'}}
       />
+      {LoginPages()}
     </>
   );
 };
@@ -148,6 +155,46 @@ function FavoritesScreen({navigation}) {
         </Htab.Navigator>
       </SafeAreaView>
     </Fragment>
+  );
+}
+
+/**
+ * * 인증 화면
+ */
+const LoginPages = () => {
+  <>
+    <Stack.Screen
+      name="Login"
+      component={Login}
+      options={{headerTitle: '로그인'}}
+    />
+    <Stack.Screen
+      name="SignUp"
+      component={SignUp}
+      options={{headerTitle: '회원가입'}}
+    />
+    <Stack.Screen
+      name="MatchIdPwd"
+      component={MatchIdPwd}
+      options={{headerTitle: '아이디/비밀번호 찾기'}}
+    />
+  </>;
+};
+
+function MatchIdPwd() {
+  return (
+    <Htab.Navigator>
+      <Htab.Screen
+        name="MatchID"
+        component={MatchID}
+        options={{tabBarLabel: '아이디찾기'}}
+      />
+      <Htab.Screen
+        name="MatchPwd"
+        component={MatchPwd}
+        options={{tabBarLabel: '비밀번호찾기'}}
+      />
+    </Htab.Navigator>
   );
 }
 

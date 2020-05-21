@@ -17,7 +17,8 @@ function Router() {
     <Observer>
       {() => (
         <NavigationContainer>
-          {mainState.token == null ? <MyAuthLogin /> : <MyMainTab />}
+          <MyMainTab />
+          {/* {mainState.token == null ? <MyAuthLogin /> : <MyMainTab />} */}
         </NavigationContainer>
       )}
     </Observer>

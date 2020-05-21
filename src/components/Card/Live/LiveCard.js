@@ -29,7 +29,10 @@ const CustomLiveCard = (props) => {
               }}>
               <Card
                 containerStyle={[CustomStyles.defaultCard]}
-                wrapperStyle={{height: type == 'live' ? 110 : 80}}>
+                wrapperStyle={{
+                  // height: 80,
+                  height: type == 'live' ? 110 : 80,
+                }}>
                 <View style={{flexDirection: 'column'}}>
                   <View style={{flexDirection: 'row', marginBottom: 8}}>
                     <TouchableWithoutFeedback

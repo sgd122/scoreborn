@@ -47,13 +47,13 @@ const MyCustomRightComponent = ({navigation}) => {
     <View style={{flexDirection: 'row'}}>
       <TouchableOpacity onPress={() => setVisible(!visible)}>
         <Image
-          style={{zIndex: 9999, marginRight: 10}}
+          style={{zIndex: 9999, marginRight: 10, height: 20}}
           source={require('../../../img/head/Calendar.png')}
         />
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('Alarm')}>
         <Image
-          style={{zIndex: 9999}}
+          style={{zIndex: 9999, height: 20}}
           source={require('../../../img/head/Bell.png')}
         />
       </TouchableOpacity>
