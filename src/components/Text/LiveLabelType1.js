@@ -26,7 +26,9 @@ const CustomStyles = StyleSheet.create({
     justifyContent: 'center',
   },
   defaultView: {
-    marginBottom: 10,
+    marginBottom: 12,
+    marginTop: 12,
+
     backgroundColor: '#e5f0ff',
     justifyContent: 'center',
     height: 24,

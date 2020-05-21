@@ -112,8 +112,8 @@ const CustomStyles = StyleSheet.create({
     shadowOffset: {width: 0, height: 4},
     elevation: 3, // Android적용
 
-    marginBottom: 10,
-    marginTop: 0,
+    marginBottom: 4,
+    marginTop: 4,
 
     marginLeft: 10,
     marginRight: 10,

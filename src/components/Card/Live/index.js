@@ -58,8 +58,8 @@ const CustomStyles = StyleSheet.create({
     shadowOffset: {width: 0, height: 4},
     elevation: 3, // Android적용
 
-    marginBottom: 10,
-    marginTop: 0,
+    marginBottom: 4,
+    marginTop: 4,
 
     marginLeft: 10,
     marginRight: 10,
@@ -81,7 +81,7 @@ const CustomStyles = StyleSheet.create({
   liveContainer: {
     backgroundColor: '#E5F0FF',
     borderRadius: 5,
-    padding: 7,
+    padding: 4,
     marginLeft: 10,
     width: '80%',
   },

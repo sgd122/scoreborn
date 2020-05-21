@@ -30,11 +30,15 @@ const CustomLiveCard = (props) => {
               <Card
                 containerStyle={[CustomStyles.defaultCard]}
                 wrapperStyle={{
-                  // height: 80,
-                  height: type == 'live' ? 110 : 80,
+                  height: 80,
+                  // height: type == 'live' ? 110 : 80,
                 }}>
                 <View style={{flexDirection: 'column'}}>
-                  <View style={{flexDirection: 'row', marginBottom: 8}}>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      marginBottom: 5,
+                    }}>
                     <TouchableWithoutFeedback
                       onPress={() => {
                         func.onLikeClick(k, type, navigation);
@@ -50,18 +54,29 @@ const CustomLiveCard = (props) => {
                     {/* 
                   //* 1번팀 로고
                   */}
-                    <View style={{flexDirection: 'row'}}>
-                      <View>
+                    <View
+                      style={{
+                        flexDirection: 'row',
+                      }}>
+                      <View
+                        style={{
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                        }}>
                         <Image
                           style={[
-                            {width: 40, height: 40, resizeMode: 'contain'},
+                            {
+                              width: 28,
+                              height: 28,
+                              resizeMode: 'contain',
+                            },
                           ]}
                           source={require('../../../img/game/game1.png')}
                         />
                         <Text
                           style={[
                             CustomStyles.defualtFont,
-                            {color: '#03367A', fontSize: 14, marginTop: 10},
+                            {color: '#03367A', fontSize: 14, marginTop: 5},
                           ]}>
                           {k.home.name}
                         </Text>
@@ -79,12 +94,7 @@ const CustomLiveCard = (props) => {
                         ]}>
                         {k.time}
                       </Text>
-                      <View
-                        style={{
-                          flexDirection: 'row',
-                          marginTop: 5,
-                          marginBottom: 5,
-                        }}>
+                      <View style={{flexDirection: 'row'}}>
                         <Text
                           style={[
                             CustomStyles.defualtFont,
@@ -112,16 +122,26 @@ const CustomLiveCard = (props) => {
                     {/* 
                   //* 2번팀 로고
                   */}
-                    <View>
+                    <View
+                      style={{
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                      }}>
                       <Image
-                        style={[{width: 40, height: 40, resizeMode: 'contain'}]}
+                        style={[
+                          {
+                            width: 28,
+                            height: 28,
+                            resizeMode: 'contain',
+                          },
+                        ]}
                         source={require('../../../img/game/game2.png')}
                       />
                       <Text
                         style={[
                           CustomStyles.defualtFont,
                           CustomStyles.AwayBlackColor,
-                          {fontSize: 14, marginTop: 10},
+                          {fontSize: 14, marginTop: 5},
                         ]}>
                         {k.away.name}
                       </Text>

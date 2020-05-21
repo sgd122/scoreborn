@@ -29,7 +29,7 @@ const CustomLiveCard = (props) => {
               }}>
               <Card
                 containerStyle={[CustomStyles.defaultCard]}
-                wrapperStyle={{height: type == 'live' ? 110 : 80}}>
+                wrapperStyle={{height: 80}}>
                 <View style={{flexDirection: 'column'}}>
                   <View style={[styles.conatiner_between]}>
                     <TouchableWithoutFeedback
@@ -42,7 +42,11 @@ const CustomLiveCard = (props) => {
                   //* 1번팀 로고
                   */}
                     <View style={{flexDirection: 'row'}}>
-                      <View>
+                      <View
+                        style={{
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                        }}>
                         <Image
                           style={[
                             {width: 40, height: 40, resizeMode: 'contain'},
@@ -103,7 +107,11 @@ const CustomLiveCard = (props) => {
                     {/* 
                   //* 2번팀 로고
                   */}
-                    <View>
+                    <View
+                      style={{
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                      }}>
                       <Image
                         style={[{width: 40, height: 40, resizeMode: 'contain'}]}
                         source={require('../../../img/game/game2.png')}
