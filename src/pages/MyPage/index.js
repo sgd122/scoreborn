@@ -108,7 +108,7 @@ function MyPage({ userStore, navigation }) {
                   img={require('../../img/icon/Star.png')}
                   count={1054}
                   title="나의 즐겨찾기"
-                  move=""
+                  move='MyPage/FavoritPage'
                   navigation={navigation}
                 />
               </View>

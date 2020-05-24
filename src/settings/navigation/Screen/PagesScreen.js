@@ -14,6 +14,9 @@ import MyPage from '../../../pages/MyPage';
 import NickNameChange from '../../../pages/MyPage/SubPage/NickNameChange';
 import StatusMessageChange from '../../../pages/MyPage/SubPage/StatusMessageChange';
 import Follow from '../../../pages/MyPage/SubPage/Follow';
+import FavoritPage from '../../../pages/MyPage/SubPage/Favorits/index';
+import Favorits from '../../../pages/MyPage/SubPage/Favorits/Favorits';
+import ChatingRoom from '../../../pages/MyPage/SubPage/Favorits/ChatingRoom';
 
 const PagesScreen = () => {
   return (
@@ -68,6 +71,12 @@ const PagesScreen = () => {
         name="MyPage/Follow"
         component={Follow}
         options={{ headerTitle: '나를 즐겨찾는 사람' }}
+      />
+
+      <Stack.Screen
+        name="MyPage/FavoritPage"
+        component={FavoritPage}
+        options={{ headerTitle: '나의 즐겨찾기' }}
       />
     </>
   );
