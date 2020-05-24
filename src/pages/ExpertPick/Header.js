@@ -26,5 +26,11 @@ export default function ExpertPick({userStore, navigation}) {
 
   useEffect(() => {}, []);
 
-  return <PickCard data={state.header_list} style={{height: 150}} />;
+  return (
+    <PickCard
+      data={state.header_list}
+      style={{backgroundColor: '#fff'}}
+      type={'expertPick'}
+    />
+  );
 }

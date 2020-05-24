@@ -16,7 +16,7 @@ import * as func from './func';
  * @param {*} props
  *
  */
-const TypePick = (props) => {
+const TypeExpertPick = (props) => {
   let {type, data, CustomStyles} = props;
   if (!type) {
     type = 'pick';
@@ -31,7 +31,7 @@ const TypePick = (props) => {
       {data &&
         data.map((k) => {
           return (
-            <View style={{margin: 10}}>
+            <View style={{marginLeft: 10, marginRight: 10, marginTop: 14}}>
               {/* <Card containerStyle={[CustomStyles.defaultCard]}> */}
               <View style={{flexDirection: 'column'}}>
                 <View style={{flexDirection: 'row', marginBottom: 5}}>
@@ -89,16 +89,21 @@ const TypePick = (props) => {
                   style={{
                     backgroundColor: '#F7F7F7',
                     borderRadius: 5,
-                    padding: 10,
+                    height: 55.69,
                   }}>
                   <View
                     style={{
+                      flex: 1,
                       flexDirection: 'row',
-                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      // justifyContent: 'center',
                     }}>
                     <View
                       style={{
+                        flex: 1,
                         flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
                       }}>
                       <Text
                         style={[
@@ -109,6 +114,7 @@ const TypePick = (props) => {
                             letterSpacing: -0.04,
                             color: '#ADADAD',
                             marginBottom: 8,
+                            textAlign: 'center',
                           },
                         ]}>
                         {k.leagueName}
@@ -123,34 +129,27 @@ const TypePick = (props) => {
                         </Text>
                       </View>
                     </View>
-                    {k.money && (
-                      <TouchableOpacity
-                        onPress={() => {
-                          func.onCardClick(k, type, props.navigation);
+
+                    <TouchableOpacity
+                      onPress={() => {
+                        func.onCardClick(k, type, props.navigation);
+                      }}>
+                      <View
+                        style={{
+                          width: '100%',
+                          flexDirection: 'row',
+                          // justifyContent: 'space-between',
+                          marginRight: 10,
                         }}>
-                        <View
+                        <Image
                           style={{
-                            flex: 1,
-                            backgroundColor: '#E5F0FF',
-                            borderRadius: 5,
-                            padding: 8,
-                            height: 38,
-                            flexDirection: 'row',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                          }}>
-                          <Image
-                            style={{
-                              width: 11.17,
-                              height: 11.17,
-                              marginRight: 2,
-                            }}
-                            source={require('../../../../img/icon/krw.png')}
-                          />
-                          <Text style={CustomStyles.moneyFont}>{k.money}</Text>
-                        </View>
-                      </TouchableOpacity>
-                    )}
+                            width: 7,
+                            height: 12,
+                          }}
+                          source={require('../../../../img/icon/RightArrow.png')}
+                        />
+                      </View>
+                    </TouchableOpacity>
                   </View>
                 </View>
               </View>
@@ -162,4 +161,4 @@ const TypePick = (props) => {
   );
 };
 
-export default TypePick;
+export default TypeExpertPick;

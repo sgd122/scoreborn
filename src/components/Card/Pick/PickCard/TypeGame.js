@@ -2,6 +2,7 @@ import React from 'react';
 import {
   View,
   Text,
+  Image,
   TouchableOpacity,
   TouchableWithoutFeedback,
 } from 'react-native';
@@ -54,20 +55,34 @@ const TypeGame = (props) => {
                       </Text>
                     </View>
                   </View>
-                  <TouchableOpacity
-                    onPress={() => {
-                      func.onCardClick(k, type, props.navigation);
-                    }}>
-                    <View
-                      style={{
-                        backgroundColor: '#E5F0FF',
-                        borderRadius: 5,
-                        padding: 5,
-                        height: 30,
+                  {k.money && (
+                    <TouchableOpacity
+                      onPress={() => {
+                        func.onCardClick(k, type, props.navigation);
                       }}>
-                      <Text style={CustomStyles.moneyFont}>₩ {k.money}</Text>
-                    </View>
-                  </TouchableOpacity>
+                      <View
+                        style={{
+                          flex: 1,
+                          backgroundColor: '#E5F0FF',
+                          borderRadius: 5,
+                          padding: 8,
+                          height: 38,
+                          flexDirection: 'row',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                        }}>
+                        <Image
+                          style={{
+                            width: 11.17,
+                            height: 11.17,
+                            marginRight: 2,
+                          }}
+                          source={require('../../../../img/icon/krw.png')}
+                        />
+                        <Text style={CustomStyles.moneyFont}>{k.money}</Text>
+                      </View>
+                    </TouchableOpacity>
+                  )}
                 </View>
               </View>
             </Card>

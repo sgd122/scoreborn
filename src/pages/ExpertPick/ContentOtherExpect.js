@@ -9,6 +9,7 @@ import PageContext, {PageProvider} from './Context';
 import PickCard from '../../components/Card/Pick/PickCard';
 import CustomListChat from '../../components/ListItem/CustomListChat';
 import RoundImage from '../../components/Image/RoundImage';
+import VerticalGrayLine from '../../components/Line/VerticalGrayLine';
 
 //* 스타일
 import styles from '../../styles/common.module.scss';
@@ -24,10 +25,20 @@ export default function ContentOtherExpect({userStore, navigation}) {
   useEffect(() => {}, []);
 
   return (
-    <View>
-      <Card containerStyle={[CustomStyles.defaultCard]}>
-        <View style={{flexDirection: 'row'}}>
-          <Text style={CustomStyles.defualtFont}>이 전문가의 다른 픽</Text>
+    <>
+      <VerticalGrayLine style={{marginTop: 16, marginBottom: 16}} />
+      <View
+        style={{
+          backgroundColor: '#fff',
+          marginLeft: 10,
+          marginRight: 10,
+        }}>
+        {/* <Card containerStyle={[CustomStyles.defaultCard]}> */}
+        <View
+          style={{flexDirection: 'row', alignItems: 'center', marginBottom: 8}}>
+          <Text style={CustomStyles.defualtFont}>
+            이 경기에 대한 다른 전문가 픽
+          </Text>
           <RoundImage
             source={require('../../img/game/game1.png')}
             style={{
@@ -43,8 +54,9 @@ export default function ContentOtherExpect({userStore, navigation}) {
           type="Chat"
           navigation={navigation}
         />
-      </Card>
-    </View>
+        {/* </Card> */}
+      </View>
+    </>
   );
 }
 
@@ -65,21 +77,10 @@ const CustomStyles = StyleSheet.create({
     marginRight: 10,
   },
   defualtFont: {
-    fontSize: 14,
-    lineHeight: 20,
-    fontFamily: Fonts.NotoSans,
-  },
-  gameFont: {
     fontSize: 16,
     fontWeight: '500',
     lineHeight: 23,
-    color: '#042B6C',
     fontFamily: Fonts.NotoSans,
-  },
-  etcFont: {
-    fontSize: 12,
-    lineHeight: 17,
-    color: '#929394',
-    fontFamily: Fonts.NotoSans,
+    letterSpacing: -0.09,
   },
 });

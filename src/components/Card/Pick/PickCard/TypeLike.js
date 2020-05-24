@@ -31,7 +31,13 @@ const TypeLike = (props) => {
               onPress={() => {
                 func.onCardClick(k, type);
               }}>
-              <View style={{marginLeft: 10, marginRight: 10}}>
+              <View
+                style={{
+                  marginLeft: 10,
+                  marginRight: 10,
+                  // marginBottom: 4,
+                  // marginTop: 4,
+                }}>
                 {/* <Card containerStyle={[CustomStyles.defaultCard]}> */}
                 <View style={{flexDirection: 'column'}}>
                   <View style={{flexDirection: 'column'}}>

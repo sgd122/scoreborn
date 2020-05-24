@@ -75,7 +75,10 @@ function SubLive({userStore, navigation}) {
       {() => (
         <View style={[styles.container]}>
           <View>
-            <Image source={require('../../../img/game/livegame.png')} />
+            <Image
+              source={require('../../../img/game/livegame.png')}
+              style={{height: 172, width: '100%'}}
+            />
           </View>
           <View style={{backgroundColor: '#F7F7F7'}}>
             <Text
@@ -101,7 +104,7 @@ function SubLive({userStore, navigation}) {
                 <Text
                   onPress={() => navigation.navigate('Live/SubPrevResult')}
                   style={[
-                    CustomStyles.defualtFont,
+                    CustomStyles.defualtFont2,
                     {
                       textAlign: 'center',
                     },
@@ -124,11 +127,15 @@ function SubLive({userStore, navigation}) {
                       textAlign: 'center',
                       color: '#042B6C',
                       fontFamily: Fonts.Roboto,
-                      marginRight: 15,
-                      fontSize: 26,
+                      fontWeight: '500',
+                      lineHeight: 33,
+                      fontSize: 28,
+                      letterSpacing: -0.09,
+                      marginLeft: 5,
+                      marginRight: 5,
                     },
                   ]}>
-                  11:45:30
+                  11:45
                 </Text>
                 <RoundImage
                   source={require('../../../img/game/game2.png')}
@@ -149,7 +156,7 @@ function SubLive({userStore, navigation}) {
                 <Text
                   onPress={() => navigation.navigate('Live/SubPrevResult')}
                   style={[
-                    CustomStyles.defualtFont,
+                    CustomStyles.defualtFont2,
                     {
                       textAlign: 'center',
                     },
@@ -218,7 +225,18 @@ const CustomStyles = StyleSheet.create({
   defualtFont: {
     fontSize: 14,
     lineHeight: 20,
+    fontWeight: 'bold',
+    letterSpacing: -0.09,
+    fontStyle: 'normal',
     fontFamily: Fonts.NotoSans,
+  },
+  defualtFont2: {
+    fontSize: 14,
+    lineHeight: 16,
+    fontWeight: '500',
+    letterSpacing: -0.09,
+    fontStyle: 'normal',
+    fontFamily: Fonts.Roboto,
   },
   pickBottomStyle: {
     height: 40,

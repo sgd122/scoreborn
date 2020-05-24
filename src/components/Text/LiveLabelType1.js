@@ -1,10 +1,10 @@
 // App.js
-import React, {Component} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import React, { Component } from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 import styles from '../../styles/common.module.scss';
-import {Fonts} from '../../settings/fonts';
+import { Fonts } from '../../settings/fonts';
 
-export default function LiveLabelType1({style, children, ...props}) {
+export default function LiveLabelType1({ style, children, ...props }) {
   return (
     <View style={CustomStyles.defaultView}>
       <Text style={[CustomStyles.defualtFont, style]} {...props}>

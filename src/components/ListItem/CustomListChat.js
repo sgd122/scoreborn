@@ -39,8 +39,11 @@ const CustomListChat = (props) => (
       props.list.map((l, i) => (
         <>
           <View style={{flexDirection: 'row', marginBottom: 20, marginTop: 10}}>
-            <RoundImage source={require('../../img/game/pick/top1.png')} />
-            <View style={{flexDirection: 'column', flex: 1}}>
+            <RoundImage
+              size={48}
+              source={require('../../img/game/pick/top1.png')}
+            />
+            <View style={{flexDirection: 'column', flex: 1, marginLeft: 10}}>
               <TouchableOpacity
                 style={{flexDirection: 'row'}}
                 onPress={() => {
@@ -66,6 +69,7 @@ const CustomListChat = (props) => (
                     backgroundColor: '#F7F7F7',
                     padding: 5,
                     borderRadius: 5,
+                    marginTop: 5,
                     width: '85%',
                   }}>
                   <Text style={[CustomStyles.defualtFont]}>
@@ -76,7 +80,7 @@ const CustomListChat = (props) => (
               </View>
             </View>
           </View>
-          <Divider />
+          <Divider style={{backgroundColor: 'rgba(146,147,48,0.13)'}} />
         </>
       ))}
   </View>

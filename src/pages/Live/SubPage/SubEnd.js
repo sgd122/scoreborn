@@ -73,15 +73,29 @@ function SubEnd({userStore, navigation}) {
       {() => (
         <View style={[styles.container]}>
           <View style={{backgroundColor: '#F7F7F7'}}>
-            <Text
+            <View
               style={{
-                textAlign: 'center',
-                color: '#ADADAD',
-                fontSize: 14,
-                margin: 10,
+                borderColor: '#FFF',
+                borderRadius: 5,
+                backgroundColor: '#FFF',
+                padding: 5,
+                marginLeft: 60,
+                marginRight: 60,
+                margin: 8,
+                justifyContent: 'center',
+                alignItems: 'center',
               }}>
-              3월 12일 16:00 유로파리그
-            </Text>
+              <Text
+                style={{
+                  textAlign: 'center',
+                  color: '#ADADAD',
+                  fontSize: 14,
+                  lineHeight: 20,
+                  letterSpacing: -0.04,
+                }}>
+                3월 12일 16:00 유로파리그
+              </Text>
+            </View>
             <View
               style={{
                 flexDirection: 'column',
@@ -95,38 +109,42 @@ function SubEnd({userStore, navigation}) {
                 }}>
                 <Text
                   style={[
-                    CustomStyles.defualtFont,
+                    CustomStyles.defualtFont2,
                     {
                       textAlign: 'center',
                     },
                   ]}>
                   바샥하비르
                 </Text>
-                <RoundImage source={require('../../../img/game/game1.png')} />
+                <RoundImage
+                  source={require('../../../img/game/game1.png')}
+                  size={32}
+                  style={{marginLeft: 5}}
+                />
                 <Text
                   style={[
                     {
                       textAlign: 'center',
                       color: '#042B6C',
                       fontFamily: Fonts.Roboto,
-                      marginRight: 15,
+                      fontWeight: 'normal',
+                      lineHeight: 31,
                       fontSize: 26,
+                      letterSpacing: -0.025,
+                      marginLeft: 5,
+                      marginRight: 5,
                     },
                   ]}>
                   11:45:30
                 </Text>
                 <RoundImage
                   source={require('../../../img/game/game2.png')}
-                  style={{
-                    width: 50,
-                    height: 50,
-                    borderRadius: 50 / 2,
-                    marginRight: 0,
-                  }}
+                  size={32}
+                  style={{marginRight: 5}}
                 />
                 <Text
                   style={[
-                    CustomStyles.defualtFont,
+                    CustomStyles.defualtFont2,
                     {
                       textAlign: 'center',
                     },
@@ -194,7 +212,18 @@ const CustomStyles = StyleSheet.create({
   defualtFont: {
     fontSize: 14,
     lineHeight: 20,
+    fontWeight: 'bold',
+    letterSpacing: -0.09,
+    fontStyle: 'normal',
     fontFamily: Fonts.NotoSans,
+  },
+  defualtFont2: {
+    fontSize: 14,
+    lineHeight: 16,
+    fontWeight: '500',
+    letterSpacing: -0.09,
+    fontStyle: 'normal',
+    fontFamily: Fonts.Roboto,
   },
   pickBottomStyle: {
     height: 40,

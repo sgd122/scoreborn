@@ -27,9 +27,13 @@ const RoundImage = ({onPress, name, size, style, ...props}) => {
   });
   return (
     <View>
-      <TouchableOpacity onPress={() => onPress()}>
+      {onPress ? (
+        <TouchableOpacity onPress={() => onPress()}>
+          <Image style={[CustomStyles.defaultImgae, style]} {...props} />
+        </TouchableOpacity>
+      ) : (
         <Image style={[CustomStyles.defaultImgae, style]} {...props} />
-      </TouchableOpacity>
+      )}
       {name && <Text style={CustomStyles.defualtFont}>{name}</Text>}
     </View>
   );
