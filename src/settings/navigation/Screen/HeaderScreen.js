@@ -12,7 +12,7 @@ export default function HeaderScreen({navigation, children}) {
     <LinearGradient colors={['#001943', '#153467']}>
       <Header
         leftComponent={<MyCustomLeftComponent navigation={navigation} />}
-        centerComponent={<MyCustomCenterComponent />}
+        centerComponent={<MyCustomCenterComponent navigation={navigation} />}
         rightComponent={<MyCustomRightComponent navigation={navigation} />}
         containerStyle={{
           backgroundColor: 'transparent',
@@ -33,8 +33,16 @@ const MyCustomLeftComponent = ({navigation}) => {
     />
   );
 };
-const MyCustomCenterComponent = () => {
-  return <Logo style={{height: '100%', width: '50%', zIndex: 9999}} />;
+const MyCustomCenterComponent = ({navigation}) => {
+  return (
+    <View style={{width: '100%', alignItems: 'center'}}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Live')}
+        style={{width: '100%', alignItems: 'center'}}>
+        <Logo style={{height: '100%', width: '50%', zIndex: 9999}} />
+      </TouchableOpacity>
+    </View>
+  );
 };
 
 const MyCustomRightComponent = ({navigation}) => {
@@ -47,14 +55,16 @@ const MyCustomRightComponent = ({navigation}) => {
     <View style={{flexDirection: 'row'}}>
       <TouchableOpacity onPress={() => setVisible(!visible)}>
         <Image
-          style={{zIndex: 9999, marginRight: 10, height: 20}}
+          style={{zIndex: 9999, height: 18}}
           source={require('../../../img/head/Calendar.png')}
+          resizeMode="contain"
         />
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('Alarm')}>
         <Image
-          style={{zIndex: 9999, height: 20}}
+          style={{zIndex: 9999, height: 18}}
           source={require('../../../img/head/Bell.png')}
+          resizeMode="contain"
         />
       </TouchableOpacity>
 

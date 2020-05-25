@@ -38,6 +38,7 @@ const CustomLiveCard = (props) => {
                     style={{
                       flexDirection: 'row',
                       marginBottom: 5,
+                      alignItems: 'center',
                     }}>
                     <TouchableWithoutFeedback
                       onPress={() => {

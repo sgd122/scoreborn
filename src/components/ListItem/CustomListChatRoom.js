@@ -13,27 +13,6 @@ import RoundImage from '../Image/RoundImage';
 import SquareImage from '../Image/SquareImage';
 import {Fonts} from '../../settings/fonts';
 
-const CustomType = ({type, navigation}) => {
-  if (type == 'Expert') {
-    return (
-      <View
-        style={{
-          backgroundColor: '#E5F0FF',
-          borderRadius: 5,
-          padding: 5,
-          height: 30,
-        }}>
-        <Text
-          style={CustomStyles.moneyFont}
-          onPress={() => navigation && navigation.navigate('ExpertPick')}>
-          무료
-        </Text>
-      </View>
-    );
-  } else {
-    return <></>;
-  }
-};
 const CustomListChatRoom = (props) => (
   <View>
     {props.list &&

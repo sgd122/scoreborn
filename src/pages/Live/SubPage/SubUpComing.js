@@ -190,7 +190,7 @@ function UpComing({userStore, navigation}) {
             {state.TabCnt == 1 ? (
               <TabChat navigation={navigation} />
             ) : (
-              <TabExpert navigation={navigation} />
+              <TabExpert navigation={navigation} type={'Expert'} />
             )}
           </ScrollView>
         </View>

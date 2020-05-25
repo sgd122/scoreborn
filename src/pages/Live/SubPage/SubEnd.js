@@ -190,7 +190,7 @@ function SubEnd({userStore, navigation}) {
             {state.TabCnt == 1 ? (
               <TabChat navigation={navigation} />
             ) : (
-              <TabExpert navigation={navigation} />
+              <TabExpert navigation={navigation} type={'End'} />
             )}
           </ScrollView>
         </View>

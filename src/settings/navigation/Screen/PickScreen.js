@@ -1,6 +1,13 @@
 // router.js
 import React, {useEffect, useContext, Fragment} from 'react';
-import {Button, View, Text, SafeAreaView, StatusBar} from 'react-native';
+import {
+  Button,
+  View,
+  Text,
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
@@ -21,6 +28,8 @@ import rankTab from '../../../pages/Pick/rankTab';
 
 //* 공통 헤더 및 Sider
 import HeaderScreen from './HeaderScreen';
+
+import {Fonts} from '../../../settings/fonts';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -50,25 +59,69 @@ export default function PickScreen({navigation}) {
           <Htab.Screen
             name="Pick"
             component={Pick}
-            options={{tabBarLabel: '전체'}}
+            options={{
+              tabBarLabel: ({focused}) => (
+                <TabBarLabelComp focused={focused}>전체</TabBarLabelComp>
+              ),
+            }}
           />
           <Htab.Screen
             name="Game"
             component={gameTab}
-            options={{tabBarLabel: '경기별'}}
+            options={{
+              tabBarLabel: ({focused}) => (
+                <TabBarLabelComp focused={focused}>경기별</TabBarLabelComp>
+              ),
+            }}
           />
           <Htab.Screen
             name="Like"
             component={likeTab}
-            options={{tabBarLabel: '즐겨찾기'}}
+            options={{
+              tabBarLabel: ({focused}) => (
+                <TabBarLabelComp focused={focused}>즐겨찾기</TabBarLabelComp>
+              ),
+            }}
           />
           <Htab.Screen
             name="Rank"
             component={rankTab}
-            options={{tabBarLabel: '랭킹'}}
+            options={{
+              tabBarLabel: ({focused}) => (
+                <TabBarLabelComp focused={focused}>랭킹</TabBarLabelComp>
+              ),
+            }}
           />
         </Htab.Navigator>
       </SafeAreaView>
     </Fragment>
   );
 }
+
+const TabBarLabelComp = ({children, focused}) => {
+  return (
+    <Text
+      style={[focused ? CustomStyles.focusedFont : CustomStyles.defualtFont]}>
+      {children}
+    </Text>
+  );
+};
+
+const CustomStyles = StyleSheet.create({
+  focusedFont: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    lineHeight: 20,
+    letterSpacing: -0.09,
+    fontFamily: Fonts.NotoSans,
+    color: '#042B6C',
+  },
+  defualtFont: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    lineHeight: 20,
+    letterSpacing: -0.09,
+    fontFamily: Fonts.NotoSans,
+    color: '#929394',
+  },
+});

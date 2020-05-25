@@ -12,7 +12,7 @@ import CustomListChat from '../../../components/ListItem/CustomListChat';
 //* 스타일
 import styles from '../../../styles/common.module.scss';
 import {Fonts} from '../../../settings/fonts';
-export default function UpComingExpert({userStore, navigation}) {
+export default function UpComingExpert({type, userStore, navigation}) {
   const {
     state,
     setState,
@@ -66,11 +66,7 @@ export default function UpComingExpert({userStore, navigation}) {
   return (
     <View style={[styles.container, {margin: 10}]}>
       <ScrollView>
-        <CustomListChat
-          list={state.list}
-          type="Expert"
-          navigation={navigation}
-        />
+        <CustomListChat list={state.list} type={type} navigation={navigation} />
       </ScrollView>
     </View>
   );
