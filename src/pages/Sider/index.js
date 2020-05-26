@@ -68,8 +68,17 @@ function CustomSider({userStore, navigation}) {
 
           <Divider style={{margin: 20}} />
 
-          <View style={{flexDirection: 'row', justifyContent: 'center'}}>
-            <Image source={require('../../img/bottom/LIVE_Check.png')} />
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <Image
+              source={require('../../img/bottom/LIVE_Check.png')}
+              style={{height: 19.38, width: 33.91}}
+              resizeMode="contain"
+            />
             <Text style={{marginLeft: 5}}>종목별로 보기</Text>
           </View>
 

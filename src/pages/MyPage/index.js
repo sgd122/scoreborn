@@ -23,11 +23,11 @@ import { Fonts } from '../../settings/fonts';
 import { FlatList } from 'react-native-gesture-handler';
 
 //* 컴퍼넌트
-import UserImages from './SubPage/UserImages';
-import UserNickName from './SubPage/UserNickName';
-import UserStatusText from './SubPage/UserStatusText';
-import UserLikeCount from './SubPage/UserLikeCount';
-import UserCash from './SubPage/UserCash';
+import UserImages from './SubPage/UserInfo/UserImages';
+import UserNickName from './SubPage/UserInfo/UserNickName';
+import UserStatusText from './SubPage/UserInfo/UserStatusText';
+import UserLikeCount from './SubPage/UserInfo/UserLikeCount';
+import UserCash from './SubPage/UserInfo/UserCash';
 
 function MyPage({ userStore, navigation }) {
   const { state, setState, } = useContext(PageContext);
@@ -77,7 +77,7 @@ function MyPage({ userStore, navigation }) {
             <UserNickName CustomStyles={CustomStyles} navigation={navigation} />
 
             {/* 상태메세지 */}
-            <UserStatusText CustomStyles={CustomStyles} />
+            <UserStatusText CustomStyles={CustomStyles} navigation={navigation} />
 
             {/* 수치화 3개 */}
             <View style={{ width: '100%', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -87,6 +87,8 @@ function MyPage({ userStore, navigation }) {
                   img={require('../../img/icon/person.png')}
                   count={30}
                   title="나를 즐겨찾는 사람"
+                  move='MyPage/Follow'
+                  navigation={navigation}
                 />
                 {/* 세로줄 */}
                 <HorizontalLine />
@@ -96,6 +98,8 @@ function MyPage({ userStore, navigation }) {
                   img={require('../../img/icon/good.png')}
                   count={1054}
                   title="받은 좋아요"
+                  move=""
+                  navigation={navigation}
                 />
                 {/* 세로줄 */}
                 <HorizontalLine />
@@ -104,6 +108,8 @@ function MyPage({ userStore, navigation }) {
                   img={require('../../img/icon/Star.png')}
                   count={1054}
                   title="나의 즐겨찾기"
+                  move='MyPage/FavoritPage'
+                  navigation={navigation}
                 />
               </View>
             </View>
@@ -190,8 +196,7 @@ const CustomStyles = StyleSheet.create({
     borderRadius: 5,
     position: 'absolute',
     fontFamily: Fonts.NotoSans,
-    right: 4,
-    margin: 10
+    right: 12,
   },
   UserLikeCountOutter: {
     width: '80 %',

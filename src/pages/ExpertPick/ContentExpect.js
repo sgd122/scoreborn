@@ -8,6 +8,8 @@ import PageContext, {PageProvider} from './Context';
 //* 공통 컴포넌트
 import PickCard from '../../components/Card/Pick/PickCard';
 import RoundImage from '../../components/Image/RoundImage';
+import HorizontalLine from '../../components/Line/HorizontalLine';
+import VerticalGrayLine from '../../components/Line/VerticalGrayLine';
 
 //* 스타일
 import styles from '../../styles/common.module.scss';
@@ -23,11 +25,41 @@ export default function ContentExpect({userStore, navigation}) {
   useEffect(() => {}, []);
 
   return (
-    <View>
-      <Card containerStyle={[CustomStyles.defaultCard]}>
+    <>
+      <VerticalGrayLine style={{marginTop: 16, marginBottom: 16}} />
+      <View
+        style={{
+          backgroundColor: '#fff',
+          marginLeft: 10,
+          marginRight: 10,
+        }}>
+        {/* <Card containerStyle={[CustomStyles.defaultCard]}> */}
+
         <View style={{alignItems: 'center'}}>
-          <Text style={CustomStyles.defualtFont}>예상우승팀</Text>
-          <RoundImage source={require('../../img/game/game1.png')} />
+          <Text style={[CustomStyles.defualtFont]}>예상우승팀</Text>
+          <View
+            style={{
+              backgroundColor: '#fff',
+              width: 64,
+              height: 64,
+              borderRadius: 64 / 2,
+
+              borderWidth: 0,
+              shadowColor: 'rgba(4, 43, 108, 0.15)',
+              shadowOpacity: 1, //그림자 투명도
+              shadowRadius: 10,
+              shadowOffset: {width: 0, height: 0},
+              elevation: 3, // Android적용
+
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+            <Image
+              style={{width: 34}}
+              resizeMode="contain"
+              source={require('../../img/game/game0.png')}
+            />
+          </View>
           <Text style={[CustomStyles.gameFont]}>시카고 컵스</Text>
         </View>
         <Divider style={{margin: 10}} />
@@ -49,8 +81,9 @@ export default function ContentExpect({userStore, navigation}) {
         <Text style={[CustomStyles.etcFont]}>
           이 의견은 유저의 개인 의견이며, 스포츠 본의 입장을 대표하지 않습니다.
         </Text>
-      </Card>
-    </View>
+        {/* </Card> */}
+      </View>
+    </>
   );
 }
 
@@ -63,7 +96,10 @@ const CustomStyles = StyleSheet.create({
     shadowRadius: 20,
     shadowOffset: {width: 0, height: 4},
     elevation: 3, // Android적용
-    marginBottom: -7,
+
+    marginBottom: 4,
+    marginTop: 4,
+
     marginLeft: 10,
     marginRight: 10,
   },
@@ -71,6 +107,7 @@ const CustomStyles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 20,
     fontFamily: Fonts.NotoSans,
+    letterSpacing: -0.09,
   },
   gameFont: {
     fontSize: 16,
@@ -78,11 +115,14 @@ const CustomStyles = StyleSheet.create({
     lineHeight: 23,
     color: '#042B6C',
     fontFamily: Fonts.NotoSans,
+    letterSpacing: -0.09,
+    textAlign: 'center',
   },
   etcFont: {
     fontSize: 12,
     lineHeight: 17,
     color: '#929394',
     fontFamily: Fonts.NotoSans,
+    letterSpacing: -0.09,
   },
 });

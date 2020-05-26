@@ -29,9 +29,17 @@ const CustomLiveCard = (props) => {
               }}>
               <Card
                 containerStyle={[CustomStyles.defaultCard]}
-                wrapperStyle={{height: type == 'live' ? 110 : 80}}>
+                wrapperStyle={{
+                  height: 80,
+                  // height: type == 'live' ? 110 : 80,
+                }}>
                 <View style={{flexDirection: 'column'}}>
-                  <View style={{flexDirection: 'row', marginBottom: 8}}>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      marginBottom: 5,
+                      alignItems: 'center',
+                    }}>
                     <TouchableWithoutFeedback
                       onPress={() => {
                         func.onLikeClick(k, type, navigation);
@@ -48,17 +56,27 @@ const CustomLiveCard = (props) => {
                   //* 1번팀 로고
                   */}
                     <View style={{flexDirection: 'row'}}>
-                      <View>
+                      <View
+                        style={{
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          width: 100,
+                          // backgroundColor: 'red',
+                        }}>
                         <Image
                           style={[
-                            {width: 40, height: 40, resizeMode: 'contain'},
+                            {
+                              width: 34,
+                              height: 34,
+                              resizeMode: 'contain',
+                            },
                           ]}
                           source={require('../../../img/game/game1.png')}
                         />
                         <Text
                           style={[
                             CustomStyles.defualtFont,
-                            {color: '#03367A', fontSize: 14, marginTop: 10},
+                            {color: '#03367A', fontSize: 14, marginTop: 7},
                           ]}>
                           {k.home.name}
                         </Text>
@@ -68,7 +86,12 @@ const CustomLiveCard = (props) => {
                     {/* 
                   //* 경기스코어
                   */}
-                    <View style={{justifyContent: 'center'}}>
+                    <View
+                      style={{
+                        flex: 1,
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                      }}>
                       <Text
                         style={[
                           CustomStyles.defualtFont,
@@ -76,12 +99,7 @@ const CustomLiveCard = (props) => {
                         ]}>
                         {k.time}
                       </Text>
-                      <View
-                        style={{
-                          flexDirection: 'row',
-                          marginTop: 5,
-                          marginBottom: 5,
-                        }}>
+                      <View style={{flexDirection: 'row'}}>
                         <Text
                           style={[
                             CustomStyles.defualtFont,
@@ -109,16 +127,27 @@ const CustomLiveCard = (props) => {
                     {/* 
                   //* 2번팀 로고
                   */}
-                    <View>
+                    <View
+                      style={{
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        width: 50,
+                      }}>
                       <Image
-                        style={[{width: 40, height: 40, resizeMode: 'contain'}]}
+                        style={[
+                          {
+                            width: 34,
+                            height: 34,
+                            resizeMode: 'contain',
+                          },
+                        ]}
                         source={require('../../../img/game/game2.png')}
                       />
                       <Text
                         style={[
                           CustomStyles.defualtFont,
                           CustomStyles.AwayBlackColor,
-                          {fontSize: 14, marginTop: 10},
+                          {fontSize: 14, marginTop: 7},
                         ]}>
                         {k.away.name}
                       </Text>

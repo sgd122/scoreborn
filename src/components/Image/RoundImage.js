@@ -10,7 +10,15 @@ import {
 import styles from '../../styles/common.module.scss';
 import {Fonts} from '../../settings/fonts';
 
-const RoundImage = ({onPress, name, size, style, ...props}) => {
+const RoundImage = ({
+  onPress,
+  name,
+  size,
+  style,
+  containerStyle,
+  fontStyle,
+  ...props
+}) => {
   const [globalSize, setGlobalSize] = useState(size ? size : 50);
   const CustomStyles = StyleSheet.create({
     defualtFont: {
@@ -22,15 +30,27 @@ const RoundImage = ({onPress, name, size, style, ...props}) => {
       width: globalSize,
       height: globalSize,
       borderRadius: globalSize / 2,
-      // marginRight: 15,
     },
   });
   return (
-    <View>
-      <TouchableOpacity onPress={() => onPress()}>
+    <View
+      style={[
+        {
+          alignItems: 'center',
+          justifyContent: 'center',
+        },
+        containerStyle,
+      ]}>
+      {onPress ? (
+        <TouchableOpacity onPress={() => onPress()}>
+          <Image style={[CustomStyles.defaultImgae, style]} {...props} />
+        </TouchableOpacity>
+      ) : (
         <Image style={[CustomStyles.defaultImgae, style]} {...props} />
-      </TouchableOpacity>
-      {name && <Text style={CustomStyles.defualtFont}>{name}</Text>}
+      )}
+      {name && (
+        <Text style={[CustomStyles.defualtFont, fontStyle]}>{name}</Text>
+      )}
     </View>
   );
 };

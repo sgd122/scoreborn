@@ -1,7 +1,7 @@
 // router.js
-import React, {useEffect, useContext} from 'react';
+import React, {useState} from 'react';
 import {TouchableOpacity, View, Image} from 'react-native';
-import {Header, Icon, Text} from 'react-native-elements';
+import {Header, Icon, Text, Overlay} from 'react-native-elements';
 import {DrawerActions} from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
 import Logo from '../../../components/Logo';
@@ -12,7 +12,7 @@ export default function HeaderScreen({navigation, children}) {
     <LinearGradient colors={['#001943', '#153467']}>
       <Header
         leftComponent={<MyCustomLeftComponent navigation={navigation} />}
-        centerComponent={<MyCustomCenterComponent />}
+        centerComponent={<MyCustomCenterComponent navigation={navigation} />}
         rightComponent={<MyCustomRightComponent navigation={navigation} />}
         containerStyle={{
           backgroundColor: 'transparent',
@@ -33,25 +33,45 @@ const MyCustomLeftComponent = ({navigation}) => {
     />
   );
 };
-const MyCustomCenterComponent = () => {
-  return <Logo style={{height: '100%', width: '50%', zIndex: 9999}} />;
+const MyCustomCenterComponent = ({navigation}) => {
+  return (
+    <View style={{width: '100%', alignItems: 'center'}}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Live')}
+        style={{width: '100%', alignItems: 'center'}}>
+        <Logo style={{height: '100%', width: '50%', zIndex: 9999}} />
+      </TouchableOpacity>
+    </View>
+  );
 };
 
 const MyCustomRightComponent = ({navigation}) => {
+  const [visible, setVisible] = useState(false);
+
+  const toggleOverlay = () => {
+    setVisible(!visible);
+  };
   return (
     <View style={{flexDirection: 'row'}}>
-      <TouchableOpacity onPress={() => navigation.navigate('MyPage')}>
+      <TouchableOpacity onPress={() => setVisible(!visible)}>
         <Image
-          style={{zIndex: 9999, marginRight: 10}}
+          style={{zIndex: 9999, height: 18}}
           source={require('../../../img/head/Calendar.png')}
+          resizeMode="contain"
         />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => goHome()}>
+      <TouchableOpacity onPress={() => navigation.navigate('Alarm')}>
         <Image
-          style={{zIndex: 9999}}
+          style={{zIndex: 9999, height: 18}}
           source={require('../../../img/head/Bell.png')}
+          resizeMode="contain"
         />
       </TouchableOpacity>
+
+      {/* 달력 */}
+      <Overlay isVisible={visible} onBackdropPress={toggleOverlay}>
+        <Text>여기에 달력이 출력됩니다.</Text>
+      </Overlay>
     </View>
   );
 };

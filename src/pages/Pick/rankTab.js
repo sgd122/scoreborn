@@ -98,7 +98,7 @@ function Pick({userStore, navigation}) {
   return (
     <Observer>
       {() => (
-        <View style={[styles.container]}>
+        <View style={[styles.container, {backgroundColor: '#F5F5F5'}]}>
           <ScrollView>
             <PickCard type={'rank'} data={state.list} navigation={navigation} />
           </ScrollView>

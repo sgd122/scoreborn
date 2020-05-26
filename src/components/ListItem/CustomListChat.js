@@ -17,15 +17,41 @@ const CustomType = ({type, navigation}) => {
     return (
       <View
         style={{
+          flex: 1,
           backgroundColor: '#E5F0FF',
           borderRadius: 5,
-          padding: 5,
-          height: 30,
+          marginTop: 5,
+          marginLeft: 5,
+          height: 32,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}>
         <Text
           style={CustomStyles.moneyFont}
           onPress={() => navigation && navigation.navigate('ExpertPick')}>
           무료
+        </Text>
+      </View>
+    );
+  } else if (type == 'End') {
+    return (
+      <View
+        style={{
+          flex: 1,
+          backgroundColor: '#E5F0FF',
+          borderRadius: 5,
+          marginTop: 5,
+          marginLeft: 5,
+          height: 32,
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
+        <Text
+          style={CustomStyles.moneyFont}
+          onPress={() => navigation && navigation.navigate('ExpertPick')}>
+          보기
         </Text>
       </View>
     );
@@ -39,8 +65,11 @@ const CustomListChat = (props) => (
       props.list.map((l, i) => (
         <>
           <View style={{flexDirection: 'row', marginBottom: 20, marginTop: 10}}>
-            <RoundImage source={require('../../img/game/pick/top1.png')} />
-            <View style={{flexDirection: 'column', flex: 1}}>
+            <RoundImage
+              size={48}
+              source={require('../../img/game/pick/top1.png')}
+            />
+            <View style={{flexDirection: 'column', flex: 1, marginLeft: 10}}>
               <TouchableOpacity
                 style={{flexDirection: 'row'}}
                 onPress={() => {
@@ -66,7 +95,9 @@ const CustomListChat = (props) => (
                     backgroundColor: '#F7F7F7',
                     padding: 5,
                     borderRadius: 5,
+                    marginTop: 5,
                     width: '85%',
+                    height: 32,
                   }}>
                   <Text style={[CustomStyles.defualtFont]}>
                     쉽지 않은 픽, 하지만 해답은 있습니다.
@@ -76,7 +107,7 @@ const CustomListChat = (props) => (
               </View>
             </View>
           </View>
-          <Divider />
+          <Divider style={{backgroundColor: 'rgba(146,147,48,0.13)'}} />
         </>
       ))}
   </View>
@@ -114,6 +145,7 @@ const CustomStyles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 20,
     fontWeight: '500',
+    letterSpacing: -0.09,
     fontFamily: Fonts.NotoSans,
   },
 });

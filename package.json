@@ -1,5 +1,5 @@
 {
-  "name": "AwesomeProject",
+  "name": "ScoreBorn",
   "version": "0.0.1",
   "private": true,
   "rnpm": {
@@ -13,7 +13,9 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "launch-ios": "react-native run-ios --simulator \"iPhone 8\""
+    "launch-ios": "react-native run-ios --simulator \"iPhone 8\"",
+    "launch-android": "react-native run-android",
+    "launch-android-release": "react-native run-android --variant=release"
   },
   "dependencies": {
     "@babel/plugin-proposal-decorators": "^7.8.3",
@@ -32,6 +34,7 @@
     "react": "16.11.0",
     "react-native": "0.62.2",
     "react-native-elements": "^1.2.7",
+    "react-native-firebase": "^5.6.0",
     "react-native-gesture-handler": "^1.6.1",
     "react-native-linear-gradient": "^2.5.6",
     "react-native-paper": "^3.8.0",

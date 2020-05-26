@@ -2,6 +2,7 @@ import React from 'react';
 import {
   View,
   Text,
+  Image,
   TouchableOpacity,
   TouchableWithoutFeedback,
 } from 'react-native';
@@ -22,55 +23,84 @@ const TypeGame = (props) => {
   }
 
   return (
-    <View>
+    <View style={{backgroundColor: '#F5F5F5'}}>
       {data &&
         data.map((k) => {
           return (
-            <TouchableOpacity
-              onPress={() => {
-                func.onCardClick(k, type);
-              }}>
-              <Card containerStyle={[CustomStyles.defaultCard]}>
-                <View style={{flexDirection: 'column'}}>
+            <Card containerStyle={[CustomStyles.defaultCard]}>
+              <View style={{flexDirection: 'column'}}>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                  }}>
                   <View
                     style={{
-                      flexDirection: 'row',
-                      justifyContent: 'space-between',
+                      flexDirection: 'column',
                     }}>
+                    <Text
+                      style={[
+                        [CustomStyles.defualtFont],
+                        {fontSize: 12, color: '#ADADAD'},
+                      ]}>
+                      {k.leagueName}
+                    </Text>
                     <View
                       style={{
-                        flexDirection: 'column',
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        justifyContent: 'center',
                       }}>
-                      <Text
-                        style={[
-                          [CustomStyles.defualtFont],
-                          {fontSize: 12, color: '#ADADAD'},
-                        ]}>
-                        {k.leagueName}
+                      <Text style={[[CustomStyles.gameFont]]}>
+                        {k.home.name}
                       </Text>
-                      <View style={{flexDirection: 'row'}}>
-                        <Text style={[[CustomStyles.gameFont]]}>
-                          {k.home.name}
-                        </Text>
-                        <Text style={[[CustomStyles.gameFont]]}> vs </Text>
-                        <Text style={[[CustomStyles.gameFont]]}>
-                          {k.away.name}
-                        </Text>
-                      </View>
-                    </View>
-                    <View
-                      style={{
-                        backgroundColor: '#E5F0FF',
-                        borderRadius: 5,
-                        padding: 5,
-                        height: 30,
-                      }}>
-                      <Text style={CustomStyles.moneyFont}>₩ {k.money}</Text>
+                      <RoundImage
+                        size={18}
+                        source={require('../../../../img/game/game1.png')}
+                        style={{marginLeft: 3.6, marginRight: 8}}
+                      />
+                      <Text style={[[CustomStyles.gameFont]]}> vs </Text>
+                      <RoundImage
+                        size={18}
+                        source={require('../../../../img/game/game2.png')}
+                        style={{marginLeft: 8, marginRight: 3.6}}
+                      />
+                      <Text style={[[CustomStyles.gameFont]]}>
+                        {k.away.name}
+                      </Text>
                     </View>
                   </View>
+                  {k.money && (
+                    <TouchableOpacity
+                      onPress={() => {
+                        func.onCardClick(k, type, props.navigation);
+                      }}>
+                      <View
+                        style={{
+                          flex: 1,
+                          backgroundColor: '#E5F0FF',
+                          borderRadius: 5,
+                          padding: 8,
+                          height: 38,
+                          flexDirection: 'row',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                        }}>
+                        <Image
+                          style={{
+                            width: 9.68,
+                            height: 11.4,
+                            marginRight: 3,
+                          }}
+                          source={require('../../../../img/icon/Trophy.png')}
+                        />
+                        <Text style={CustomStyles.moneyFont}>{k.money}</Text>
+                      </View>
+                    </TouchableOpacity>
+                  )}
                 </View>
-              </Card>
-            </TouchableOpacity>
+              </View>
+            </Card>
           );
         })}
     </View>

@@ -43,7 +43,7 @@ function ExpertPick({userStore, navigation}) {
       ...prev,
       header_list: [
         {
-          name: '1',
+          name: '스포츠어드벤처',
           subtitle: '러셀은 안전하게 2아웃 잘 잡습니다.',
           time: '경기종료',
           leagueName: '16:00 잉글랜드 PD리그',

@@ -2,15 +2,15 @@
 
 import React, { useEffect, useContext } from 'react';
 import { View, Image, Text } from 'react-native';
-import PageContext, { PageProvider } from '../Context';
+import PageContext, { PageProvider } from '../../Context';
 
 //* 공통 컴포넌트
-import ScoreInput from '../../../components/Text/ScoreInput';
-import RoundImage from '../../../components/Image/RoundImage';
+import ScoreInput from '../../../../components/Text/ScoreInput';
+import RoundImage from '../../../../components/Image/RoundImage';
 
 //* 스타일
-import styles from '../../../styles/common.module.scss';
-import { Fonts } from '../../../settings/fonts';
+import styles from '../../../../styles/common.module.scss';
+import { Fonts } from '../../../../settings/fonts';
 
 export default function UserCash({ CustomStyles }) {
     const {
@@ -26,7 +26,7 @@ export default function UserCash({ CustomStyles }) {
                     나의 캐시
                 </Text>
                 <Image
-                    source={require('../../../img/icon/money.png')}
+                    source={require('../../../../img/icon/money.png')}
                     style={{ width: 12, height: 12 }}
                     resizeMode="contain"></Image>
             </View>

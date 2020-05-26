@@ -32,7 +32,7 @@ export default function MyMainTab() {
       <Stack.Screen
         name="Home"
         component={DrawerTab}
-        options={{headerStyle: {height: 0}}}
+        options={{headerShown: false, headerStyle: {height: 0}}}
       />
       {PagesScreen()}
     </Stack.Navigator>
@@ -58,9 +58,20 @@ function MySettingsBottom({navigation}) {
         component={LiveScreen}
         options={{
           tabBarLabel: '라이브',
-          tabBarIcon: ({color}) => (
-            <Image source={require('../../../img/bottom/LIVE.png')} />
-          ),
+          tabBarIcon: ({focused}) =>
+            focused ? (
+              <Image
+                source={require('../../../img/bottom/LIVE_Check.png')}
+                style={{height: 16.46, width: 28.8}}
+                resizeMode="contain"
+              />
+            ) : (
+              <Image
+                source={require('../../../img/bottom/LIVE.png')}
+                style={{height: 16.46, width: 28.8}}
+                resizeMode="contain"
+              />
+            ),
         }}
       />
       <Tab.Screen
@@ -68,9 +79,20 @@ function MySettingsBottom({navigation}) {
         component={PickScreen}
         options={{
           tabBarLabel: '픽',
-          tabBarIcon: ({color}) => (
-            <Image source={require('../../../img/bottom/Pick.png')} />
-          ),
+          tabBarIcon: ({focused}) =>
+            focused ? (
+              <Image
+                source={require('../../../img/bottom/Pick_Check.png')}
+                style={{height: 20.1, width: 20.1}}
+                resizeMode="contain"
+              />
+            ) : (
+              <Image
+                source={require('../../../img/bottom/Pick.png')}
+                style={{height: 20.1, width: 20.1}}
+                resizeMode="contain"
+              />
+            ),
         }}
       />
       <Tab.Screen
@@ -78,9 +100,20 @@ function MySettingsBottom({navigation}) {
         component={ChatScreen}
         options={{
           tabBarLabel: '채팅',
-          tabBarIcon: ({color}) => (
-            <Image source={require('../../../img/bottom/Chat.png')} />
-          ),
+          tabBarIcon: ({focused}) =>
+            focused ? (
+              <Image
+                source={require('../../../img/bottom/Chat_Check.png')}
+                style={{height: 15.81, width: 15.67}}
+                resizeMode="contain"
+              />
+            ) : (
+              <Image
+                source={require('../../../img/bottom/Chat.png')}
+                style={{height: 15.81, width: 15.67}}
+                resizeMode="contain"
+              />
+            ),
         }}
       />
       <Tab.Screen
@@ -88,9 +121,20 @@ function MySettingsBottom({navigation}) {
         component={BoardScreen}
         options={{
           tabBarLabel: '게시판',
-          tabBarIcon: ({color}) => (
-            <Image source={require('../../../img/bottom/Board.png')} />
-          ),
+          tabBarIcon: ({focused}) =>
+            focused ? (
+              <Image
+                source={require('../../../img/bottom/Board_Check.png')}
+                style={{height: 20.1, width: 20.1}}
+                resizeMode="contain"
+              />
+            ) : (
+              <Image
+                source={require('../../../img/bottom/Board.png')}
+                style={{height: 20.1, width: 20.1}}
+                resizeMode="contain"
+              />
+            ),
         }}
       />
     </Tab.Navigator>

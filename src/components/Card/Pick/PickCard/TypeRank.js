@@ -27,6 +27,7 @@ const TypeRank = (props) => {
         data.map((k) => {
           return (
             <TouchableOpacity
+              style={{backgroundColor: '#F5F5F5'}}
               onPress={() => {
                 func.onCardClick(k, type);
               }}>

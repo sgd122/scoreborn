@@ -2,14 +2,14 @@
 
 import React, { useEffect, useContext } from 'react';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
-import PageContext, { PageProvider } from '../Context';
-import { Fonts } from '../../../settings/fonts';
+import PageContext, { PageProvider } from '../../Context';
+import { Fonts } from '../../../../settings/fonts';
 //* 공통 컴포넌트
-import ScoreInput from '../../../components/Text/ScoreInput';
-import RoundImage from '../../../components/Image/RoundImage';
+import ScoreInput from '../../../../components/Text/ScoreInput';
+import RoundImage from '../../../../components/Image/RoundImage';
 
 //* 스타일
-import styles from '../../../styles/common.module.scss';
+import styles from '../../../../styles/common.module.scss';
 
 export default function UserNickName({ CustomStyles, navigation }) {
     const {

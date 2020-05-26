@@ -8,6 +8,7 @@ import PageContext, {PageProvider} from './Context';
 //* 공통 컴포넌트
 import PickCard from '../../components/Card/Pick/PickCard';
 import RoundImage from '../../components/Image/RoundImage';
+import VerticalGrayLine from '../../components/Line/VerticalGrayLine';
 
 //* 스타일
 import styles from '../../styles/common.module.scss';
@@ -23,10 +24,18 @@ export default function ContentOtherPick({userStore, navigation}) {
   useEffect(() => {}, []);
 
   return (
-    <View>
-      <Card containerStyle={[CustomStyles.defaultCard]}>
-        <View style={{flexDirection: 'row'}}>
-          <Text style={CustomStyles.defualtFont}>이 전문가의 다른 픽</Text>
+    <>
+      <VerticalGrayLine style={{marginTop: 16, marginBottom: 16}} />
+      <View
+        style={{
+          backgroundColor: '#fff',
+          marginLeft: 10,
+          marginRight: 10,
+        }}>
+        {/* <Card containerStyle={[CustomStyles.defaultCard]}> */}
+        <View
+          style={{flexDirection: 'row', alignItems: 'center', marginBottom: 8}}>
+          <Text style={[CustomStyles.defualtFont]}>이 전문가의 다른 픽</Text>
           <RoundImage
             source={require('../../img/game/game1.png')}
             style={{
@@ -37,9 +46,10 @@ export default function ContentOtherPick({userStore, navigation}) {
             }}
           />
         </View>
-        <PickCard data={state.list} type={'game'} />
-      </Card>
-    </View>
+        <PickCard data={state.list} type={'nc_game'} />
+        {/* </Card> */}
+      </View>
+    </>
   );
 }
 
@@ -52,26 +62,18 @@ const CustomStyles = StyleSheet.create({
     shadowRadius: 20,
     shadowOffset: {width: 0, height: 4},
     elevation: 3, // Android적용
-    marginBottom: -7,
+
+    marginBottom: 4,
+    marginTop: 4,
+
     marginLeft: 10,
     marginRight: 10,
   },
   defualtFont: {
-    fontSize: 14,
-    lineHeight: 20,
-    fontFamily: Fonts.NotoSans,
-  },
-  gameFont: {
     fontSize: 16,
     fontWeight: '500',
     lineHeight: 23,
-    color: '#042B6C',
     fontFamily: Fonts.NotoSans,
-  },
-  etcFont: {
-    fontSize: 12,
-    lineHeight: 17,
-    color: '#929394',
-    fontFamily: Fonts.NotoSans,
+    letterSpacing: -0.09,
   },
 });
