@@ -31,7 +31,6 @@ import Favorites from '../../../pages/Favorites';
 import FavoritesUsers from '../../../pages/Favorites/Tab/FavoritesUsers';
 import FavoritesChat from '../../../pages/Favorites/Tab/FavoritesChat';
 import FavoritesExpert from '../../../pages/Favorites/Tab/FavoritesExpert';
-import NickNameChange from '../../../pages/NickNameChange';
 import AlarmPage from '../../../pages/Alarm';
 import AlaramSettings from '../../../pages/Alarm/Subpage/AlaramSettings';
 
@@ -43,6 +42,7 @@ import MatchPwd from '../../../pages/MatchPwd';
 
 import Sider from './SiderContent';
 import AlarmScreen from './AlaramScreen';
+import NickNameChange from '../../../pages/MyPage/SubPage/NickNameChange';
 import StatusMessageChange from '../../../pages/MyPage/SubPage/StatusMessageChange';
 import Follow from '../../../pages/MyPage/SubPage/Follow';
 import FavoritPage from '../../../pages/MyPage/SubPage/Favorits/index';
