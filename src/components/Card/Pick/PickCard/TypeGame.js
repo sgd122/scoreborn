@@ -23,7 +23,7 @@ const TypeGame = (props) => {
   }
 
   return (
-    <View>
+    <View style={{backgroundColor: '#F5F5F5'}}>
       {data &&
         data.map((k) => {
           return (
@@ -45,11 +45,26 @@ const TypeGame = (props) => {
                       ]}>
                       {k.leagueName}
                     </Text>
-                    <View style={{flexDirection: 'row'}}>
+                    <View
+                      style={{
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}>
                       <Text style={[[CustomStyles.gameFont]]}>
                         {k.home.name}
                       </Text>
+                      <RoundImage
+                        size={18}
+                        source={require('../../../../img/game/game1.png')}
+                        style={{marginLeft: 3.6, marginRight: 8}}
+                      />
                       <Text style={[[CustomStyles.gameFont]]}> vs </Text>
+                      <RoundImage
+                        size={18}
+                        source={require('../../../../img/game/game2.png')}
+                        style={{marginLeft: 8, marginRight: 3.6}}
+                      />
                       <Text style={[[CustomStyles.gameFont]]}>
                         {k.away.name}
                       </Text>
@@ -73,11 +88,11 @@ const TypeGame = (props) => {
                         }}>
                         <Image
                           style={{
-                            width: 11.17,
-                            height: 11.17,
-                            marginRight: 2,
+                            width: 9.68,
+                            height: 11.4,
+                            marginRight: 3,
                           }}
-                          source={require('../../../../img/icon/krw.png')}
+                          source={require('../../../../img/icon/Trophy.png')}
                         />
                         <Text style={CustomStyles.moneyFont}>{k.money}</Text>
                       </View>

@@ -163,7 +163,7 @@ function Pick({userStore, navigation}) {
     <Observer>
       {() => (
         <View style={[styles.container]}>
-          <ScrollView>
+          <ScrollView style={{backgroundColor: '#F5F5F5'}}>
             <PickCard type={'game'} data={state.list} navigation={navigation} />
 
             <LiveLabelType1>종료된 경기</LiveLabelType1>

@@ -79,13 +79,20 @@ function MySettingsBottom({navigation}) {
         component={PickScreen}
         options={{
           tabBarLabel: '픽',
-          tabBarIcon: ({focused}) => (
-            <Image
-              source={require('../../../img/bottom/Pick.png')}
-              style={{height: 20.1, width: 20.1}}
-              resizeMode="contain"
-            />
-          ),
+          tabBarIcon: ({focused}) =>
+            focused ? (
+              <Image
+                source={require('../../../img/bottom/Pick_Check.png')}
+                style={{height: 20.1, width: 20.1}}
+                resizeMode="contain"
+              />
+            ) : (
+              <Image
+                source={require('../../../img/bottom/Pick.png')}
+                style={{height: 20.1, width: 20.1}}
+                resizeMode="contain"
+              />
+            ),
         }}
       />
       <Tab.Screen
@@ -93,13 +100,20 @@ function MySettingsBottom({navigation}) {
         component={ChatScreen}
         options={{
           tabBarLabel: '채팅',
-          tabBarIcon: ({focused}) => (
-            <Image
-              source={require('../../../img/bottom/Chat.png')}
-              style={{height: 15.81, width: 15.67}}
-              resizeMode="contain"
-            />
-          ),
+          tabBarIcon: ({focused}) =>
+            focused ? (
+              <Image
+                source={require('../../../img/bottom/Chat_Check.png')}
+                style={{height: 15.81, width: 15.67}}
+                resizeMode="contain"
+              />
+            ) : (
+              <Image
+                source={require('../../../img/bottom/Chat.png')}
+                style={{height: 15.81, width: 15.67}}
+                resizeMode="contain"
+              />
+            ),
         }}
       />
       <Tab.Screen
@@ -107,13 +121,20 @@ function MySettingsBottom({navigation}) {
         component={BoardScreen}
         options={{
           tabBarLabel: '게시판',
-          tabBarIcon: ({focused}) => (
-            <Image
-              source={require('../../../img/bottom/Board.png')}
-              style={{height: 20.1, width: 20.1}}
-              resizeMode="contain"
-            />
-          ),
+          tabBarIcon: ({focused}) =>
+            focused ? (
+              <Image
+                source={require('../../../img/bottom/Board_Check.png')}
+                style={{height: 20.1, width: 20.1}}
+                resizeMode="contain"
+              />
+            ) : (
+              <Image
+                source={require('../../../img/bottom/Board.png')}
+                style={{height: 20.1, width: 20.1}}
+                resizeMode="contain"
+              />
+            ),
         }}
       />
     </Tab.Navigator>

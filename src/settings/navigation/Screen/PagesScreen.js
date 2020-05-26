@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, {Fragment} from 'react';
 import {
   Button,
   View,
@@ -8,10 +8,10 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import {createStackNavigator} from '@react-navigation/stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 
 const Stack = createStackNavigator();
 const Htab = createMaterialTopTabNavigator();
@@ -43,7 +43,6 @@ import MatchPwd from '../../../pages/MatchPwd';
 
 import Sider from './SiderContent';
 import AlarmScreen from './AlaramScreen';
-import NickNameChange from '../../../pages/MyPage/SubPage/NickNameChange';
 import StatusMessageChange from '../../../pages/MyPage/SubPage/StatusMessageChange';
 import Follow from '../../../pages/MyPage/SubPage/Follow';
 import FavoritPage from '../../../pages/MyPage/SubPage/Favorits/index';
@@ -56,52 +55,52 @@ const PagesScreen = () => {
       <Stack.Screen
         name="Live/UpComing"
         component={SubUpComing}
-        options={{ headerTitle: '진행예정 경기' }}
+        options={{headerTitle: '진행예정 경기'}}
       />
       <Stack.Screen
         name="Live/Live"
         component={SubLive}
-        options={{ headerTitle: '진행중 경기' }}
+        options={{headerTitle: '진행중 경기'}}
       />
       <Stack.Screen
         name="Live/End"
         component={SubEnd}
-        options={{ headerTitle: '종료된 경기' }}
+        options={{headerTitle: '종료된 경기'}}
       />
       <Stack.Screen
         name="Live/SubPrevResult"
         component={SubPrevResult}
-        options={{ headerTitle: '이전 경기결과' }}
+        options={{headerTitle: '이전 경기결과'}}
       />
       <Stack.Screen
         name="ExpertPick"
         component={ExpertPick}
-        options={{ headerTitle: '전문가 픽' }}
+        options={{headerTitle: '전문가 픽'}}
       />
       <Stack.Screen
         name="Profile/Expert"
         component={ExpertProfile}
-        options={{ headerTitle: '전문가 프로필' }}
+        options={{headerTitle: '전문가 프로필'}}
       />
       <Stack.Screen
         name="MyPage"
         component={MyPage}
-        options={{ headerTitle: '마이페이지' }}
+        options={{headerTitle: '마이페이지'}}
       />
       <Stack.Screen
         name="MyPage/NickNameChange"
         component={NickNameChange}
-        options={{ headerTitle: '닉네임 변경' }}
+        options={{headerTitle: '닉네임 변경'}}
       />
       <Stack.Screen
         name="Favorites"
         component={FavoritesScreen}
-        options={{ headerTitle: '나의 즐겨찾기' }}
+        options={{headerTitle: '나의 즐겨찾기'}}
       />
       <Stack.Screen
         name="Alarm"
         component={AlarmPage}
-        options={({ route, navigation }) => ({
+        options={({route, navigation}) => ({
           headerTitle: '알림',
           headerRight: (props) => (
             <AlarmTitle navigation={navigation} {...props} />
@@ -111,24 +110,24 @@ const PagesScreen = () => {
       <Stack.Screen
         name="Alarm/Settings"
         component={AlaramSettings}
-        options={{ headerTitle: '알림 설정' }}
+        options={{headerTitle: '알림 설정'}}
       />
       <Stack.Screen
         name="MyPage/StatusMessageChange"
         component={StatusMessageChange}
-        options={{ headerTitle: '프로필 메시지 변경' }}
+        options={{headerTitle: '프로필 메시지 변경'}}
       />
 
       <Stack.Screen
         name="MyPage/Follow"
         component={Follow}
-        options={{ headerTitle: '나를 즐겨찾는 사람' }}
+        options={{headerTitle: '나를 즐겨찾는 사람'}}
       />
 
       <Stack.Screen
         name="MyPage/FavoritPage"
         component={FavoritPage}
-        options={{ headerTitle: '나의 즐겨찾기' }}
+        options={{headerTitle: '나의 즐겨찾기'}}
       />
 
       {LoginPages()}
@@ -144,7 +143,7 @@ function AlarmTitle(props) {
       }}>
       <View>
         <Image
-          style={{ marginRight: 10 }}
+          style={{marginRight: 10}}
           resizeMode="contain"
           source={require('../../../img/icon/Settings.png')}
         />
@@ -153,28 +152,28 @@ function AlarmTitle(props) {
   );
 }
 
-function FavoritesScreen({ navigation }) {
+function FavoritesScreen({navigation}) {
   return (
     <Fragment>
-      <SafeAreaView style={{ flex: 0, backgroundColor: '#001943' }} />
+      <SafeAreaView style={{flex: 0, backgroundColor: '#001943'}} />
       <StatusBar barStyle="light-content" />
-      <SafeAreaView style={{ flex: 1 }}>
+      <SafeAreaView style={{flex: 1}}>
         {/* <HeaderScreen navigation={navigation} /> */}
         <Htab.Navigator>
           <Htab.Screen
             name="Favorites/Users"
             component={FavoritesUsers}
-            options={{ tabBarLabel: '유저' }}
+            options={{tabBarLabel: '유저'}}
           />
           <Htab.Screen
             name="Favorites/Chat"
             component={FavoritesChat}
-            options={{ tabBarLabel: '채팅방' }}
+            options={{tabBarLabel: '채팅방'}}
           />
           <Htab.Screen
             name="Favorites/Expert"
             component={FavoritesExpert}
-            options={{ tabBarLabel: '전문가' }}
+            options={{tabBarLabel: '전문가'}}
           />
         </Htab.Navigator>
       </SafeAreaView>
@@ -190,17 +189,17 @@ const LoginPages = () => {
     <Stack.Screen
       name="Login"
       component={Login}
-      options={{ headerTitle: '로그인' }}
+      options={{headerTitle: '로그인'}}
     />
     <Stack.Screen
       name="SignUp"
       component={SignUp}
-      options={{ headerTitle: '회원가입' }}
+      options={{headerTitle: '회원가입'}}
     />
     <Stack.Screen
       name="MatchIdPwd"
       component={MatchIdPwd}
-      options={{ headerTitle: '아이디/비밀번호 찾기' }}
+      options={{headerTitle: '아이디/비밀번호 찾기'}}
     />
   </>;
 };
@@ -211,12 +210,12 @@ function MatchIdPwd() {
       <Htab.Screen
         name="MatchID"
         component={MatchID}
-        options={{ tabBarLabel: '아이디찾기' }}
+        options={{tabBarLabel: '아이디찾기'}}
       />
       <Htab.Screen
         name="MatchPwd"
         component={MatchPwd}
-        options={{ tabBarLabel: '비밀번호찾기' }}
+        options={{tabBarLabel: '비밀번호찾기'}}
       />
     </Htab.Navigator>
   );

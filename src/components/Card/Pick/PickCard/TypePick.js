@@ -31,7 +31,7 @@ const TypePick = (props) => {
       {data &&
         data.map((k) => {
           return (
-            <View style={{margin: 10}}>
+            <View style={{marginLeft: 16, marginRight: 13, marginBottom: 10}}>
               {/* <Card containerStyle={[CustomStyles.defaultCard]}> */}
               <View style={{flexDirection: 'column'}}>
                 <View style={{flexDirection: 'row', marginBottom: 5}}>
@@ -49,7 +49,12 @@ const TypePick = (props) => {
                       ]}>
                       {k.name}
                     </Text>
-                    <View style={{flexDirection: 'row'}}>
+                    <View
+                      style={{
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}>
                       <Text
                         style={[
                           [CustomStyles.defualtFont],
@@ -90,6 +95,7 @@ const TypePick = (props) => {
                     backgroundColor: '#F7F7F7',
                     borderRadius: 5,
                     padding: 10,
+                    marginLeft: 5,
                   }}>
                   <View
                     style={{
@@ -113,11 +119,26 @@ const TypePick = (props) => {
                         ]}>
                         {k.leagueName}
                       </Text>
-                      <View style={{flexDirection: 'row'}}>
+                      <View
+                        style={{
+                          flexDirection: 'row',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                        }}>
                         <Text style={[[CustomStyles.gameFont]]}>
                           {k.home.name}
                         </Text>
+                        <RoundImage
+                          size={18}
+                          source={require('../../../../img/game/game1.png')}
+                          style={{marginLeft: 3.6, marginRight: 8}}
+                        />
                         <Text style={[[CustomStyles.gameFont]]}> vs </Text>
+                        <RoundImage
+                          size={18}
+                          source={require('../../../../img/game/game2.png')}
+                          style={{marginLeft: 8, marginRight: 3.6}}
+                        />
                         <Text style={[[CustomStyles.gameFont]]}>
                           {k.away.name}
                         </Text>
@@ -134,7 +155,7 @@ const TypePick = (props) => {
                             backgroundColor: '#E5F0FF',
                             borderRadius: 5,
                             padding: 8,
-                            height: 38,
+                            height: 32,
                             flexDirection: 'row',
                             alignItems: 'center',
                             justifyContent: 'center',

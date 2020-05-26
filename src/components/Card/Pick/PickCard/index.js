@@ -96,11 +96,12 @@ const CustomStyles = StyleSheet.create({
   defaultCard: {
     borderRadius: 5,
     borderWidth: 0,
-    shadowColor: 'rgba(40, 40, 40, 0.15)',
-    shadowOpacity: 1, //그림자 투명도
-    shadowRadius: 20,
-    shadowOffset: {width: 0, height: 4},
-    elevation: 3, // Android적용
+    shadowColor: '#fff',
+    // shadowColor: 'rgba(40, 40, 40, 0.15)',
+    // shadowOpacity: 1, //그림자 투명도
+    // shadowRadius: 20,
+    // shadowOffset: {width: 0, height: 4},
+    // elevation: 3, // Android적용
 
     marginBottom: 4,
     marginTop: 4,
