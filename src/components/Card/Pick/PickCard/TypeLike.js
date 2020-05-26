@@ -28,6 +28,7 @@ const TypeLike = (props) => {
         data.map((k) => {
           return (
             <>
+              <VerticalGrayLine style={{marginBottom: 12, marginTop: 0}} />
               <TouchableOpacity
                 onPress={() => {
                   func.onCardClick(k, type);
@@ -36,6 +37,7 @@ const TypeLike = (props) => {
                   style={{
                     marginLeft: 10,
                     marginRight: 10,
+                    marginBottom: 8,
                   }}>
                   <View style={{flexDirection: 'column'}}>
                     <View style={{flexDirection: 'column'}}>
@@ -119,7 +121,7 @@ const TypeLike = (props) => {
                   {/* </Card> */}
                 </View>
               </TouchableOpacity>
-              <VerticalGrayLine style={{marginBottom: 15}} />
+              {/* <VerticalGrayLine style={{marginBottom: 15}} /> */}
             </>
           );
         })}
