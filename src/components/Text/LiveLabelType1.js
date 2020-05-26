@@ -4,9 +4,14 @@ import {View, Text, StyleSheet} from 'react-native';
 import styles from '../../styles/common.module.scss';
 import {Fonts} from '../../settings/fonts';
 
-export default function LiveLabelType1({style, children, ...props}) {
+export default function LiveLabelType1({
+  containerStyle,
+  style,
+  children,
+  ...props
+}) {
   return (
-    <View style={CustomStyles.defaultView}>
+    <View style={[CustomStyles.defaultView, containerStyle]}>
       <Text style={[CustomStyles.defualtFont, style]} {...props}>
         {children}
       </Text>

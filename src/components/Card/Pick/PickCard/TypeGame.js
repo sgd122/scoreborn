@@ -27,7 +27,16 @@ const TypeGame = (props) => {
       {data &&
         data.map((k) => {
           return (
-            <Card containerStyle={[CustomStyles.defaultCard]}>
+            <Card
+              containerStyle={[
+                CustomStyles.defaultCard,
+                {
+                  marginBottom: 4,
+                  marginTop: 4,
+                  marginLeft: 17,
+                  marginRight: 17,
+                },
+              ]}>
               <View style={{flexDirection: 'column'}}>
                 <View
                   style={{
@@ -82,6 +91,7 @@ const TypeGame = (props) => {
                           borderRadius: 5,
                           padding: 8,
                           height: 38,
+                          width: 54,
                           flexDirection: 'row',
                           alignItems: 'center',
                           justifyContent: 'center',
