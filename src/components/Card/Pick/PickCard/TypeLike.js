@@ -5,10 +5,10 @@ import {
   TouchableOpacity,
   TouchableWithoutFeedback,
 } from 'react-native';
-import {Card, Divider} from 'react-native-elements';
+import { Card, Divider } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from '../../../../styles/common.module.scss';
-import {Fonts} from '../../../../settings/fonts';
+import { Fonts } from '../../../../settings/fonts';
 import RoundImage from '../../../Image/RoundImage';
 import VerticalGrayLine from '../../../Line/VerticalGrayLine';
 import * as func from './func';
@@ -17,7 +17,7 @@ import * as func from './func';
  *
  */
 const TypeLike = (props) => {
-  let {type, data, CustomStyles} = props;
+  let { type, data, CustomStyles } = props;
   if (!type) {
     type = 'pick';
   }
@@ -39,47 +39,47 @@ const TypeLike = (props) => {
                   // marginTop: 4,
                 }}>
                 {/* <Card containerStyle={[CustomStyles.defaultCard]}> */}
-                <View style={{flexDirection: 'column'}}>
-                  <View style={{flexDirection: 'column'}}>
-                    <View style={{flexDirection: 'row'}}>
+                <View style={{ flexDirection: 'column' }}>
+                  <View style={{ flexDirection: 'column' }}>
+                    <View style={{ flexDirection: 'row' }}>
                       <RoundImage
                         source={require('../../../../img/game/game1.png')}
                       />
-                      <View style={{flexDirection: 'column'}}>
-                        <View style={{flexDirection: 'row'}}>
+                      <View style={{ flexDirection: 'column' }}>
+                        <View style={{ flexDirection: 'row' }}>
                           <Text
                             style={[
                               CustomStyles.defualtFont,
-                              {fontSize: 14, marginRight: 10},
+                              { fontSize: 14, marginRight: 10 },
                             ]}>
                             {k.name}
                           </Text>
                           <Text
                             style={[
                               CustomStyles.defualtFont,
-                              {fontSize: 12, color: '#ADADAD'},
+                              { fontSize: 12, color: '#ADADAD' },
                             ]}>
                             {k.subtitle}
                           </Text>
                         </View>
                         <Text
-                          style={[CustomStyles.defualtFont, {fontSize: 12}]}>
+                          style={[CustomStyles.defualtFont, { fontSize: 12 }]}>
                           {k.detail}
                         </Text>
                       </View>
                     </View>
-                    <Divider style={{marginTop: 10, marginBottom: 5}} />
+                    <Divider style={{ marginTop: 10, marginBottom: 5 }} />
                     <View
                       style={{
                         flexDirection: 'row',
                         justifyContent: 'space-between',
                       }}>
-                      <View style={{flexDirection: 'row'}}>
+                      <View style={{ flexDirection: 'row' }}>
                         <TouchableWithoutFeedback
                           onPress={() => {
                             func.onLikeClick(k, type);
                           }}>
-                          <Icon name="star" size={18} style={{color: 'red'}} />
+                          <Icon name="star" size={18} style={{ color: 'red' }} />
                         </TouchableWithoutFeedback>
                         <Text
                           style={[
@@ -99,7 +99,7 @@ const TypeLike = (props) => {
                         <Text
                           style={[
                             CustomStyles.defualtFont,
-                            {fontSize: 12, color: '#042B6C'},
+                            { fontSize: 12, color: '#042B6C' },
                           ]}>
                           {k.live}
                         </Text>
@@ -109,7 +109,7 @@ const TypeLike = (props) => {
                 </View>
                 {/* </Card> */}
               </View>
-              <VerticalGrayLine style={{marginBottom: 15}} />
+              <VerticalGrayLine style={{ marginBottom: 15 }} />
             </TouchableOpacity>
           );
         })}
