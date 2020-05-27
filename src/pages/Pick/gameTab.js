@@ -166,7 +166,9 @@ function Pick({userStore, navigation}) {
           <ScrollView style={{backgroundColor: '#F5F5F5'}}>
             <PickCard type={'game'} data={state.list} navigation={navigation} />
 
-            <LiveLabelType1>종료된 경기</LiveLabelType1>
+            <LiveLabelType1 containerStyle={{marginBottom: 4, marginTop: 4}}>
+              종료된 경기
+            </LiveLabelType1>
             <PickCard
               type={'EndGame'}
               data={state.list}

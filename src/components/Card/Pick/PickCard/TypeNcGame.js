@@ -86,6 +86,7 @@ const TypeGame = (props) => {
                             borderRadius: 5,
                             padding: 8,
                             height: 32,
+                            width: 54,
                             flexDirection: 'row',
                             alignItems: 'center',
                             justifyContent: 'center',
