@@ -35,7 +35,7 @@ export default function LiveScreen({navigation}) {
       <SafeAreaView style={{flex: 0, backgroundColor: '#001943'}} />
       <StatusBar barStyle="light-content" />
       <SafeAreaView style={{flex: 1}}>
-        <HeaderScreen navigation={navigation} />
+        <HeaderScreen navigation={navigation} type="Live" />
         <Stack.Navigator
           initialRouteName="Live"
           screenOptions={{

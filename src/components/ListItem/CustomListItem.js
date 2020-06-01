@@ -1,8 +1,16 @@
 import React from 'react';
-import {View, Image, StyleSheet, Text, TextInput} from 'react-native';
+import {
+  View,
+  Image,
+  StyleSheet,
+  Text,
+  TextInput,
+  ScrollView,
+} from 'react-native';
 import {ListItem, Avatar} from 'react-native-elements';
+import TextLine from '../Line/TextLine';
 import styles from '../../styles/common.module.scss';
-
+import {Fonts} from '../../settings/fonts';
 const SubTitleLabel = ({data}) => {
   return (
     <View style={CustomStyles.elem}>
@@ -16,40 +24,56 @@ const SubTitleLabel = ({data}) => {
         </View>
       )}
       <View style={CustomStyles.userComment}>
-        <Text>{data.subtitle}</Text>
-        <Text style={CustomStyles.bottomFont}>행복버스 | 10분전 | 조회176</Text>
+        <Text style={CustomStyles.SubTitleFont}>{data.subtitle}</Text>
+        <View
+          style={{flexDirection: 'row', alignItems: 'center', marginTop: 5}}>
+          <Text style={CustomStyles.bottomFont}>행복버스</Text>
+          <TextLine />
+          <Text style={CustomStyles.bottomFont}>10분전</Text>
+          <TextLine />
+          <Text style={CustomStyles.bottomFont}>조회176</Text>
+        </View>
       </View>
     </View>
   );
 };
 
 const CustomListItem = (props) => (
-  <View>
-    {props.list &&
-      props.list.map((l, i) => (
-        <ListItem
-          key={i}
-          title={l.name}
-          titleStyle={{fontWeight: 'bold', paddingBottom: 5}}
-          subtitle={<SubTitleLabel data={l} />}
-          badge={{
-            value: 3,
-            badgeStyle: {
-              backgroundColor: 'white',
-              borderColor: '#ADADAD',
-              borderRadius: 19,
-              borderWidth: 1.2,
-              height: 30,
-              minWidth: 0,
-              width: 30,
-            },
-            textStyle: {color: '#ADADAD', fontSize: 15},
-          }}
-          bottomDivider
-          {...props}
-        />
-      ))}
-  </View>
+  <ScrollView>
+    <View>
+      {props.list &&
+        props.list.map((l, i) => (
+          <ListItem
+            key={i}
+            title={l.name}
+            titleStyle={{
+              fontFamily: Fonts.NotoSans,
+              fontWeight: 'bold',
+              fontSize: 14,
+              lineHeight: 20,
+              letterSpacing: -0.09,
+              paddingBottom: 5,
+            }}
+            subtitle={<SubTitleLabel data={l} />}
+            badge={{
+              value: 3,
+              badgeStyle: {
+                backgroundColor: 'white',
+                borderColor: '#ADADAD',
+                borderRadius: 19,
+                borderWidth: 1.2,
+                minWidth: 0,
+                height: 34,
+                width: 34,
+              },
+              textStyle: CustomStyles.BadgeFont,
+            }}
+            bottomDivider
+            {...props}
+          />
+        ))}
+    </View>
+  </ScrollView>
 );
 
 const CustomStyles = StyleSheet.create({
@@ -67,8 +91,23 @@ const CustomStyles = StyleSheet.create({
     // backgroundColor: 'yellow',
   },
   bottomFont: {
-    paddingBottom: 5,
-    paddingTop: 5,
+    fontFamily: Fonts.NotoSans,
+    fontSize: 12,
+    lineHeight: 17,
+    letterSpacing: -0.03,
+    color: '#ADADAD',
+  },
+  SubTitleFont: {
+    fontFamily: Fonts.NotoSans,
+    fontSize: 14,
+    lineHeight: 20,
+    letterSpacing: -0.09,
+  },
+  BadgeFont: {
+    fontFamily: Fonts.NotoSans,
+    fontSize: 14,
+    lineHeight: 20,
+    letterSpacing: -0.09,
     color: '#ADADAD',
   },
 });

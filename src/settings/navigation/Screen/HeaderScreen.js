@@ -7,13 +7,19 @@ import LinearGradient from 'react-native-linear-gradient';
 import Logo from '../../../components/Logo';
 import AsyncStorage from '@react-native-community/async-storage';
 import RNRestart from 'react-native-restart';
-export default function HeaderScreen({navigation, children}) {
+export default function HeaderScreen({navigation, type, children}) {
   return (
     <LinearGradient colors={['#001943', '#153467']}>
       <Header
-        leftComponent={<MyCustomLeftComponent navigation={navigation} />}
-        centerComponent={<MyCustomCenterComponent navigation={navigation} />}
-        rightComponent={<MyCustomRightComponent navigation={navigation} />}
+        leftComponent={
+          <MyCustomLeftComponent navigation={navigation} type={type} />
+        }
+        centerComponent={
+          <MyCustomCenterComponent navigation={navigation} type={type} />
+        }
+        rightComponent={
+          <MyCustomRightComponent navigation={navigation} type={type} />
+        }
         containerStyle={{
           backgroundColor: 'transparent',
           justifyContent: 'space-around',
@@ -23,7 +29,7 @@ export default function HeaderScreen({navigation, children}) {
   );
 }
 
-const MyCustomLeftComponent = ({navigation}) => {
+const MyCustomLeftComponent = ({navigation, type}) => {
   return (
     <Icon
       name="menu"
@@ -33,7 +39,7 @@ const MyCustomLeftComponent = ({navigation}) => {
     />
   );
 };
-const MyCustomCenterComponent = ({navigation}) => {
+const MyCustomCenterComponent = ({navigation, type}) => {
   return (
     <View style={{width: '100%', alignItems: 'center'}}>
       <TouchableOpacity
@@ -45,27 +51,31 @@ const MyCustomCenterComponent = ({navigation}) => {
   );
 };
 
-const MyCustomRightComponent = ({navigation}) => {
+const MyCustomRightComponent = ({navigation, type}) => {
   const [visible, setVisible] = useState(false);
 
   const toggleOverlay = () => {
     setVisible(!visible);
   };
   return (
-    <View style={{flexDirection: 'row'}}>
-      <TouchableOpacity onPress={() => setVisible(!visible)}>
-        <Image
-          style={{zIndex: 9999, height: 18}}
-          source={require('../../../img/head/Calendar.png')}
-          resizeMode="contain"
-        />
-      </TouchableOpacity>
+    <View
+      style={{
+        flexDirection: 'row',
+        justifyContent: 'center',
+      }}>
+      {type == 'Live' && (
+        <TouchableOpacity onPress={() => setVisible(!visible)}>
+          <Calendar />
+        </TouchableOpacity>
+      )}
+      {type == 'Board' && (
+        <TouchableOpacity onPress={() => setVisible(!visible)}>
+          <Board />
+        </TouchableOpacity>
+      )}
+
       <TouchableOpacity onPress={() => navigation.navigate('Alarm')}>
-        <Image
-          style={{zIndex: 9999, height: 18}}
-          source={require('../../../img/head/Bell.png')}
-          resizeMode="contain"
-        />
+        <Bell />
       </TouchableOpacity>
 
       {/* 달력 */}
@@ -76,6 +86,33 @@ const MyCustomRightComponent = ({navigation}) => {
   );
 };
 
+const Calendar = () => {
+  return (
+    <Image
+      style={{zIndex: 9999, height: 18, width: 16, marginRight: 16}}
+      source={require('../../../img/head/Calendar.png')}
+      // resizeMode="contain"
+    />
+  );
+};
+const Board = () => {
+  return (
+    <Image
+      style={{zIndex: 9999, height: 18, width: 20, marginRight: 14}}
+      source={require('../../../img/head/Board.png')}
+      // resizeMode="contain"
+    />
+  );
+};
+const Bell = () => {
+  return (
+    <Image
+      style={{zIndex: 9999, height: 18, width: 16}}
+      source={require('../../../img/head/Bell.png')}
+      // resizeMode="contain"
+    />
+  );
+};
 const goHome = () => {
   AsyncStorage.removeItem('userToken');
   RNRestart.Restart();

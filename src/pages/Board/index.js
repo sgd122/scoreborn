@@ -6,7 +6,7 @@ import {Observer, observer, inject} from 'mobx-react';
 import PageContext, {PageProvider} from './Context';
 
 //* 공통 컴포넌트
-import ScoreInput from '../../components/Text/ScoreInput';
+import CustomTrend from '../../components/Card/Trend';
 import ScoreLabel from '../../components/Text/ScoreLabel';
 import CustomButton from '../../components/Buttons/CustomButton';
 import CustomListItem from '../../components/ListItem/CustomListItem';
@@ -14,6 +14,7 @@ import HeaderScreen from '../../settings/navigation/Screen/HeaderScreen';
 
 //* 스타일
 import styles from '../../styles/common.module.scss';
+import {Fonts} from '../../settings/fonts';
 
 function Board({userStore, navigation}) {
   const {
@@ -49,6 +50,7 @@ function Board({userStore, navigation}) {
     <Observer>
       {() => (
         <View style={[styles.container]}>
+          <CustomTrend type={'weekly'} />
           <CustomListItem list={state.list} />
         </View>
       )}

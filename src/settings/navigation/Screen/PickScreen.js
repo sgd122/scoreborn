@@ -55,7 +55,7 @@ export default function PickScreen({navigation}) {
       <SafeAreaView style={{flex: 0, backgroundColor: '#001943'}} />
       <StatusBar barStyle="light-content" />
       <SafeAreaView style={{flex: 1}}>
-        <HeaderScreen navigation={navigation} />
+        <HeaderScreen navigation={navigation} type="Pick" />
         <Htab.Navigator>
           <Htab.Screen
             name="Pick"
