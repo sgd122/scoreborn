@@ -69,7 +69,7 @@ const MyCustomRightComponent = ({navigation, type}) => {
         </TouchableOpacity>
       )}
       {type == 'Board' && (
-        <TouchableOpacity onPress={() => setVisible(!visible)}>
+        <TouchableOpacity onPress={() => navigation.navigate('Board/Create')}>
           <Board />
         </TouchableOpacity>
       )}
@@ -113,6 +113,7 @@ const Bell = () => {
     />
   );
 };
+
 const goHome = () => {
   AsyncStorage.removeItem('userToken');
   RNRestart.Restart();

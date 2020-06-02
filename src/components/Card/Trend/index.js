@@ -1,5 +1,5 @@
-import React from 'react';
-import {View, Image, StyleSheet, Text, TextInput} from 'react-native';
+import React, {useState} from 'react';
+import {View, Image, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {Card, Divider} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from '../../../styles/common.module.scss';
@@ -11,9 +11,10 @@ import RoundImage from '../../Image/RoundImage';
  *
  */
 const CustomTrend = ({type, ...props}) => {
+  const [close, setClose] = useState(false);
   return (
     <>
-      <View style={CustomStyles.defaultCard}>
+      <View style={[CustomStyles.defaultCard, close && {display: 'none'}]}>
         <View
           style={{
             marginLeft: 12,
@@ -26,6 +27,16 @@ const CustomTrend = ({type, ...props}) => {
           />
           <Text style={CustomStyles.defualtFont}>주간 인기글 모아보기</Text>
         </View>
+
+        <TouchableOpacity
+          style={CustomStyles.rightCloseView}
+          onPress={() => setClose(!close)}>
+          <Image
+            source={require('../../../img/icon/Close.png')}
+            resizeMode="contain"
+            style={{width: 20, height: 20}}
+          />
+        </TouchableOpacity>
       </View>
     </>
   );
@@ -33,12 +44,20 @@ const CustomTrend = ({type, ...props}) => {
 
 const CustomStyles = StyleSheet.create({
   defaultCard: {
+    flexDirection: 'row',
     backgroundColor: '#F7F7F7',
     borderRadius: 5,
     height: 95,
     marginLeft: 16,
     marginRight: 16,
     marginTop: 16,
+  },
+  rightCloseView: {
+    flex: 1,
+    alignItems: 'flex-end',
+    justifyContent: 'flex-start',
+    marginRight: 10,
+    marginTop: 10,
   },
   defualtFont: {
     marginTop: 10,
