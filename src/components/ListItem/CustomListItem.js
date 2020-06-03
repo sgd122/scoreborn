@@ -13,27 +13,50 @@ import styles from '../../styles/common.module.scss';
 import {Fonts} from '../../settings/fonts';
 const SubTitleLabel = ({data}) => {
   return (
-    <View style={CustomStyles.elem}>
-      {data.avatar_url && (
-        <View style={CustomStyles.userInfo}>
-          <Avatar
-            source={{
-              uri: data.avatar_url,
-            }}
-          />
-        </View>
-      )}
-      <View style={CustomStyles.userComment}>
-        <Text style={CustomStyles.SubTitleFont}>{data.subtitle}</Text>
-        <View
-          style={{flexDirection: 'row', alignItems: 'center', marginTop: 5}}>
-          <Text style={CustomStyles.bottomFont}>행복버스</Text>
-          <TextLine />
-          <Text style={CustomStyles.bottomFont}>10분전</Text>
-          <TextLine />
-          <Text style={CustomStyles.bottomFont}>조회176</Text>
+    <View style={{marginTop: 8, marginLeft: 20, marginRight: 16}}>
+      <View>
+        <Text
+          style={{
+            fontFamily: Fonts.NotoSans,
+            fontWeight: 'bold',
+            fontSize: 14,
+            lineHeight: 20,
+            letterSpacing: -0.09,
+            paddingBottom: 5,
+          }}>
+          {data.name}
+        </Text>
+      </View>
+      <View style={[CustomStyles.elem, {marginBottom: 13}]}>
+        {data.avatar_url && (
+          <View style={CustomStyles.userInfo}>
+            <Avatar
+              source={{
+                uri: data.avatar_url,
+              }}
+            />
+          </View>
+        )}
+        <View style={CustomStyles.userComment}>
+          <Text style={CustomStyles.SubTitleFont}>{data.subtitle}</Text>
+          <View
+            style={{flexDirection: 'row', alignItems: 'center', marginTop: 5}}>
+            <Text style={CustomStyles.bottomFont}>행복버스</Text>
+            <TextLine />
+            <Text style={CustomStyles.bottomFont}>10분전</Text>
+            <TextLine />
+            <Text style={CustomStyles.bottomFont}>조회176</Text>
+          </View>
         </View>
       </View>
+      <View
+        style={{
+          marginRight: 10,
+          borderBottomWidth: 1,
+          borderBottomStyle: 'solid',
+          borderBottomColor: 'rgba(146, 147, 148, 0.13)',
+        }}
+      />
     </View>
   );
 };
@@ -41,37 +64,7 @@ const SubTitleLabel = ({data}) => {
 const CustomListItem = (props) => (
   <ScrollView>
     <View>
-      {props.list &&
-        props.list.map((l, i) => (
-          <ListItem
-            key={i}
-            title={l.name}
-            titleStyle={{
-              fontFamily: Fonts.NotoSans,
-              fontWeight: 'bold',
-              fontSize: 14,
-              lineHeight: 20,
-              letterSpacing: -0.09,
-              paddingBottom: 5,
-            }}
-            subtitle={<SubTitleLabel data={l} />}
-            badge={{
-              value: 3,
-              badgeStyle: {
-                backgroundColor: 'white',
-                borderColor: '#ADADAD',
-                borderRadius: 19,
-                borderWidth: 1.2,
-                minWidth: 0,
-                height: 34,
-                width: 34,
-              },
-              textStyle: CustomStyles.BadgeFont,
-            }}
-            bottomDivider
-            {...props}
-          />
-        ))}
+      {props.list && props.list.map((data) => <SubTitleLabel data={data} />)}
     </View>
   </ScrollView>
 );

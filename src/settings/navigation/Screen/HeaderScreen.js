@@ -5,6 +5,7 @@ import {Header, Icon, Text, Overlay} from 'react-native-elements';
 import {DrawerActions} from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
 import Logo from '../../../components/Logo';
+import CustomCalendar from '../../../components/Calenadar/CustomCalendar';
 import AsyncStorage from '@react-native-community/async-storage';
 import RNRestart from 'react-native-restart';
 export default function HeaderScreen({navigation, type, children}) {
@@ -80,7 +81,8 @@ const MyCustomRightComponent = ({navigation, type}) => {
 
       {/* 달력 */}
       <Overlay isVisible={visible} onBackdropPress={toggleOverlay}>
-        <Text>여기에 달력이 출력됩니다.</Text>
+        {/* <Text>여기에 달력이 출력됩니다.</Text> */}
+        <CustomCalendar />
       </Overlay>
     </View>
   );

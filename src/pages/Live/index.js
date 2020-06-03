@@ -1,6 +1,6 @@
 //* 라이브
 
-import React, { useEffect, useContext } from 'react';
+import React, {useEffect, useContext} from 'react';
 import {
   ScrollView,
   View,
@@ -9,8 +9,8 @@ import {
   Text,
   TextInput,
 } from 'react-native';
-import { Observer, observer, inject } from 'mobx-react';
-import PageContext, { PageProvider } from './Context';
+import {Observer, observer, inject} from 'mobx-react';
+import PageContext, {PageProvider} from './Context';
 
 //* 공통 컴포넌트
 import ScoreInput from '../../components/Text/ScoreInput';
@@ -26,16 +26,16 @@ import styles from '../../styles/common.module.scss';
 
 //* Modal
 import Modal01 from './Modal/Modal01';
-function Live({ userStore, navigation }) {
+function Live({userStore, navigation}) {
   const {
     state,
     setState,
-    actions: { callLogin, callSignUp, callForgot },
+    actions: {callLogin, callSignUp, callForgot},
   } = useContext(PageContext);
 
   useEffect(() => {
     //* Navigation
-    setState((prev) => ({ ...prev, navigation: navigation }));
+    setState((prev) => ({...prev, navigation: navigation}));
 
     setState((prev) => ({
       ...prev,
@@ -113,7 +113,7 @@ function Live({ userStore, navigation }) {
   );
 }
 
-export default inject('userStore')(({ userStore, navigation }) => {
+export default inject('userStore')(({userStore, navigation}) => {
   return (
     <PageProvider>
       {/* <HeaderScreen navigation={navigation} /> */}
