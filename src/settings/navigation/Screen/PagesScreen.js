@@ -49,6 +49,9 @@ import FavoritPage from '../../../pages/MyPage/SubPage/Favorits/index';
 import Favorits from '../../../pages/MyPage/SubPage/Favorits/Favorits';
 import ChatingRoom from '../../../pages/MyPage/SubPage/Favorits/ChatingRoom';
 
+//* 게시판
+import CreateBoard from '../../../pages/Board/SubPage/CreateBoard';
+
 const PagesScreen = () => {
   return (
     <>
@@ -128,6 +131,17 @@ const PagesScreen = () => {
         name="MyPage/FavoritPage"
         component={FavoritPage}
         options={{headerTitle: '나의 즐겨찾기'}}
+      />
+
+      <Stack.Screen
+        name="Board/Create"
+        component={CreateBoard}
+        options={({route, navigation}) => ({
+          headerTitle: '글쓰기',
+          // headerRight: (props) => (
+          //   <AlarmTitle navigation={navigation} {...props} />
+          // ),
+        })}
       />
 
       {LoginPages()}
